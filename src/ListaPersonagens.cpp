@@ -111,8 +111,8 @@ Personagem *ListaPersonagens::voltarInicio()
 }
 Personagem *ListaPersonagens::irProximo()
 {
-    /* Se atual não for nulo */
-    if (atual)
+    /* Se o proximo de atual nao for nulo */
+    if (atual->get_prox())
     {
         atual = atual->get_prox();
         return atual->get_info();

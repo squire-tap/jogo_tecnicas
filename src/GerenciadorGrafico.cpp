@@ -29,10 +29,15 @@ void GerenciadorGrafico::desenhar(const string caminho, const vector2D<float> po
 
     sf::Sprite sprite;
 
+    //text
+    
     sprite.setTexture(*text);
 
-    sprite.setScale(dimensao.x , dimensao.y);
+    sprite.setScale(dimensao.x / sprite.getLocalBounds().width, dimensao.y / sprite.getLocalBounds().height);
 
+    /*introdução do getSize() para centralizar a origem em relação à sprite redimensionada*/
+    sprite.setOrigin(sf::Vector2f(text->getSize().x/2, text->getSize().y/2));
+    
     sprite.setPosition(posicao.x, posicao.y);
 
     janela->draw(sprite);

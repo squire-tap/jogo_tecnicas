@@ -1,6 +1,6 @@
 #include "Heroi.hpp"
 
-Heroi::Heroi(vector2D<float> pos) : Desenhavel(pos , vector2D<float>() , vector2D<float>(0.5f,0.5f), "assets/pngegg.png")
+Heroi::Heroi(vector2D<float> pos) : Desenhavel(pos , vector2D<float>() , vector2D<float>(200.f,200.f), "assets/pngegg.png")
 {
     
 }

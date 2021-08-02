@@ -1,6 +1,7 @@
 #ifndef _PRINCIPAL_HPP_
 #define _PRINCIPAL_HPP_
 #include "GerenciadorGrafico.hpp"
+#include "GerenciadorColisoes.hpp"
 #include "ListaDesenhaveis.hpp"
                 
 
@@ -12,6 +13,7 @@ private:
     sf::Clock relogio;
     GerenciadorGrafico gg;
     GerenciadorEventos ge;
+    GerenciadorColisoes gc;
     ListaDesenhaveis listaAmigos;
     unsigned int IDjanelaFechada;
     bool terminar;

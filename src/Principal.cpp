@@ -9,12 +9,15 @@ Principal::Principal() : IDjanelaFechada{ge.adicionarOuvinteOutro([this](const s
     /* Criando os primeiros personagem */
     
     Inimigo *p1 = new Inimigo(vector2D<float>(0.0f, 0.0f), vector2D<float>(0.0f,0.0f));
-    Inimigo *p2 = new Inimigo(vector2D<float>(20.0f, 60.0f), vector2D<float>(0.0f,0.0f));
-    Heroi *p3 = new Heroi(vector2D<float>(0.0f, 0.0f));
+    Inimigo *p2 = new Inimigo(vector2D<float>(800.0f, 600.0f), vector2D<float>(0.0f,0.0f));
+    Heroi *p3 = new Heroi(vector2D<float>(1000.0f, 1000.0f));
 
     listaAmigos.inserir(p1);
+    gc.adicionarColidivel(p1);
     listaAmigos.inserir(p2);
+    gc.adicionarColidivel(p2);
     listaAmigos.inserir(p3);
+    gc.adicionarColidivel(p3);
 
     /* Atribui as condições iniciais para as entidades , tanto na parte gráfica como nos eventos */
     listaAmigos.inicializarDesenhavel(gg, ge);
@@ -36,6 +39,7 @@ void Principal::executar()
         relogio.restart();
 
         ge.tratarEventos();
+        gc.verificarColisoes();
 
         gg.limpar();
         //janela->clear

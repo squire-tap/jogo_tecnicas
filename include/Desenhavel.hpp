@@ -20,6 +20,10 @@ public:
     virtual void atualizar(float t);
     virtual void desenhar(GerenciadorGrafico &gg);
 
+    vector2D<float> getPosicao();
+    vector2D<float> getDimensao();
+    void setVelocidade(vector2D<float> velo);
+
 };
 
 #endif

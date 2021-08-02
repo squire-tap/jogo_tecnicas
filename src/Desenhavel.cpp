@@ -1,7 +1,7 @@
 #include "Desenhavel.hpp"
 
 Desenhavel::Desenhavel(vector2D<float> pos, vector2D<float> vel,vector2D<float> dim, const string caminhoText) : 
-posicao{pos}, velocidade{vel},dimensao{dim}, caminho{caminhoText}
+    posicao{ pos }, velocidade{ vel }, dimensao{ dim }, caminho{ caminhoText }
 {
     
 }
@@ -25,4 +25,19 @@ void Desenhavel::atualizar(float t)
 void Desenhavel::desenhar(GerenciadorGrafico &gg)
 {
     gg.desenhar(caminho, posicao , dimensao);
+}
+
+vector2D<float> Desenhavel::getPosicao()
+{
+    return posicao;
+}
+
+vector2D<float> Desenhavel::getDimensao()
+{
+    return dimensao;
+}
+
+void Desenhavel::setVelocidade(vector2D<float> velo)
+{
+    velocidade = velo;
 }

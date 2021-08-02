@@ -16,6 +16,7 @@
 #include <SFML/Graphics.hpp>
 #include <stdio.h>
 #include <iostream>
+#include <set>
 using std::cout;
 using std::endl;
 using std::cin;

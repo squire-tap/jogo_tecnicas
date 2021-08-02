@@ -7,9 +7,9 @@ class GerenciadorEventos
 private:
     static unsigned int proximoID;
     sf::RenderWindow *janela;
-    map<unsigned int, function<void(const sf::Event &)>> ouvintesMouse;
-    map<unsigned int, function<void(const sf::Event &)>> ouvintesTeclado;
-    map<unsigned int, function<void(const sf::Event &)>> ouvintesOutros;
+    map<unsigned int , function<void(const sf::Event &)>> ouvintesMouse;
+    map<unsigned int , function<void(const sf::Event &)>> ouvintesTeclado;
+    map<unsigned int , function<void(const sf::Event &)>> ouvintesOutros;
     sf::Event evento;
 
 public:

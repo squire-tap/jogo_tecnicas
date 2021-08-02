@@ -10,8 +10,9 @@ Heroi::~Heroi()
 void Heroi::inicializar(GerenciadorGrafico &gg, GerenciadorEventos &ge)
 {
     gg.carregarTextura(caminho);
-                                    
-    chaveOuvinte = ge.adicionarOuvinteTeclado([this] (const sf::Event& e) {tratarEvento(e);});
+
+                                   
+    chaveOuvinte = ge.adicionarOuvinteTeclado( [this] (const sf::Event& e) {tratarEvento(e);} );
 }
 void Heroi::atualizar(float t)
 {
@@ -24,6 +25,7 @@ void Heroi::desenhar(GerenciadorGrafico &gg)
     gg.desenhar(caminho, posicao , dimensao);
 
 }  
+//Abstrata "virtual pura"
 void Heroi::tratarEvento(const sf::Event &e)
 {
     if(e.type == sf::Event::KeyPressed)

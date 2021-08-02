@@ -3,7 +3,6 @@
 #pragma once
 
 #include "Colidivel.hpp"
-//#include "Personagem.hpp"
 #include "stdafx.hpp"
 #include <iterator>
 

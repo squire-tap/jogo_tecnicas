@@ -44,10 +44,6 @@ public:
     TL voltarInicio();
     TL irProximo();
 
-    /* void inicializarPersonagens(GerenciadorGrafico &gg);
-    void atualizaPersonagens(float t);
-    void desenharPersonagens(GerenciadorGrafico &gg);
-    void destruirPersonagens(); */
 };
 
 template<class TL>

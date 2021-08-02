@@ -15,14 +15,15 @@ void Heroi::inicializar(GerenciadorGrafico &gg, GerenciadorEventos &ge)
 }
 void Heroi::atualizar(float t)
 {
-    posicao += velocidade * t;
+    posicao += (velocidade + correcaoColisao) * t;
+    correcaoColisao = vector2D<float>(0.0f , 0.0f);
 
 }
-/* void Heroi::desenhar(GerenciadorGrafico &gg)
+void Heroi::desenhar(GerenciadorGrafico &gg)
 {
     gg.desenhar(caminho, posicao , dimensao);
 
-} */
+}  
 void Heroi::tratarEvento(const sf::Event &e)
 {
     if(e.type == sf::Event::KeyPressed)
@@ -73,13 +74,13 @@ void Heroi::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vect
 {
     if (idOutro == 2)
     {
-        if (direcao == 1 && velocidade.y > 0)
-            velocidade.y = 0;
-        else if (direcao == 2 && velocidade.x < 0)
-            velocidade.x = 0;
-        else if (direcao == 3 && velocidade.y < 0)
-            velocidade.y = 0;
-        else if (direcao == 4 && velocidade.x > 0)
-            velocidade.x = 0;
+        if (direcao == 1)
+            correcaoColisao.y = -100;
+        else if (direcao == 2 )
+            correcaoColisao.x = 100;
+        else if (direcao == 3 )
+            correcaoColisao.y = 100;
+        else if (direcao == 4 )
+            correcaoColisao.x = -100;
     }
 }

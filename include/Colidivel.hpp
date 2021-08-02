@@ -10,6 +10,7 @@ class Colidivel : public Desenhavel
 {
 protected:
 	int id;
+	vector2D<float> correcaoColisao;
 
 public:
 	Colidivel(vector2D<float> pos, vector2D<float> vel, vector2D<float> dim, const string caminhoText, int id);

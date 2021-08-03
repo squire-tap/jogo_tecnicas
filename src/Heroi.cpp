@@ -1,6 +1,6 @@
 #include "Heroi.hpp"
 
-Heroi::Heroi(vector2D<float> pos) : Colidivel(pos , vector2D<float>() , vector2D<float>(200.0f,200.0f), "assets/pngegg.png", 1)
+Heroi::Heroi(vector2D<float> pos) : Colidivel(pos , vector2D<float>() , vector2D<float>(200.0f,200.0f), "assets/heroi.png", 1)
 {
 }
 Heroi::~Heroi()
@@ -11,7 +11,6 @@ void Heroi::inicializar(GerenciadorGrafico &gg, GerenciadorEventos &ge)
 {
     gg.carregarTextura(caminho);
 
-                                   
     chaveOuvinte = ge.adicionarOuvinteTeclado( [this] (const sf::Event& e) {tratarEvento(e);} );
 }
 void Heroi::atualizar(float t)

@@ -11,6 +11,7 @@ public:
     ~Inimigo();
 
     void colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vector2D<float> dimensoesOutro);
+    
 };
 
 

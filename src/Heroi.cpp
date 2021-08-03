@@ -11,6 +11,7 @@ void Heroi::inicializar(GerenciadorGrafico &gg, GerenciadorEventos &ge)
 {
     gg.carregarTextura(caminho);
 
+    /* Heroi passa a ser um ouvinte do teclado , que após um evento é chamada a tratar evento do heroi */
     chaveOuvinte = ge.adicionarOuvinteTeclado( [this] (const sf::Event& e) {tratarEvento(e);} );
 }
 void Heroi::atualizar(float t)

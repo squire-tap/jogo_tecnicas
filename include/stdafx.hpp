@@ -1,6 +1,3 @@
-// stdafx.h : include file for standard system include files,
-// or project specific include files that are used frequently, but
-// are changed infrequently
 #ifndef _STDAFX_HPP_
 #define _STDAFX_HPP_
 
@@ -17,6 +14,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <set>
+#include <iterator>
 using std::cout;
 using std::endl;
 using std::cin;

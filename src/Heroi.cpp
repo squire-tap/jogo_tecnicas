@@ -1,34 +1,33 @@
 #include "Heroi.hpp"
 
-Heroi::Heroi(vector2D<float> pos) : Colidivel(pos , vector2D<float>() , vector2D<float>(200.0f,200.0f), "assets/heroi.png", 1)
+Heroi::Heroi(vector2D<float> pos) : Colidivel(pos, vector2D<float>(), vector2D<float>(200.0f, 200.0f), "assets/heroi.png", 1)
 {
 }
 Heroi::~Heroi()
 {
-
 }
 void Heroi::inicializar(GerenciadorGrafico &gg, GerenciadorEventos &ge)
 {
     gg.carregarTextura(caminho);
 
     /* Heroi passa a ser um ouvinte do teclado , que após um evento é chamada a tratar evento do heroi */
-    chaveOuvinte = ge.adicionarOuvinteTeclado( [this] (const sf::Event& e) {tratarEvento(e);} );
+    chaveOuvinte = ge.adicionarOuvinteTeclado([this](const sf::Event &e)
+                                              { tratarEvento(e); });
+
 }
 void Heroi::atualizar(float t)
 {
     posicao += (velocidade + correcaoColisao) * t;
-    correcaoColisao = vector2D<float>(0.0f , 0.0f);
-
+    correcaoColisao = vector2D<float>(0.0f, 0.0f);
 }
 void Heroi::desenhar(GerenciadorGrafico &gg)
 {
-    gg.desenhar(caminho, posicao , dimensao);
-
-}  
+    gg.desenhar(caminho, posicao, dimensao);
+}
 //Abstrata "virtual pura"
 void Heroi::tratarEvento(const sf::Event &e)
 {
-    if(e.type == sf::Event::KeyPressed)
+    if (e.type == sf::Event::KeyPressed)
     {
         switch (e.key.code)
         {
@@ -47,8 +46,9 @@ void Heroi::tratarEvento(const sf::Event &e)
         default:
             break;
         }
+
     }
-    else if(e.type == sf::Event::KeyReleased)
+    else if (e.type == sf::Event::KeyReleased)
     {
         switch (e.key.code)
         {
@@ -67,9 +67,19 @@ void Heroi::tratarEvento(const sf::Event &e)
         default:
             break;
         }
-
     }
+    else if (e.type == sf::Event::MouseButtonPressed)
+        {
+            switch (e.mouseButton.button)
+            {
+            case sf::Mouse::Left:
+                setPodeAtirar(true);
+                break;
 
+            default:
+                break;
+            }
+        } 
 }
 
 void Heroi::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vector2D<float> dimensoesOutro)
@@ -78,11 +88,11 @@ void Heroi::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vect
     {
         if (direcao == 1)
             correcaoColisao.y = -100;
-        else if (direcao == 2 )
+        else if (direcao == 2)
             correcaoColisao.x = 100;
-        else if (direcao == 3 )
+        else if (direcao == 3)
             correcaoColisao.y = 100;
-        else if (direcao == 4 )
+        else if (direcao == 4)
             correcaoColisao.x = -100;
     }
 }

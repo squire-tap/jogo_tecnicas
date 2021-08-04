@@ -1,10 +1,7 @@
-#pragma once
-
-#include "stdafx.hpp"
+#ifndef COLIDIVEL_HPP
+#define COLIDIVEL_HPP
 #include "Desenhavel.hpp"
-#include "vector2D.hpp"
-#include <SFML/Graphics.hpp>
-#include <string.h>
+
 
 class Colidivel : public Desenhavel
 {
@@ -18,3 +15,5 @@ public:
 	virtual void colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vector2D<float> dimensoesOutro) = 0;
 	int getId();
 };
+
+#endif

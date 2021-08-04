@@ -1,13 +1,13 @@
 #ifndef HEROI_HPP
 #define HEROI_HPP
 #include "Colidivel.hpp"
+#include "Atirador.hpp"
 
 
-class Heroi : public Colidivel
+class Heroi : public Colidivel , public Atirador
 {
 private:
     unsigned int chaveOuvinte;
-    
     
 public:
     Heroi(vector2D<float> pos);
@@ -16,9 +16,7 @@ public:
     void atualizar(float t);
     void desenhar(GerenciadorGrafico &gg);
     void tratarEvento(const sf::Event &e);
-
     void colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vector2D<float> dimensoesOutro);
-
 };
 
 #endif

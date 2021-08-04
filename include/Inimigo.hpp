@@ -1,11 +1,12 @@
 #ifndef INIMIGO_HPP
 #define INIMIGO_HPP
 #include "Colidivel.hpp"
+#include "Atirador.hpp"
 
-class Inimigo : public Colidivel
+class Inimigo : public Colidivel , public Atirador
 {
 private:
-    /* data */
+    
 public:
     Inimigo(vector2D<float> pos , vector2D<float> vel);
     ~Inimigo();

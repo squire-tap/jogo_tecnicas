@@ -6,7 +6,7 @@
 
 class ListaDesenhaveis
 {
-private:
+public:
     lista<Desenhavel*> lista_desenhavel;
    
 public:

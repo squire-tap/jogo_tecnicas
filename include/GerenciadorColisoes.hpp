@@ -1,10 +1,7 @@
-#pragma once
-
-#pragma once
-
+#ifndef GERENCIADORCOLISOES_HPP
+#define GERENCIADORCOLISOES_HPP
 #include "Colidivel.hpp"
-#include "stdafx.hpp"
-#include <iterator>
+
 
 class GerenciadorColisoes
 {
@@ -23,3 +20,5 @@ public:
 	void verificarColisoes();
 
 };
+
+#endif

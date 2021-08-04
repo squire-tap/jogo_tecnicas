@@ -1,5 +1,9 @@
 #ifndef _PRINCIPAL_HPP_
 #define _PRINCIPAL_HPP_
+#include "Principal.hpp"
+#include "Heroi.hpp"
+#include "Inimigo.hpp"
+#include "Municao.hpp"
 #include "GerenciadorGrafico.hpp"
 #include "GerenciadorColisoes.hpp"
 #include "ListaDesenhaveis.hpp"
@@ -23,6 +27,7 @@ public:
     ~Principal();               
     void executar();
     void janelaFechada(const sf::Event& e);
+    void criarProjeteis(ListaDesenhaveis);
 };
 
 #endif

@@ -19,6 +19,7 @@ void ListaDesenhaveis::inicializarDesenhavel(GerenciadorGrafico &gg , Gerenciado
 {
     Desenhavel *p = lista_desenhavel.voltarInicio();
     
+    
 
     /* Percorre toda a lista de personagens , e chama a funcao atualiza para cada personagem */
     while (p)

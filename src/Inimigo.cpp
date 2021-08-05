@@ -1,6 +1,6 @@
 #include "Inimigo.hpp"
 
-Inimigo::Inimigo(vector2D<float> pos, vector2D<float> vel) : Colidivel(pos , vel , vector2D<float>(200.0f,200.f),"assets/inimigo.png", 2) 
+Inimigo::Inimigo(vector2D<float> pos , vector2D<float> vel , vector2D<float> dim , const string caminhoText, int id) : Atirador(pos , vel , dim ,caminhoText, 2) 
 {
 }
 Inimigo::~Inimigo()

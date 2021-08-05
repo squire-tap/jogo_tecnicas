@@ -6,7 +6,7 @@
 
 class ListaDesenhaveis
 {
-public:
+protected:
     lista<Desenhavel*> lista_desenhavel;
    
 public:
@@ -18,6 +18,8 @@ public:
     void atualizaDesenhavel(float t);
     void desenharDesenhavel(GerenciadorGrafico &gg);
     void destruirDesenhavel();
+    void removerDesenhavel(Desenhavel* p);
+    void removerDestruir(Desenhavel* p);
 };
 
 #endif

@@ -76,5 +76,40 @@ void GerenciadorColisoes::verificarColisoes()
 				(*it2)->colidir(dir21, (*it1)->getId(), (*it1)->getPosicao(), (*it1)->getDimensao());
 			}
 		}
+
 	}
+	limpaDesenhaveis();
+}
+
+void GerenciadorColisoes::limpaDesenhaveis()
+{
+	Colidivel* pAux;
+    set<Colidivel*> limpeza;
+
+    for (auto iterador = colidiveis.begin(); iterador != colidiveis.end(); iterador++)
+    {
+        pAux = *iterador;
+
+		/* Caso existe for false */
+        if (!pAux->getExiste())
+        {
+            limpeza.insert(pAux);
+        }
+
+    }
+
+     for (auto iterador = limpeza.begin(); iterador != limpeza.end(); iterador++)
+    {
+        pAux = *iterador;
+		
+		colidiveis.erase(pAux);
+		
+		cout << "Antes Remover " << pAux << endl;
+        lista->removerDestruir(pAux);
+		cout << "Depois Remover" << endl;
+    }
+
+
+    limpeza.clear();
+
 }

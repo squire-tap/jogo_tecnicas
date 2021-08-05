@@ -22,14 +22,13 @@ void GerenciadorGrafico::desenhar(const string caminho, const vector2D<float> po
     if (!textures.count(caminho))
     {
         cerr << "Imagem em " << caminho << " nao carregada " << endl;
-        exit(0);
+        carregarTextura(caminho);
+        cout << "Carregada" << endl;
     }
     /* Retorna o valor correspondente á chave caminho */
     sf::Texture *text = textures[caminho];
 
     sf::Sprite sprite;
-
-    //text
     
     sprite.setTexture(*text);
 
@@ -63,7 +62,6 @@ bool GerenciadorGrafico::carregarTextura(const string caminho)
     return true;
 }
 void GerenciadorGrafico::centralizar(const vector2D<float> centro)
-
 {
     camera.setCenter(sf::Vector2f(centro.x, centro.y));
 }

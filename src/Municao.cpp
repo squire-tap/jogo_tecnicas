@@ -1,6 +1,6 @@
 #include "Municao.hpp"
 
-Municao::Municao(vector2D<float> pos): Projetil(pos) , chaveOuvinte(0) , existe(false)
+Municao::Municao(vector2D<float> pos , vector2D<float> vel , vector2D<float> dim , const string caminhoText , int id ): Projetil(pos , vel , dim , caminhoText , id)
 {
 }
 
@@ -10,11 +10,12 @@ Municao::~Municao()
 
 void Municao::atualizar(float t)
 {
-    posicao = velocidade * t;
+    posicao += velocidade * t;
+    
 }
 void Municao::desenhar(GerenciadorGrafico &gg)
 {
-    gg.desenhar(caminho , posicao , velocidade);
+    gg.desenhar(caminho , posicao , dimensao);
 }
 void Municao::inicializar(GerenciadorGrafico &gg, GerenciadorEventos &ge)
 {
@@ -23,14 +24,6 @@ void Municao::inicializar(GerenciadorGrafico &gg, GerenciadorEventos &ge)
 
 void Municao::colidir(int direcao , int idOutro , vector2D<float> posicaoOutro , vector2D<float> dimensoesOutro)
 {
-    if (idOutro == 2)
-    {
-
-        if (direcao)
-        {
-            existe = false;
-        }
-        velocidade = (0.0f , 0.0f);
-    }
-
+    if(idOutro  !=  1 && idOutro != 0)
+        existe = false; 
 }

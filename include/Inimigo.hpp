@@ -3,12 +3,12 @@
 #include "Colidivel.hpp"
 #include "Atirador.hpp"
 
-class Inimigo : public Colidivel , public Atirador
+class Inimigo : public Atirador
 {
 private:
     
 public:
-    Inimigo(vector2D<float> pos , vector2D<float> vel);
+    Inimigo(vector2D<float> pos = (0.0f , 0.0f) , vector2D<float> vel = (0.0f , 0.0f) , vector2D<float> dim = (0.0f , 0.0f) , const string caminhoText = " " , int id = 0) ;
     ~Inimigo();
 
     void colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vector2D<float> dimensoesOutro);

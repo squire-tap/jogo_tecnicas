@@ -40,6 +40,8 @@ public:
 
     void inserir(TL info);
     void esvaziar();
+    void removerInfo(TL info);
+    void removerDestruir(TL info);
 
     TL voltarInicio();
     TL irProximo();
@@ -125,13 +127,14 @@ void lista<TL>::inserir(TL info)
         if (!inicio) /* Se inicio for nulo */
         {
             inicio = p;
+            fim = p;
         }
         else
         {
             fim->set_prox(p);
             p->set_prev(fim);
+            fim = p;
         }
-        fim = p;
 
     }
 }
@@ -188,5 +191,71 @@ TL lista<TL>::irProximo()
         /* cout << "Nao fui para o proximo personagem!" << endl; */
     }
 }
+
+template<class TL>
+void lista<TL>::removerInfo(TL info)
+{
+        ElementoLista<TL>* pAux = inicio;
+
+        while (pAux->get_info() != info)
+        {
+                pAux = pAux->get_prox();
+        }
+
+        if (pAux == inicio)
+        {
+                inicio = pAux->get_prox();
+                if(inicio != NULL)
+                        inicio->set_prev(NULL);
+        }
+        else if (pAux == fim)
+        {
+                fim = fim->get_prev();
+                fim->set_prox(NULL);
+        }
+        else
+        {
+                pAux->get_prev()->set_prox(pAux->get_prox());
+                pAux->get_prox()->set_prev(pAux->get_prev());
+        }
+
+        delete pAux;
+}
+
+template<class TL>
+void lista<TL>::removerDestruir(TL info)
+{
+        ElementoLista<TL>* pAux = inicio;
+        TL pInfo = NULL;
+
+        while (pInfo != info)
+        {
+                pAux = pAux->get_prox();
+        }
+
+        pInfo = pAux->get_info();
+
+        if (pAux == inicio)
+        {
+                inicio = pAux->get_prox();
+                inicio->set_prev(NULL);
+        }
+        else if (pAux == fim)
+        {
+                fim = fim->get_prev();
+                fim->set_prox(NULL);
+        }
+        else
+        {
+                /* Amarração da lista */
+                pAux->get_prev()->set_prox(pAux->get_prox());
+                pAux->get_prox()->set_prev(pAux->get_prev());
+        }
+
+        delete pInfo;
+        delete pAux;
+}
+
+
 
 #endif

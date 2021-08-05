@@ -3,19 +3,24 @@
 #include "Colidivel.hpp"
 #include "ListaDesenhaveis.hpp"
 #include "Municao.hpp"
+#include "GerenciadorColisoes.hpp"
 
-class Atirador
+class Atirador : public Colidivel
 {
 protected:
     bool podeAtirar;
     ListaDesenhaveis* lista;
+    GerenciadorColisoes *gc; //copia da principal
+    
 
 public:
-    Atirador();
+    Atirador(vector2D<float> pos = (0.0f ,0.0f), vector2D<float> vel = (0.0f , 0.0f), vector2D<float> dim = (0.0f , 0.0f), const string caminhoText = " ", int id = 0);
     ~Atirador();
     bool getPodeAtirar();
     void setPodeAtirar(bool pode);
     void atirar();
+    void setListaDesenhaveis(ListaDesenhaveis* l);
+    void setGerenciadorColisao(GerenciadorColisoes *g);
 };
 
 

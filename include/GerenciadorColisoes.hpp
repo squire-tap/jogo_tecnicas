@@ -1,6 +1,7 @@
 #ifndef GERENCIADORCOLISOES_HPP
 #define GERENCIADORCOLISOES_HPP
 #include "Colidivel.hpp"
+#include "ListaDesenhaveis.hpp"
 
 
 class GerenciadorColisoes
@@ -8,6 +9,7 @@ class GerenciadorColisoes
 private:
 	set<Colidivel*> colidiveis;
 	int estadoColidindo(Colidivel* p1, Colidivel* p2);
+	ListaDesenhaveis* lista;
 
 public:
 	GerenciadorColisoes();
@@ -18,6 +20,7 @@ public:
 	void removerTodos();
 
 	void verificarColisoes();
+	void limpaDesenhaveis();
 
 };
 

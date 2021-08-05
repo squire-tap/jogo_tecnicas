@@ -1,6 +1,6 @@
 #include "Atirador.hpp"
 
-Atirador::Atirador(/* args */): podeAtirar(false)
+Atirador::Atirador(vector2D<float> pos, vector2D<float> vel, vector2D<float> dim, const string caminhoText, int id): Colidivel(pos , vel , dim , caminhoText , id) , podeAtirar(false)
 {
 
 }
@@ -20,8 +20,20 @@ void Atirador::setPodeAtirar(bool pode)
     podeAtirar = pode;
 }
 
+void Atirador::setListaDesenhaveis(ListaDesenhaveis* l)
+{
+    lista = l;
+}
+void Atirador::setGerenciadorColisao(GerenciadorColisoes *g)
+{
+    gc = g;
+}
+
 void Atirador::atirar()
 {
-    Municao* p = new Municao();
+    Municao* p = NULL; 
+    p = new Municao(posicao , vector2D<float>(300.0f , 0.0f) , vector2D<float>(200.0f , 200.0f) , "assets/bala.png" , 0);  
+    
     lista->inserir(p);
+    gc->adicionarColidivel(p);
 }

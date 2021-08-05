@@ -19,8 +19,6 @@ void ListaDesenhaveis::inicializarDesenhavel(GerenciadorGrafico &gg , Gerenciado
 {
     Desenhavel *p = lista_desenhavel.voltarInicio();
     
-    
-
     /* Percorre toda a lista de personagens , e chama a funcao atualiza para cada personagem */
     while (p)
     {
@@ -64,4 +62,14 @@ void ListaDesenhaveis::destruirDesenhavel()
         p = lista_desenhavel.irProximo();
     }
     lista_desenhavel.esvaziar();
+}
+
+void ListaDesenhaveis::removerDesenhavel(Desenhavel* p)
+{
+    lista_desenhavel.removerInfo(p);
+}
+
+void ListaDesenhaveis::removerDestruir(Desenhavel* p)
+{
+        lista_desenhavel.removerDestruir(p);
 }

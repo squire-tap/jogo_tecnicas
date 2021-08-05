@@ -1,8 +1,10 @@
 #include "Heroi.hpp"
 
-Heroi::Heroi(vector2D<float> pos) : Colidivel(pos, vector2D<float>(), vector2D<float>(200.0f, 200.0f), "assets/heroi.png", 1)
+Heroi::Heroi(vector2D<float> pos , vector2D<float> vel , vector2D<float> dim , const string caminhoText, int id ) : Atirador(pos, vel, dim , caminhoText, 1)
 {
+    
 }
+
 Heroi::~Heroi()
 {
 }
@@ -13,6 +15,9 @@ void Heroi::inicializar(GerenciadorGrafico &gg, GerenciadorEventos &ge)
     /* Heroi passa a ser um ouvinte do teclado , que após um evento é chamada a tratar evento do heroi */
     chaveOuvinte = ge.adicionarOuvinteTeclado([this](const sf::Event &e)
                                               { tratarEvento(e); });
+    
+    chaveOuvinte = ge.adicionarOuvinteMouse( [this] (const sf::Event &e)
+                                            {tratarEvento(e); });
 
 }
 void Heroi::atualizar(float t)
@@ -73,7 +78,7 @@ void Heroi::tratarEvento(const sf::Event &e)
             switch (e.mouseButton.button)
             {
             case sf::Mouse::Left:
-                setPodeAtirar(true);
+                atirar() ;
                 break;
 
             default:

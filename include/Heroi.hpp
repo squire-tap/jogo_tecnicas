@@ -4,13 +4,13 @@
 #include "Atirador.hpp"
 
 
-class Heroi : public Colidivel , public Atirador
+class Heroi : public Atirador
 {
 private:
     unsigned int chaveOuvinte;
     
 public:
-    Heroi(vector2D<float> pos);
+    Heroi(vector2D<float> pos = (0.0f ,0.0f), vector2D<float> vel = (0.0f , 0.0f), vector2D<float> dim = (0.0f , 0.0f), const string caminhoText = " ", int id = 0);
     ~Heroi();
     void inicializar(GerenciadorGrafico &gg , GerenciadorEventos &ge);
     void atualizar(float t);

@@ -6,6 +6,7 @@ Principal::Principal() : IDjanelaFechada{ge.adicionarOuvinteOutro([this](const s
                          terminar{false}
 {
     /* Criando os primeiros personagem */
+    gc.setListaDesenhaveis(&listaAmigos);
 
     Inimigo *ini1 = new Inimigo(vector2D<float>(850.0f, 550.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(200.0f, 200.f), "assets/inimigo.png");
     Inimigo *ini2 = new Inimigo(vector2D<float>(800.0f, 600.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(200.0f, 200.f), "assets/inimigo.png");

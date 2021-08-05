@@ -231,9 +231,10 @@ void lista<TL>::removerDestruir(TL info)
         while (pInfo != info)
         {
                 pAux = pAux->get_prox();
+                pInfo = pAux->get_info();
         }
 
-        pInfo = pAux->get_info();
+
 
         if (pAux == inicio)
         {

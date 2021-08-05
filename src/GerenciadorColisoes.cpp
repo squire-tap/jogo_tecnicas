@@ -58,6 +58,11 @@ void GerenciadorColisoes::removerTodos()
 	colidiveis.clear();
 }
 
+void GerenciadorColisoes::setListaDesenhaveis(ListaDesenhaveis* l)
+{
+	lista = l;
+}
+
 void GerenciadorColisoes::verificarColisoes()
 {
 	for (auto it1 = colidiveis.begin(); it1 != colidiveis.end(); it1++)

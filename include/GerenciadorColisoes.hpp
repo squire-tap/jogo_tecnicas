@@ -18,6 +18,7 @@ public:
 	void adicionarColidivel(Colidivel* pC);
 	void removerColidivel(Colidivel* pC);
 	void removerTodos();
+	void setListaDesenhaveis(ListaDesenhaveis* l);
 
 	void verificarColisoes();
 	void limpaDesenhaveis();

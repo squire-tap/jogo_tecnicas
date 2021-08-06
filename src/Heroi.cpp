@@ -24,6 +24,9 @@ void Heroi::atualizar(float t)
 {
     posicao += (velocidade + correcaoColisao) * t;
     correcaoColisao = vector2D<float>(0.0f, 0.0f);
+    
+    velocidade.y = velocidade.y + 2000 * t;
+    cout << posicao.x << "  " << posicao.y << endl;
 }
 void Heroi::desenhar(GerenciadorGrafico &gg)
 {
@@ -37,13 +40,13 @@ void Heroi::tratarEvento(const sf::Event &e)
         switch (e.key.code)
         {
         case sf::Keyboard::Right:
-            velocidade.x += 100;
+            velocidade.x += 300;
             break;
         case sf::Keyboard::Left:
-            velocidade.x += -100;
+            velocidade.x += -300;
             break;
         case sf::Keyboard::Up:
-            velocidade.y += -100;
+            velocidade.y = -1200;
             break;
         case sf::Keyboard::Down:
             velocidade.y += 100;
@@ -58,14 +61,14 @@ void Heroi::tratarEvento(const sf::Event &e)
         switch (e.key.code)
         {
         case sf::Keyboard::Right:
-            velocidade.x += -100;
+            velocidade.x += -300;
             break;
         case sf::Keyboard::Left:
-            velocidade.x += 100;
+            velocidade.x += 300;
             break;
-        case sf::Keyboard::Up:
-            velocidade.y += 100;
-            break;
+        //case sf::Keyboard::Up:
+            //velocidade.y += 100;
+            //break;
         case sf::Keyboard::Down:
             velocidade.y += -100;
             break;
@@ -92,12 +95,36 @@ void Heroi::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vect
     if (idOutro == 2)
     {
         if (direcao == 1)
-            correcaoColisao.y = -100;
+            correcaoColisao.y = -300;
         else if (direcao == 2)
-            correcaoColisao.x = 100;
+            correcaoColisao.x = 300;
         else if (direcao == 3)
-            correcaoColisao.y = 100;
+            correcaoColisao.y = 300;
         else if (direcao == 4)
-            correcaoColisao.x = -100;
+            correcaoColisao.x = -300;
+    }
+    if (idOutro == 3)
+    {
+        if (direcao == 1)
+        {
+            if (velocidade.y < 0)
+                velocidade.y = 0;
+        }
+        else if (direcao == 2)
+        {
+            correcaoColisao.x = 300;
+        }
+        else if (direcao == 3)
+        {
+            if (velocidade.y > 0)
+            {
+                velocidade.y = 0;
+                posicao += vector2D<float>(0.0f, -0.7f);
+            }
+        }
+        else if (direcao == 4)
+        {
+            correcaoColisao.x = -300;
+        }
     }
 }

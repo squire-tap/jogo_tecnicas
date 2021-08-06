@@ -30,11 +30,11 @@ int GerenciadorColisoes::estadoColidindo(Colidivel* p1, Colidivel* p2)
 	if ((fabs(distancia.x) < ((dimen1.x + dimen2.x) / 2.0)) && (fabs(distancia.y) < ((dimen1.y + dimen2.y) / 2.0)))
 	{
 		//cout << distancia.x << "  " << distancia.y << endl;
-		if (fabs(distancia.x) < fabs(distancia.y) && distancia.y < 0)
+		if (fabs(distancia.x) < fabs(distancia.y) && distancia.y > 0)
 			return 1;
 		else if (fabs(distancia.y) < fabs(distancia.x) && distancia.x > 0)
 			return 2;
-		else if (fabs(distancia.x) < fabs(distancia.y) && distancia.y > 0)
+		else if (fabs(distancia.x) < fabs(distancia.y) && distancia.y < 0)
 			return 3;
 		else if ((fabs(distancia.y) < fabs(distancia.x) && distancia.x < 0))
 			return 4;
@@ -76,7 +76,6 @@ void GerenciadorColisoes::verificarColisoes()
 			{
 				int dir12 = estadoColidindo(*it1, *it2);
 				int dir21 = estadoColidindo(*it2, *it1);
-				//cout << dir12 << "  " << dir21 << endl;
 				(*it1)->colidir(dir12, (*it2)->getId(), (*it2)->getPosicao(), (*it2)->getDimensao());
 				(*it2)->colidir(dir21, (*it1)->getId(), (*it1)->getPosicao(), (*it1)->getDimensao());
 			}

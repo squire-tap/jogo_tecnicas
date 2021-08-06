@@ -7,6 +7,10 @@
 #include "GerenciadorGrafico.hpp"
 #include "GerenciadorColisoes.hpp"
 #include "ListaDesenhaveis.hpp"
+#include "Heroi.hpp"
+#include "DadosFase.hpp"
+#include "DiretorMapa.hpp"
+#include "Fase1Builder.hpp"
                 
 
 
@@ -21,6 +25,8 @@ private:
     ListaDesenhaveis listaAmigos;
     unsigned int IDjanelaFechada;
     bool terminar;
+
+    Heroi* jogador;
 
 public:
     Principal();

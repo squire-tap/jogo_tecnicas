@@ -15,7 +15,7 @@ private:
 public:
     GerenciadorGrafico();
     ~GerenciadorGrafico();
-    void desenhar(const string caminho , const vector2D<float> posicao , const vector2D<float> dimensao);
+    void desenhar(const string caminho , const vector2D<float> posicao , const vector2D<float> dimensao , bool ori);
     void limpar(int r = 0 , int g = 0 , int b = 0);
     bool carregarTextura(const string); 
     void centralizar(const vector2D<float> centro);

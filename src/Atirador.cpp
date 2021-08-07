@@ -1,7 +1,7 @@
 #include "Atirador.hpp"
 
 Atirador::Atirador(vector2D<float> pos, vector2D<float> vel, vector2D<float> dim, const string caminhoText, int id) : 
-Colidivel(pos, vel, dim, caminhoText, id), podeAtirar(false)
+Colidivel(pos, vel, dim, caminhoText, id), podeAtirar(false) , orientacao(true)
 {
 }
 

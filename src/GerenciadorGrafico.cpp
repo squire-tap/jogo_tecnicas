@@ -16,7 +16,7 @@ GerenciadorGrafico::~GerenciadorGrafico()
         delete i->second;
     }
 }
-void GerenciadorGrafico::desenhar(const string caminho, const vector2D<float> posicao , const vector2D<float> dimensao)
+void GerenciadorGrafico::desenhar(const string caminho, const vector2D<float> posicao , const vector2D<float> dimensao , bool ori)
 
 {
     if (!textures.count(caminho))
@@ -33,6 +33,10 @@ void GerenciadorGrafico::desenhar(const string caminho, const vector2D<float> po
     sprite.setTexture(*text);
 
     sprite.setScale(dimensao.x / sprite.getLocalBounds().width, dimensao.y / sprite.getLocalBounds().height);
+
+    /* Rotaciona a sprite conforme o booleano */
+    if(!ori)
+        sprite.scale(sf::Vector2f(-1.0f , 1.0f));
 
     /*introdução do getSize() para centralizar a origem em relação à sprite redimensionada*/
     sprite.setOrigin(sf::Vector2f(text->getSize().x/2, text->getSize().y/2));

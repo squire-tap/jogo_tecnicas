@@ -40,11 +40,11 @@ void Heroi::tratarEvento(const sf::Event &e)
         switch (e.key.code)
         {
         case sf::Keyboard::Right:
-            velocidade.x += 300;
+            velocidade.x += 500;
             orientacao = true;
             break;
         case sf::Keyboard::Left:
-            velocidade.x += -300;
+            velocidade.x += -500;
             orientacao = false;
             break;
         case sf::Keyboard::Up:
@@ -53,7 +53,6 @@ void Heroi::tratarEvento(const sf::Event &e)
                 velocidade.y = -1450;
                 noChao = false;
             }
-            /* velocidade.y = -1200 */
             break;
         case sf::Keyboard::Down:
             velocidade.y += 100;

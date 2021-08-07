@@ -1,5 +1,6 @@
 #include "Fase1Builder.hpp"
 
+
 Fase1Builder::Fase1Builder():
 tilemap("assets/mapaMaior_teste.json")
 {
@@ -46,7 +47,7 @@ void Fase1Builder::buildJogadores(int jog)
 	}
 	else
 	{
-		cout << "multiplayer ainda nao implementado! Aguarde próximas atuializacoes!" << endl;
+		cout << "multiplayer ainda nao implementado! Aguarde prï¿½ximas atuializacoes!" << endl;
 		exit(190);
 	}
 }
@@ -56,7 +57,7 @@ void Fase1Builder::buildInimigos(int ini)
 	Inimigo* i_aux = NULL;
 	for (int i = 0; i < ini; i++)
 	{
-		i_aux = new Inimigo(vector2D<float>(2000.0f, 1925.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(200.0f, 200.f), "assets/inimigo.png");
+		i_aux = new Inimigo(vector2D<float>(2000.0f, 1925.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(200.0f, 200.f), "assets/inimigo.png" , 2 , mapa->getJogador());
 		mapa->incluirInimigo(i_aux);
 	}
 }

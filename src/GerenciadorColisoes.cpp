@@ -82,6 +82,9 @@ void GerenciadorColisoes::verificarColisoes()
 		}
 
 	}
+
+	/* Limpa colidiveis com o valor booleano de existe = false */
+	
 	limpaDesenhaveis();
 }
 
@@ -108,9 +111,8 @@ void GerenciadorColisoes::limpaDesenhaveis()
 		
 		colidiveis.erase(pAux);
 		
-		cout << "Antes Remover " << pAux << endl;
         lista->removerDestruir(pAux);
-		cout << "Depois Remover" << endl;
+		
     }
 
 

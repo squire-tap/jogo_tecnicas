@@ -34,7 +34,7 @@ void TileMap::carregarMapa()
 
 	if (!arquivo.is_open())
 	{
-		cout << "Erro: arquivo no caminho | " << caminho << " | não pode ser aberto!" << endl;
+		cout << "Erro: arquivo no caminho | " << caminho << " | nï¿½o pode ser aberto!" << endl;
 		exit(109);
 	}
 
@@ -92,13 +92,13 @@ const vector2D<unsigned> TileMap::getDimensoesMapa() const
 
 void TileMap::imprimirMapa()
 {
-	for (unsigned short i = 0; i < dimensoesMapa.y; i++)
+	 for (unsigned short i = 0; i < dimensoesMapa.y; i++)
 	{
-		for (unsigned short j = 0; j < dimensoesMapa.x; j++)
+		/* for (unsigned short j = 0; j < dimensoesMapa.x; j++)
 		{
 			cout << matriz[i][j] << " ";
 
-		}
+		} */
 		cout << endl;
-	}
+	} 
 }

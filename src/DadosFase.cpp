@@ -40,6 +40,9 @@ void DadosFase::registrarEntidades(GerenciadorColisoes* gC, ListaDesenhaveis* Ld
 	*/
 	for (unsigned i = 0; i < inimigos.size(); i++)
 	{
+		/* setando para o atirador "inimigo" , a lista para que ele possa incluir a municao na lista desenhaveis */
+		inimigos[i]->setListaDesenhaveis(Ld);
+		inimigos[i]->setGerenciadorColisao(gC);
 		Ld->inserir(inimigos[i]);
 		gC->adicionarColidivel(inimigos[i]);
 	}

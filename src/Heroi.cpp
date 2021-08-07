@@ -26,7 +26,6 @@ void Heroi::atualizar(float t)
     correcaoColisao = vector2D<float>(0.0f, 0.0f);
     
     velocidade.y = velocidade.y + 2000 * t;
-    cout << posicao.x << "  " << posicao.y << endl;
 }
 void Heroi::desenhar(GerenciadorGrafico &gg)
 {
@@ -127,4 +126,18 @@ void Heroi::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vect
             correcaoColisao.x = -300;
         }
     }
+}
+
+void Heroi::atirar()
+{
+    /* Cria a munição */
+    Municao *p = NULL;
+    vector2D<float> correcaoSaidaBala(85.0f, 12.5f);
+
+    /* Se for o heroi que disparou */
+    p = new Municao(posicao + correcaoSaidaBala, vector2D<float>(350.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -1);
+    
+
+    lista->inserir(p);
+    gc->adicionarColidivel(p); 
 }

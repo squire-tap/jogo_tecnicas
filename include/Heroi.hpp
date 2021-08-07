@@ -17,6 +17,7 @@ public:
     void desenhar(GerenciadorGrafico &gg);
     void tratarEvento(const sf::Event &e);
     void colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vector2D<float> dimensoesOutro);
+    void atirar();
 };
 
 #endif

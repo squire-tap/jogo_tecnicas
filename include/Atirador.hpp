@@ -12,14 +12,13 @@ protected:
     ListaDesenhaveis* lista;
     GerenciadorColisoes *gc; //copia da principal
     
-    
 
 public:
     Atirador(vector2D<float> pos = (0.0f ,0.0f), vector2D<float> vel = (0.0f , 0.0f), vector2D<float> dim = (0.0f , 0.0f), const string caminhoText = " ", int id = 0);
     ~Atirador();
     bool getPodeAtirar();
     void setPodeAtirar(bool pode);
-    void atirar();
+    virtual void atirar() = 0;
     void setListaDesenhaveis(ListaDesenhaveis* l);
     void setGerenciadorColisao(GerenciadorColisoes *g);
 };

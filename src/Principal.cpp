@@ -9,24 +9,14 @@ Principal::Principal() : IDjanelaFechada{ge.adicionarOuvinteOutro([this](const s
     
     gc.setListaDesenhaveis(&listaAmigos);
 
-    //Inimigo *ini1 = new Inimigo(vector2D<float>(850.0f, 550.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(200.0f, 200.f), "assets/inimigo.png");
-    //Inimigo *ini2 = new Inimigo(vector2D<float>(800.0f, 600.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(200.0f, 200.f), "assets/inimigo.png");
     Heroi *heroi = new Heroi(vector2D<float>(200.0f, 200.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(200.0f, 200.0f), "assets/heroi.png");
     heroi->setListaDesenhaveis(&listaAmigos);
     heroi->setGerenciadorColisao(&gc);
-
-    //listaAmigos.inserir(ini1);
-    //gc.adicionarColidivel(ini1);
-
-    //listaAmigos.inserir(ini2);
-    //gc.adicionarColidivel(ini2);
 
     listaAmigos.inserir(heroi);
     gc.adicionarColidivel(heroi);
 
     jogador = heroi;
-    
-    
     
     DiretorMapa* DM = NULL;
     Fase1Builder* FB = NULL;
@@ -34,9 +24,8 @@ Principal::Principal() : IDjanelaFechada{ge.adicionarOuvinteOutro([this](const s
     FB = new Fase1Builder();
 
     DM = new DiretorMapa(FB);
-    mp = DM->criarMapa(1, 1);
+    mp = DM->criarMapa(1, 0);
     mp->registrarEntidades(&gc, &listaAmigos);
-    //jogador = mp->getJogador();
 
     /* Atribui as condições iniciais para as entidades , tanto na parte gráfica como nos eventos */
     listaAmigos.inicializarDesenhavel(gg, ge);

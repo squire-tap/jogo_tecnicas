@@ -1,7 +1,7 @@
 #include "GerenciadorGrafico.hpp"
 
-GerenciadorGrafico::GerenciadorGrafico() : janela{new sf::RenderWindow(sf::VideoMode(800, 600), "jogo")},
-                                           camera{sf::Vector2f(1000 , 1000), sf::Vector2f(1000 , 1000)}
+GerenciadorGrafico::GerenciadorGrafico() : janela{new sf::RenderWindow(sf::VideoMode(1920, 1080), "jogo")},
+                                           camera{sf::Vector2f(1000 , 1000), sf::Vector2f(1920 , 1080)}
 {
     /* liga a janela com o view ultilizado (no caso camera) */
     janela->setView(camera);

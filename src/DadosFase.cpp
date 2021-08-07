@@ -7,6 +7,8 @@ fase(f)
 
 DadosFase::~DadosFase()
 {
+	inimigos.clear();
+	tiles.clear();
 }
 
 int DadosFase::getFase()
@@ -14,9 +16,9 @@ int DadosFase::getFase()
 	return fase;
 }
 
-void DadosFase::incluirJogador(Heroi* jog)
+void DadosFase::setInicio(vector2D<float> inc)
 {
-	jogadores.push_back(jog);
+	inicio = inc;
 }
 
 void DadosFase::incluirInimigo(Inimigo* ini)
@@ -31,18 +33,8 @@ void DadosFase::incluirTile(Tile* tl)
 
 void DadosFase::registrarEntidades(GerenciadorColisoes* gC, ListaDesenhaveis* Ld)
 {
-	/*
-	for (unsigned i = 0; i < jogadores.size(); i++)
-	{
-		Ld->inserir(jogadores[i]);
-		gC->adicionarColidivel(jogadores[i]);
-	}
-	*/
 	for (unsigned i = 0; i < inimigos.size(); i++)
 	{
-		/* setando para o atirador "inimigo" , a lista para que ele possa incluir a municao na lista desenhaveis */
-		inimigos[i]->setListaDesenhaveis(Ld);
-		inimigos[i]->setGerenciadorColisao(gC);
 		Ld->inserir(inimigos[i]);
 		gC->adicionarColidivel(inimigos[i]);
 	}
@@ -54,7 +46,7 @@ void DadosFase::registrarEntidades(GerenciadorColisoes* gC, ListaDesenhaveis* Ld
 	}
 }
 
-Heroi* DadosFase::getJogador()
+vector2D<float> DadosFase::getPosicaoInicial()
 {
-	return jogadores[0];
+	return inicio;
 }

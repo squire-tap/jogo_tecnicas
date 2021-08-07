@@ -12,7 +12,7 @@ DiretorMapa::~DiretorMapa()
 DadosFase* DiretorMapa::criarMapa(int jog, int ini)
 {
 	builder->buildFase();
-	builder->buildJogadores(jog);
+	builder->buildInicio();
 	builder->buildInimigos(ini);
 
 	return builder->getMapa();

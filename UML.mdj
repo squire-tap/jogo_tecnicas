@@ -10714,7 +10714,11 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 2241,
+<<<<<<< HEAD
 									"top": 1729,
+=======
+									"top": 1745,
+>>>>>>> aplicar-rotacao
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -10735,7 +10739,11 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"left": 2226,
+<<<<<<< HEAD
 									"top": 1729,
+=======
+									"top": 1745,
+>>>>>>> aplicar-rotacao
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -10756,7 +10764,11 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 2271,
+<<<<<<< HEAD
 									"top": 1730,
+=======
+									"top": 1746,
+>>>>>>> aplicar-rotacao
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -10773,7 +10785,11 @@
 							"tail": {
 								"$ref": "AAAAAAF7Bs+OnfmXKvk="
 							},
+<<<<<<< HEAD
 							"points": "1808:1808;1808:1736;2256:1736;2256:1432;2007:1432",
+=======
+							"points": "1808:1808;1808:1752;2256:1752;2256:1432;2007:1432",
+>>>>>>> aplicar-rotacao
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF7FojuRJBEfOo="

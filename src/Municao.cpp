@@ -15,7 +15,7 @@ void Municao::atualizar(float t)
 }
 void Municao::desenhar(GerenciadorGrafico &gg)
 {
-    gg.desenhar(caminho, posicao, dimensao);
+    gg.desenhar(caminho, posicao, dimensao , true);
 }
 void Municao::inicializar(GerenciadorGrafico &gg, GerenciadorEventos &ge)
 {

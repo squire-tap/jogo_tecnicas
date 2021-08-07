@@ -29,7 +29,7 @@ void Heroi::atualizar(float t)
 }
 void Heroi::desenhar(GerenciadorGrafico &gg)
 {
-    gg.desenhar(caminho, posicao, dimensao);
+    gg.desenhar(caminho, posicao, dimensao , orientacao);
 }
 //Abstrata "virtual pura"
 void Heroi::tratarEvento(const sf::Event &e)
@@ -40,9 +40,11 @@ void Heroi::tratarEvento(const sf::Event &e)
         {
         case sf::Keyboard::Right:
             velocidade.x += 300;
+            orientacao = true;
             break;
         case sf::Keyboard::Left:
             velocidade.x += -300;
+            orientacao = false;
             break;
         case sf::Keyboard::Up:
             velocidade.y = -1200;
@@ -132,12 +134,15 @@ void Heroi::atirar()
 {
     /* Cria a munição */
     Municao *p = NULL;
-    vector2D<float> correcaoSaidaBala(85.0f, 12.5f);
-
+    float correcaoSaidaBalaX = 85.0f;
+    float correcaoSaidaBalaY = 12.5f;
     /* Se for o heroi que disparou */
-    p = new Municao(posicao + correcaoSaidaBala, vector2D<float>(350.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -1);
-    
+    if(orientacao)
+        p = new Municao(posicao + vector2D(correcaoSaidaBalaX , correcaoSaidaBalaY) , vector2D<float>(350.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -1);
+    else 
+        p = new Municao(posicao + vector2D(-correcaoSaidaBalaX , correcaoSaidaBalaY), vector2D<float>(-350.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -1);
 
+    /* Adiciona a municao à lista */
     lista->inserir(p);
     gc->adicionarColidivel(p); 
 }

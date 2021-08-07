@@ -25,7 +25,7 @@ void Desenhavel::atualizar(float t)
 }
 void Desenhavel::desenhar(GerenciadorGrafico &gg)
 {
-    gg.desenhar(caminho, posicao , dimensao);
+    gg.desenhar(caminho , posicao , dimensao , true);
 }
 
 vector2D<float> Desenhavel::getPosicao()

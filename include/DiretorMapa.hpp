@@ -11,6 +11,6 @@ public:
 	DiretorMapa(MapaBuilder* bd);
 	~DiretorMapa();
 
-	DadosFase* criarMapa(int jog, int ini);
+	DadosFase* criarMapa(Heroi* jog, int ini);
 };
 

@@ -46,12 +46,17 @@ void Inimigo::atirar()
 
 	/* Se o jogador estiver atras do inimigo a bala sai em direção ao jogador */
 	if ( pHeroi->getPosicao().x /* jogador */ <  posicao.x /* inimigo */) /* - */
+	{
+		cout << pHeroi->getPosicao().x << " < " << posicao.x << endl; 
 		p = new Municao(posicao + correcaoSaidaBala, vector2D<float>(-350.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -2);
+		cout << "if" << endl;
+	}
 
 	/* Caso contrario ela sai para frente em direção ao jogador */
-	else 															/* + */
+	else
+	{ 															/* + */
 		p = new Municao(posicao + correcaoSaidaBala, vector2D<float>(350.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -2);
-
+	}
 	
 	lista->inserir(p);
 	gc->adicionarColidivel(p); 

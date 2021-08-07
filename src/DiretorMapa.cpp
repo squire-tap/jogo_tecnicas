@@ -9,7 +9,7 @@ DiretorMapa::~DiretorMapa()
 {
 }
 
-DadosFase* DiretorMapa::criarMapa(int jog, int ini)
+DadosFase* DiretorMapa::criarMapa(Heroi* jog, int ini)
 {
 	builder->buildFase();
 	builder->buildJogadores(jog);

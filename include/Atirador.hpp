@@ -11,6 +11,7 @@ protected:
     bool podeAtirar;
     ListaDesenhaveis* lista;
     GerenciadorColisoes *gc; //copia da principal
+    int vida;
     
 
 public:

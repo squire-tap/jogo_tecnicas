@@ -11,7 +11,7 @@ public:
 	~Fase1Builder();
 	
 	void buildFase();
-	void buildJogadores(int jog);
+	void buildJogadores(Heroi* jog);
 	void buildInimigos(int ini);
 };
 

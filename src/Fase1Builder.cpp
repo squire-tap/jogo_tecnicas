@@ -37,19 +37,9 @@ void Fase1Builder::buildFase()
 
 }
 
-void Fase1Builder::buildJogadores(int jog)
+void Fase1Builder::buildJogadores(Heroi* jog)
 {
-	Heroi* jog1 = NULL;
-	if (jog == 1)
-	{
-		jog1 = new Heroi(vector2D<float>(100.0f, 100.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(200.0f, 200.0f), "assets/heroi.png");
-		mapa->incluirJogador(jog1);
-	}
-	else
-	{
-		cout << "multiplayer ainda nao implementado! Aguarde pr�ximas atuializacoes!" << endl;
-		exit(190);
-	}
+	mapa->incluirJogador(jog);
 }
 
 void Fase1Builder::buildInimigos(int ini)

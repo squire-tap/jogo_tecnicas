@@ -2,7 +2,7 @@
 
 MapaBuilder::MapaBuilder()
 {
-	mapa = NULL;
+	dados = NULL;
 }
 
 MapaBuilder::~MapaBuilder()
@@ -11,5 +11,5 @@ MapaBuilder::~MapaBuilder()
 
 DadosFase* MapaBuilder::getMapa()
 {
-	return mapa;
+	return dados;
 }

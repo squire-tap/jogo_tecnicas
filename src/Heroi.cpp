@@ -26,7 +26,7 @@ void Heroi::atualizar(float t)
     correcaoColisao = vector2D<float>(0.0f, 0.0f);
     
     velocidade.y = velocidade.y + 2000 * t;
-    cout << posicao.x << "  " << posicao.y << endl;
+
 }
 void Heroi::desenhar(GerenciadorGrafico &gg)
 {
@@ -53,6 +53,7 @@ void Heroi::tratarEvento(const sf::Event &e)
                 velocidade.y = -1450;
                 noChao = false;
             }
+            /* velocidade.y = -1200 */
             break;
         case sf::Keyboard::Down:
             velocidade.y += 100;

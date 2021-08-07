@@ -32,10 +32,5 @@ void Atirador::setGerenciadorColisao(GerenciadorColisoes *g)
 
 void Atirador::atirar()
 {
-    Municao* p = NULL; 
-    vector2D<float> correcaoSaidaBala(85.0f , 12.5f);
-    p = new Municao(posicao + correcaoSaidaBala , vector2D<float>(350.0f , 0.0f) , vector2D<float>(100.0f , 100.0f) , "assets/bala.png" , 0);  
     
-    lista->inserir(p);
-    gc->adicionarColidivel(p);
 }

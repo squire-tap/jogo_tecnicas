@@ -2,7 +2,7 @@
 
 Heroi::Heroi(vector2D<float> pos , vector2D<float> vel , vector2D<float> dim , const string caminhoText, int id ) : Atirador(pos, vel, dim , caminhoText, 1)
 {
-    
+    noChao = false;
 }
 
 Heroi::~Heroi()
@@ -26,6 +26,7 @@ void Heroi::atualizar(float t)
     correcaoColisao = vector2D<float>(0.0f, 0.0f);
     
     velocidade.y = velocidade.y + 2000 * t;
+    cout << posicao.x << "  " << posicao.y << endl;
 }
 void Heroi::desenhar(GerenciadorGrafico &gg)
 {
@@ -47,7 +48,11 @@ void Heroi::tratarEvento(const sf::Event &e)
             orientacao = false;
             break;
         case sf::Keyboard::Up:
-            velocidade.y = -1200;
+            if (noChao)
+            {
+                velocidade.y = -1450;
+                noChao = false;
+            }
             break;
         case sf::Keyboard::Down:
             velocidade.y += 100;
@@ -62,10 +67,10 @@ void Heroi::tratarEvento(const sf::Event &e)
         switch (e.key.code)
         {
         case sf::Keyboard::Right:
-            velocidade.x += -300;
+            velocidade.x += -500;
             break;
         case sf::Keyboard::Left:
-            velocidade.x += 300;
+            velocidade.x += 500;
             break;
         //case sf::Keyboard::Up:
             //velocidade.y += 100;
@@ -96,13 +101,13 @@ void Heroi::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vect
     if (idOutro == 2)
     {
         if (direcao == 1)
-            correcaoColisao.y = -300;
+            correcaoColisao.y = -500;
         else if (direcao == 2)
-            correcaoColisao.x = 300;
+            correcaoColisao.x = 500;
         else if (direcao == 3)
-            correcaoColisao.y = 300;
+            correcaoColisao.y = 500;
         else if (direcao == 4)
-            correcaoColisao.x = -300;
+            correcaoColisao.x = -500;
     }
     if (idOutro == 3)
     {
@@ -113,19 +118,20 @@ void Heroi::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vect
         }
         else if (direcao == 2)
         {
-            correcaoColisao.x = 300;
+            correcaoColisao.x = 500;
         }
         else if (direcao == 3)
         {
             if (velocidade.y > 0)
             {
                 velocidade.y = 0;
-                posicao += vector2D<float>(0.0f, -0.7f);
+                noChao = true;
+                posicao += vector2D<float>(0.0f, (fabs(posicao.y - posicaoOutro.y) - ((dimensao.y + dimensoesOutro.y) / 2.0)));
             }
         }
         else if (direcao == 4)
         {
-            correcaoColisao.x = -300;
+            correcaoColisao.x = -500;
         }
     }
 }

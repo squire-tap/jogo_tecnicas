@@ -6,6 +6,7 @@ class Fase1Builder : public MapaBuilder
 {
 private:
 	TileMap tilemap;
+
 public:
 	Fase1Builder();
 	~Fase1Builder();

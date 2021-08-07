@@ -1,8 +1,7 @@
 #include "Fase1Builder.hpp"
 
-
 Fase1Builder::Fase1Builder():
-tilemap("assets/mapaMaior_teste.json")
+tilemap("assets/Fase1v2.json")
 {
 }
 
@@ -25,15 +24,19 @@ void Fase1Builder::buildFase()
 	{
 		for (j = 0; j < dimensoes.x; j++)
 		{
-			if (tilemap[i][j] == 1)
+			if (tilemap[i][j] == 2)
 			{
-				t_aux = new Tile(vector2D<float>(50.0f * j, 50.0f * i), "assets/areia.png");
+				t_aux = new Tile(vector2D<float>(150.0f * j, 150.0f * i), "assets/areia.png");
 				m->incluirTile(t_aux);
 			}
-
+			if (tilemap[i][j] == 1)
+			{
+				t_aux = new Tile(vector2D<float>(150.0f * j, 150.0f * i), "assets/areia_topo.png");
+				m->incluirTile(t_aux);
+			}
 		}
 	}
-	mapa = m;
+	dados = m;
 
 }
 
@@ -47,7 +50,7 @@ void Fase1Builder::buildInimigos(int ini)
 	Inimigo* i_aux = NULL;
 	for (int i = 0; i < ini; i++)
 	{
-		i_aux = new Inimigo(vector2D<float>(2000.0f, 1925.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(200.0f, 200.f), "assets/inimigo.png" , 2 , mapa->getJogador());
-		mapa->incluirInimigo(i_aux);
+		i_aux = new Inimigo(vector2D<float>(2000.0f, 1925.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(200.0f, 200.f), "assets/inimigo.png");
+		dados->incluirInimigo(i_aux);
 	}
 }

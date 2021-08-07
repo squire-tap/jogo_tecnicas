@@ -5,7 +5,7 @@
 class MapaBuilder
 {
 protected:
-	DadosFase* mapa;
+	DadosFase* dados;
 
 public:
 	MapaBuilder();

@@ -19,8 +19,6 @@ Principal::Principal() : IDjanelaFechada{ge.adicionarOuvinteOutro([this](const s
 
     jogador = heroi;
     
-    
-    
     DiretorMapa* DM = NULL;
     Fase1Builder* FB = NULL;
     DadosFase* mp = NULL;
@@ -29,7 +27,6 @@ Principal::Principal() : IDjanelaFechada{ge.adicionarOuvinteOutro([this](const s
     DM = new DiretorMapa(FB);
     mp = DM->criarMapa(jogador, 1);
     mp->registrarEntidades(&gc, &listaAmigos);
-    //jogador = mp->getJogador();
 
     /* Atribui as condições iniciais para as entidades , tanto na parte gráfica como nos eventos */
     listaAmigos.inicializarDesenhavel(gg, ge);

@@ -6,44 +6,15 @@ Atirador(pos, vel, dim, caminhoText, 2), pHeroi(p)
 }
 Inimigo::~Inimigo()
 {
-}
 
-void Inimigo::inicializar(GerenciadorGrafico &gg, GerenciadorEventos &ge)
-{
-	gg.carregarTextura(caminho);
-
-	ge.adicionarOuvinteMouse([this](const sf::Event &e)
-							 { tratarEvento(e); });
 }
 
 void Inimigo::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vector2D<float> dimensoesOutro)
 {
 	//if (idOutro == 1)
-	//cout << "ai" << endl;
+		//cout << "ai" << endl;
 }
 
-void Inimigo::tratarEvento(const sf::Event &e)
-{
-	/* Caso o jogador atire , o inimigo também atira */
-	if (e.type == sf::Event::MouseButtonPressed)
-	{
-		switch (e.mouseButton.button)
-		{
-		case sf::Mouse::Left:
-			atirar();
-			break;
-
-		default:
-			break;
-		}
-	}
-}
-
-void Inimigo::atirar()
-{
-	/* Cria a munição */
-	Municao *p = NULL;
-	vector2D<float> correcaoSaidaBala(85.0f, 12.5f);
 
 	/* Se o jogador estiver atras do inimigo a bala sai em direção ao jogador */
 	if ( pHeroi->getPosicao().x /* jogador */ <  posicao.x /* inimigo */) /* - */

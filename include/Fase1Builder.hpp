@@ -6,12 +6,13 @@ class Fase1Builder : public MapaBuilder
 {
 private:
 	TileMap tilemap;
+
 public:
 	Fase1Builder();
 	~Fase1Builder();
 	
 	void buildFase();
-	void buildJogadores(int jog);
+	void buildInicio();
 	void buildInimigos(int ini);
 };
 

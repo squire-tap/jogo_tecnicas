@@ -18,7 +18,7 @@ public:
     ~Atirador();
     bool getPodeAtirar();
     void setPodeAtirar(bool pode);
-    virtual void atirar() = 0;
+    void atirar();
     void setListaDesenhaveis(ListaDesenhaveis* l);
     void setGerenciadorColisao(GerenciadorColisoes *g);
 };

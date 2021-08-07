@@ -5,14 +5,14 @@
 class MapaBuilder
 {
 protected:
-	DadosFase* mapa;
+	DadosFase* dados;
 
 public:
 	MapaBuilder();
 	~MapaBuilder();
 	
 	virtual void buildFase() = 0;
-	virtual void buildJogadores(int jog) = 0;
+	virtual void buildInicio() = 0;
 	virtual void buildInimigos(int ini) = 0;
 
 	DadosFase* getMapa();

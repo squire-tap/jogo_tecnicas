@@ -12,7 +12,7 @@ class DadosFase
 {
 private:
 	int fase;
-	vector<Heroi*> jogadores;
+	vector2D<float> inicio;
 	vector<Inimigo*> inimigos;
 	vector<Tile*> tiles;
 
@@ -22,11 +22,11 @@ public:
 
 	int getFase();
 
-	void incluirJogador(Heroi* jog);
+	void setInicio(vector2D<float> inc);
 	void incluirInimigo(Inimigo* ini);
 	void incluirTile(Tile* tl);
 
 	void registrarEntidades(GerenciadorColisoes* gC, ListaDesenhaveis* Ld);
-	Heroi* getJogador();
+	vector2D<float> getPosicaoInicial();
 };
 

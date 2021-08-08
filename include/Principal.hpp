@@ -11,6 +11,7 @@
 #include "DadosFase.hpp"
 #include "DiretorMapa.hpp"
 #include "Fase1Builder.hpp"
+#include "PlanoFundo.hpp"
                 
 
 
@@ -27,6 +28,7 @@ private:
     bool terminar;
 
     Heroi* jogador;
+    PlanoFundo pf;
 
 public:
     Principal();

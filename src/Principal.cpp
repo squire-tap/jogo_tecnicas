@@ -55,6 +55,8 @@ void Principal::executar()
 
         listaAmigos.atualizaDesenhavel(t.asSeconds());
         gg.centralizar(jogador->getPosicao());
+        pf.setPosicao(jogador->getPosicao());
+        pf.desenhar(gg);
         listaAmigos.desenharDesenhavel(gg);
 
         gg.mostrar();

@@ -3,6 +3,7 @@
 Heroi::Heroi(vector2D<float> pos , vector2D<float> vel , vector2D<float> dim , const string caminhoText, int id ) :
 Atirador(pos, vel, dim , caminhoText, 1)  , noChao(false)
 {
+    noChao = false;
     vida = 30;
 }
 
@@ -14,8 +15,9 @@ void Heroi::inicializar(GerenciadorGrafico &gg, GerenciadorEventos &ge)
     gg.carregarTextura(caminho);
 
     /* Heroi passa a ser um ouvinte do teclado , que após um evento é chamada a tratar evento do heroi */
-     ge.adicionarOuvinteTeclado([this](const sf::Event &e) { tratarEvento(e); } , id);
-     ge.adicionarOuvinteMouse( [this] (const sf::Event &e) {tratarEvento(e); } , id);
+     chaveOuvinte = ge.adicionarOuvinteTeclado([this](const sf::Event &e) { tratarEvento(e); });
+
+     chaveOuvinte = ge.adicionarOuvinteMouse( [this] (const sf::Event &e) {tratarEvento(e); });
 
 }
 void Heroi::atualizar(float t)
@@ -134,6 +136,7 @@ void Heroi::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vect
             correcaoColisao.x = -500;
         }
     }
+    
     if(idOutro == -2)
     {
         //Se a colisao for com a bala do inimigo , decresce a vida em uma unidade

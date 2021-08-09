@@ -8,8 +8,6 @@ terminar{false}
     /* Criando os primeiros personagem */
     
     gc.setListaDesenhaveis(&listaAmigos);
-    ge.setColidiveis(gc.getColidiveis());
-
     
     Heroi *heroi = new Heroi(vector2D<float>(200.0f, 200.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(200.0f, 200.0f), "assets/heroi.png");
     heroi->setListaDesenhaveis(&listaAmigos);
@@ -52,7 +50,6 @@ void Principal::executar()
 
 
         gg.limpar();
-        ge.removerOuvintes();
         
         /* limpo os que não existem mais */
         gc.verificarColisoes();

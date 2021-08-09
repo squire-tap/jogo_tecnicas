@@ -62,6 +62,8 @@ unsigned int  GerenciadorEventos::adicionarOuvinteTeclado(function<void(const sf
 {
     ouvintesTeclado.emplace( proximoID , chamada);
 
+    return proximoID++;
+
 }
 void GerenciadorEventos::removerOuvinteTeclado(int id)
 {

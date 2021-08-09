@@ -52,8 +52,11 @@ void Principal::executar()
 
 
         gg.limpar();
-        gc.verificarColisoes();
         ge.removerOuvintes();
+        
+        /* limpo os que não existem mais */
+        gc.verificarColisoes();
+        
 
         listaAmigos.atualizaDesenhavel(t.asSeconds());
         gg.centralizar(jogador->getPosicao());

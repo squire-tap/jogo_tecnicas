@@ -11,11 +11,19 @@ Inimigo::~Inimigo()
 
 }
 
+void Inimigo::atualizar(float t)
+{
+	if(abs(pHeroi->getPosicao().x - posicao.x)  < 600.0f)
+	{
+		atirar();
+	}
+}
+
 void Inimigo::inicializar(GerenciadorGrafico &gg, GerenciadorEventos &ge)
 {
        gg.carregarTextura(caminho);
  
-       ge.adicionarOuvinteMouse([this](const sf::Event &e) { tratarEvento(e); } , id);
+       //ge.adicionarOuvinteMouse([this](const sf::Event &e) { tratarEvento(e); } , id);
  }
 
 
@@ -27,17 +35,18 @@ void Inimigo::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, ve
 	    vida -= 2;
 	    //Inimigo deixa de existir
 	    if(vida <= 0)
-	    {	        existe = false;
-
-	    }
+	    {	   
+			existe = false;
+		}
 	}
 
 	/*Adicionar colisão com a tile*/
 }
 
-void Inimigo::tratarEvento(const sf::Event &e)
+
+ /*  void Inimigo::tratarEvento(const sf::Event &e)
 {
-      /* Caso o jogador atire , o inimigo também atira */
+      // Caso o jogador atire , o inimigo também atira 
        if (e.type == sf::Event::MouseButtonPressed)
        {
                switch (e.mouseButton.button)
@@ -50,7 +59,7 @@ void Inimigo::tratarEvento(const sf::Event &e)
                        break;
                }
        }
- }
+ }   */
 
 
 void Inimigo::atirar()

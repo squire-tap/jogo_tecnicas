@@ -9,7 +9,6 @@
 #include <stdio.h>
 #include <vector>
 #include "vector2D.hpp"
-#include "lista.hpp"
 #include <SFML/Graphics.hpp>
 #include <stdio.h>
 #include <iostream>

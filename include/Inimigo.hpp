@@ -14,6 +14,7 @@ public:
     Inimigo(vector2D<float> pos = (0.0f , 0.0f) , vector2D<float> vel = (0.0f , 0.0f) , vector2D<float> dim = (0.0f , 0.0f) , const string caminhoText = " " , int id = 0 , Heroi* p = NULL);
     ~Inimigo();
 
+    void atualizar(float t);
     void inicializar(GerenciadorGrafico &gg , GerenciadorEventos &ge);
     void colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vector2D<float> dimensoesOutro);
     void tratarEvento(const sf::Event &e);

@@ -111,8 +111,7 @@ void GerenciadorColisoes::limpaDesenhaveis()
 
         removerColidivel(pAux);
         lista->removerDestruir(pAux);
-		
-    }
+	}
 
 
 

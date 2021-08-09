@@ -88,16 +88,19 @@ void GerenciadorEventos::removerOuvintes()
 {
     Colidivel* pAux = NULL;
 
+
     for(auto iterador = colidiveis.begin(); iterador != colidiveis.end(); iterador++)
     {
         pAux = *iterador;
         /* Caso existe for false */
+          
         if (!pAux->getExiste())
         {
             for(auto iterador1 = ouvintesMouse.begin() ; iterador1 != ouvintesMouse.end() ; iterador1++)
-            {                       //id
+            {        
                 if(pAux->getId() == iterador1->first)
                 {
+                    cout << pAux << endl;
                     removerOuvinteMouse(pAux->getId());
                 }
             }
@@ -107,7 +110,7 @@ void GerenciadorEventos::removerOuvintes()
                     removerOuvinteTeclado(pAux->getId());
             }
         }
-
+        
     }
 
 }

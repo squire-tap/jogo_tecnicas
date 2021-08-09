@@ -1,6 +1,7 @@
 #ifndef _LISTADESENHAVEIS_HPP_
 #define _LISTADESENHAVEIS_HPP_
 #include "Desenhavel.hpp"
+#include "lista.hpp"
 
 
 

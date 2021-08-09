@@ -118,8 +118,3 @@ void GerenciadorColisoes::limpaDesenhaveis()
     limpeza.clear();
 
 }
-
-set<Colidivel*> GerenciadorColisoes::getColidiveis()
-{
-    return colidiveis;
-}

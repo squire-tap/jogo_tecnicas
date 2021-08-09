@@ -7,6 +7,7 @@
 class Heroi : public Atirador
 {
 private:
+    unsigned int chaveOuvinte;
     bool noChao;
     
 public:

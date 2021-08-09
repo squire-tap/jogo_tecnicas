@@ -48,9 +48,9 @@ void Fase1Builder::buildJogadores(Heroi* jog)
 void Fase1Builder::buildInimigos(int ini)
 {
 	Inimigo* i_aux = NULL;
-	for (int i = 2; i < ini + 2 ; i++)
+	for (int i = 0; i < ini  ; i++)
 	{
-		i_aux = new Inimigo(vector2D<float>(2000.0f, 1925.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(200.0f, 200.f), "assets/inimigo.png" , i ,dados->getJogador());
+		i_aux = new Inimigo(vector2D<float>(2000.0f, 1925.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(200.0f, 200.f), "assets/inimigo.png" , 2 ,dados->getJogador());
 		dados->incluirInimigo(i_aux);
 	}
 }

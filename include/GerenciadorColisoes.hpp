@@ -22,7 +22,7 @@ public:
 
 	void verificarColisoes();
 	void limpaDesenhaveis();
-	set<Colidivel*> getColidiveis();
+
 
 };
 

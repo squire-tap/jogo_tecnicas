@@ -1,4 +1,5 @@
 #include "GerenciadorEventos.hpp"
+#include "Colidivel.hpp"
 
 unsigned int GerenciadorEventos::proximoID{0};
 
@@ -47,22 +48,24 @@ void GerenciadorEventos::setJanela(sf::RenderWindow *j)
     janela->setKeyRepeatEnabled(false);
 }
 
-unsigned int GerenciadorEventos::adicionarOuvinteMouse(function<void(const sf::Event &)> chamada)
+void GerenciadorEventos::setColidiveis(set<Colidivel*> c)
 {
-    ouvintesMouse.emplace(proximoID, chamada);
+    colidiveis = c;
+}
 
-    return proximoID++;
+void GerenciadorEventos::adicionarOuvinteMouse(function<void(const sf::Event &)> chamada , int id)
+{
+    ouvintesMouse.emplace(id, chamada);
 }
 void GerenciadorEventos::removerOuvinteMouse(int id)
 {
     ouvintesMouse.erase(id);
 }
 
-unsigned int GerenciadorEventos::adicionarOuvinteTeclado(function<void(const sf::Event &)> chamada)
+void GerenciadorEventos::adicionarOuvinteTeclado(function<void(const sf::Event &)> chamada  , int id)
 {
-    ouvintesTeclado.emplace(proximoID, chamada);
+    ouvintesTeclado.emplace(id, chamada);
 
-    return proximoID++;
 }
 void GerenciadorEventos::removerOuvinteTeclado(int id)
 {
@@ -78,4 +81,33 @@ unsigned int GerenciadorEventos::adicionarOuvinteOutro(function<void(const sf::E
 void GerenciadorEventos::removerOuvinteOutro(int id)
 {
     ouvintesOutros.erase(id);
+}
+
+//Percorre o map de ouvintes e retira os setados com false e retira
+void GerenciadorEventos::removerOuvintes()
+{
+    Colidivel* pAux = NULL;
+
+    for(auto iterador = colidiveis.begin(); iterador != colidiveis.end(); iterador++)
+    {
+        pAux = *iterador;
+        /* Caso existe for false */
+        if (!pAux->getExiste())
+        {
+            for(auto iterador1 = ouvintesMouse.begin() ; iterador1 != ouvintesMouse.end() ; iterador1++)
+            {                       //id
+                if(pAux->getId() == iterador1->first)
+                {
+                    removerOuvinteMouse(pAux->getId());
+                }
+            }
+            for(auto iterador1 = ouvintesTeclado.begin() ; iterador1 != ouvintesTeclado.end() ; iterador++)
+            {
+                if(pAux->getId() == iterador1->first)
+                    removerOuvinteTeclado(pAux->getId());
+            }
+        }
+
+    }
+
 }

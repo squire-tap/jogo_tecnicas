@@ -97,7 +97,7 @@ void GerenciadorColisoes::limpaDesenhaveis()
     {
         pAux = *iterador;
 
-		/* Caso existe for false */
+        /* Caso existe for false */
         if (!pAux->getExiste())
         {
             limpeza.insert(pAux);
@@ -108,14 +108,19 @@ void GerenciadorColisoes::limpaDesenhaveis()
      for (auto iterador = limpeza.begin(); iterador != limpeza.end(); iterador++)
     {
         pAux = *iterador;
-		
-		colidiveis.erase(pAux);
-		
+
+        removerColidivel(pAux);
         lista->removerDestruir(pAux);
 		
     }
 
 
+
     limpeza.clear();
 
+}
+
+set<Colidivel*> GerenciadorColisoes::getColidiveis()
+{
+    return colidiveis;
 }

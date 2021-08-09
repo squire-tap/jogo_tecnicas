@@ -1,8 +1,9 @@
 #include "Heroi.hpp"
 
-Heroi::Heroi(vector2D<float> pos , vector2D<float> vel , vector2D<float> dim , const string caminhoText, int id ) : Atirador(pos, vel, dim , caminhoText, 1)
+Heroi::Heroi(vector2D<float> pos , vector2D<float> vel , vector2D<float> dim , const string caminhoText, int id ) :
+Atirador(pos, vel, dim , caminhoText, 1)  , noChao(false)
 {
-    noChao = false;
+    vida = 30;
 }
 
 Heroi::~Heroi()
@@ -13,11 +14,8 @@ void Heroi::inicializar(GerenciadorGrafico &gg, GerenciadorEventos &ge)
     gg.carregarTextura(caminho);
 
     /* Heroi passa a ser um ouvinte do teclado , que após um evento é chamada a tratar evento do heroi */
-    chaveOuvinte = ge.adicionarOuvinteTeclado([this](const sf::Event &e)
-                                              { tratarEvento(e); });
-    
-    chaveOuvinte = ge.adicionarOuvinteMouse( [this] (const sf::Event &e)
-                                            {tratarEvento(e); });
+     ge.adicionarOuvinteTeclado([this](const sf::Event &e) { tratarEvento(e); } , id);
+     ge.adicionarOuvinteMouse( [this] (const sf::Event &e) {tratarEvento(e); } , id);
 
 }
 void Heroi::atualizar(float t)
@@ -109,6 +107,8 @@ void Heroi::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vect
         else if (direcao == 4)
             correcaoColisao.x = -500;
     }
+
+    /*mudar id da tile*/
     if (idOutro == 3)
     {
         if (direcao == 1)
@@ -132,6 +132,16 @@ void Heroi::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vect
         else if (direcao == 4)
         {
             correcaoColisao.x = -500;
+        }
+    }
+    if(idOutro == -2)
+    {
+        //Se a colisao for com a bala do inimigo , decresce a vida em uma unidade
+        vida -= 1;
+        //Jogador deixa de existir
+        if (vida <= 0)
+        {
+            existe = false;
         }
     }
 }

@@ -35,7 +35,6 @@ public:
     ~Principal();               
     void executar();
     void janelaFechada(const sf::Event& e);
-    void criarProjeteis(ListaDesenhaveis);
 };
 
 #endif

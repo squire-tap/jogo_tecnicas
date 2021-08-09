@@ -1,13 +1,14 @@
 #include "Principal.hpp"
 
 /* inicialização da adicionarOuvinteOutro com a função lambda */
-Principal::Principal() : IDjanelaFechada{ge.adicionarOuvinteOutro([this](const sf::Event &e)
-                                                                  { janelaFechada(e); })},
-                         terminar{false}
+Principal::Principal() : 
+IDjanelaFechada{ge.adicionarOuvinteOutro([this](const sf::Event &e){ janelaFechada(e); })},
+terminar{false}
 {
     /* Criando os primeiros personagem */
     
     gc.setListaDesenhaveis(&listaAmigos);
+    ge.setColidiveis(gc.getColidiveis());
 
     
     Heroi *heroi = new Heroi(vector2D<float>(200.0f, 200.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(200.0f, 200.0f), "assets/heroi.png");
@@ -52,6 +53,7 @@ void Principal::executar()
 
         gg.limpar();
         gc.verificarColisoes();
+        ge.removerOuvintes();
 
         listaAmigos.atualizaDesenhavel(t.asSeconds());
         gg.centralizar(jogador->getPosicao());

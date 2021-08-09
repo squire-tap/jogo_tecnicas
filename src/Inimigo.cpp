@@ -3,6 +3,8 @@
 Inimigo::Inimigo(vector2D<float> pos, vector2D<float> vel, vector2D<float> dim, const string caminhoText, int id, Heroi *p) : 
 Atirador(pos, vel, dim, caminhoText, 2), pHeroi(p)
 {
+    //adição vida do inimigo
+    vida = 10;
 }
 Inimigo::~Inimigo()
 {
@@ -13,15 +15,24 @@ void Inimigo::inicializar(GerenciadorGrafico &gg, GerenciadorEventos &ge)
 {
        gg.carregarTextura(caminho);
  
-       ge.adicionarOuvinteMouse([this](const sf::Event &e)
-                                    { tratarEvento(e); });
+       ge.adicionarOuvinteMouse([this](const sf::Event &e) { tratarEvento(e); } , id);
  }
 
 
 void Inimigo::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vector2D<float> dimensoesOutro)
 {
-	//if (idOutro == 1)
-		//cout << "ai" << endl;
+    //Se a colisao for com a bala do jogador , decresce a vida
+	if (idOutro == -1)
+	{
+	    vida -= 2;
+	    //Inimigo deixa de existir
+	    if(vida <= 0)
+	    {	        existe = false;
+
+	    }
+	}
+
+	/*Adicionar colisão com a tile*/
 }
 
 void Inimigo::tratarEvento(const sf::Event &e)

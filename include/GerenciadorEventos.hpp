@@ -2,6 +2,8 @@
 #define GERENCIADOREVENTOS_HPP
 #include "stdafx.hpp"
 
+class Colidivel;
+
 class GerenciadorEventos
 {
 private:
@@ -11,21 +13,26 @@ private:
     map<unsigned int , function<void(const sf::Event &)>> ouvintesTeclado;
     map<unsigned int , function<void(const sf::Event &)>> ouvintesOutros;
     sf::Event evento;
+    set<Colidivel*> colidiveis;
+
 
 public:
     GerenciadorEventos();
     ~GerenciadorEventos();
     void tratarEventos();
     void setJanela(sf::RenderWindow* j);
+    void setColidiveis(set<Colidivel*> c);
 
-    unsigned int adicionarOuvinteMouse(function<void(const sf::Event&)> chamada);
+    void adicionarOuvinteMouse(function<void(const sf::Event&)> chamada , int id);
     void removerOuvinteMouse(int id);
 
-    unsigned int adicionarOuvinteTeclado(function<void(const sf::Event&)> chamada);
+    void adicionarOuvinteTeclado(function<void(const sf::Event&)> chamada , int id);
     void removerOuvinteTeclado(int id);
 
     unsigned int adicionarOuvinteOutro(function<void(const sf::Event&)> chamada);
     void removerOuvinteOutro(int id);
+
+    void removerOuvintes();
 
 
 };

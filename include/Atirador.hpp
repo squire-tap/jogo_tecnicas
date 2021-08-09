@@ -12,6 +12,7 @@ protected:
     ListaDesenhaveis* lista;
     GerenciadorColisoes *gc; //copia da principal
     bool orientacao;
+    int vida;
     
 
 public:

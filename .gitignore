@@ -4,6 +4,9 @@
 ### VisualStudioCode ###
 .vscode/*
 
+## Clion ##
+.idea/*
+
 # Local History for Visual Studio Code
 .history/
 

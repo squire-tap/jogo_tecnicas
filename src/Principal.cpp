@@ -9,21 +9,20 @@ terminar{false}
     
     gc.setListaDesenhaveis(&listaAmigos);
     
-    Heroi *heroi = new Heroi(vector2D<float>(200.0f, 200.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(200.0f, 200.0f), "assets/heroi.png");
-    heroi->setListaDesenhaveis(&listaAmigos);
-    heroi->setGerenciadorColisao(&gc);
+    jogador = new Heroi(vector2D<float>(200.0f, 200.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(195.0f, 195.0f), "assets/heroi.png");
+    jogador->setListaDesenhaveis(&listaAmigos);
+    jogador->setGerenciadorColisao(&gc);
 
-    listaAmigos.inserir(heroi);
-    gc.adicionarColidivel(heroi);
-
-    jogador = heroi;
+    listaAmigos.inserir(jogador);
+    gc.adicionarColidivel(jogador);
     
     DiretorMapa* DM = NULL;
-    Fase1Builder* FB = NULL;
+    Fase1Builder* FB1 = NULL;
+    Fase2Builder* FB2 = NULL;
     DadosFase* mp = NULL;
-    FB = new Fase1Builder();
+    FB2 = new Fase2Builder();
 
-    DM = new DiretorMapa(FB);
+    DM = new DiretorMapa(FB2);
     mp = DM->criarMapa(jogador, 1);
     mp->registrarEntidades(&gc, &listaAmigos);
 
@@ -48,16 +47,15 @@ void Principal::executar()
 
         ge.tratarEventos();
 
-
         gg.limpar();
-        
-        /* limpo os que não existem mais */
-        gc.verificarColisoes();
-        
+        /* limpo os que não existem mais */        
 
         listaAmigos.atualizaDesenhavel(t.asSeconds());
+        gc.verificarColisoes();
+        
         gg.centralizar(jogador->getPosicao());
         pf.setPosicao(jogador->getPosicao());
+        
         pf.desenhar(gg);
         listaAmigos.desenharDesenhavel(gg);
 

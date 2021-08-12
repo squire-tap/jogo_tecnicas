@@ -29,14 +29,14 @@ void Municao::colidir(int direcao , int idOutro , vector2D<float> posicaoOutro ,
     if (id == -1)
     {
             /* Heroi */     /* Ela mesma */   /* A bala inimiga */
-        if (idOutro != 1 && idOutro != -1 && idOutro != -2)
+        if (idOutro != 1 && idOutro != -1 && idOutro != -2 && idOutro != 4 && idOutro != 5)
             existe = false;
     }
 
     /* Se a municao for do inimigo */
     else
             /* Inimigo */   /* Ela mesma */   /* Bala Heroi */
-        if (idOutro != 2 && idOutro != -2 && idOutro != -1)
+        if (idOutro != 2 && idOutro != -2 && idOutro != -1 && idOutro != 4 && idOutro != 5)
             existe = false;
 
 }

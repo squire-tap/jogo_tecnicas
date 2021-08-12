@@ -1,9 +1,8 @@
 #include "Heroi.hpp"
 
 Heroi::Heroi(vector2D<float> pos , vector2D<float> vel , vector2D<float> dim , const string caminhoText, int id ) :
-Atirador(pos, vel, dim , caminhoText, 1)  , noChao(false)
+Atirador(pos, vel, dim , caminhoText, 1)  , noChao(false), recarga(0), derrotado(false)
 {
-    noChao = false;
     vida = 30;
 }
 
@@ -27,7 +26,14 @@ void Heroi::atualizar(float t)
     
     velocidade.y = velocidade.y + 2000 * t;
 
+    recarga -= 1 * t;
 }
+
+bool Heroi::getDerrotado()
+{
+    return derrotado;
+}
+
 void Heroi::desenhar(GerenciadorGrafico &gg)
 {
     gg.desenhar(caminho, posicao, dimensao , orientacao);
@@ -50,7 +56,7 @@ void Heroi::tratarEvento(const sf::Event &e)
         case sf::Keyboard::Up:
             if (noChao)
             {
-                velocidade.y = -1450;
+                velocidade.y = -1600;
                 noChao = false;
             }
             break;
@@ -110,8 +116,20 @@ void Heroi::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vect
             correcaoColisao.x = -500;
     }
 
+    if (idOutro == 4)
+    {
+        /*Pula como reação ao contato com o cacto*/
+        velocidade.y = -1000;
+        vida -= 5;
+        //Jogador deixa de existir
+        if (vida <= 0)
+        {
+            derrotado = true;
+        }
+    }
+
     /*mudar id da tile*/
-    if (idOutro == 3)
+    if (idOutro == 3 || idOutro == 5)
     {
         if (direcao == 1)
         {
@@ -144,24 +162,29 @@ void Heroi::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vect
         //Jogador deixa de existir
         if (vida <= 0)
         {
-            existe = false;
+            derrotado = true;
         }
     }
 }
 
 void Heroi::atirar()
 {
-    /* Cria a munição */
-    Municao *p = NULL;
-    float correcaoSaidaBalaX = 85.0f;
-    float correcaoSaidaBalaY = 12.5f;
-    /* Se for o heroi que disparou */
-    if(orientacao)
-        p = new Municao(posicao + vector2D(correcaoSaidaBalaX , correcaoSaidaBalaY) , vector2D<float>(350.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -1);
-    else 
-        p = new Municao(posicao + vector2D(-correcaoSaidaBalaX , correcaoSaidaBalaY), vector2D<float>(-350.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -1);
+    if (recarga <= 0)
+    {
+        /* Cria a munição */
+        Municao* p = NULL;
+        float correcaoSaidaBalaX = 85.0f;
+        float correcaoSaidaBalaY = 12.5f;
+        /* Se for o heroi que disparou */
+        if (orientacao)
+            p = new Municao(posicao + vector2D<float>(correcaoSaidaBalaX, correcaoSaidaBalaY), vector2D<float>(500.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -1);
+        else
+            p = new Municao(posicao + vector2D<float>(-correcaoSaidaBalaX, correcaoSaidaBalaY), vector2D<float>(-500.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -1);
 
-    /* Adiciona a municao à lista */
-    lista->inserir(p);
-    gc->adicionarColidivel(p); 
+        /* Adiciona a municao à lista */
+        lista->inserir(p);
+        gc->adicionarColidivel(p);
+        recarga = 0.5;
+
+    }
 }

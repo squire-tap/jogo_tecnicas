@@ -106,12 +106,12 @@ void GerenciadorColisoes::limpaDesenhaveis()
     }
 
      for (auto iterador = limpeza.begin(); iterador != limpeza.end(); iterador++)
-    {
+     {
         pAux = *iterador;
-
         removerColidivel(pAux);
-        lista->removerDestruir(pAux);
-	}
+		
+		lista->removerDestruir(pAux);
+	 }
 
 
 

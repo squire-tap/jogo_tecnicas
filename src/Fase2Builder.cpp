@@ -1,15 +1,15 @@
-#include "Fase1Builder.hpp"
+#include "Fase2Builder.hpp"
 
-Fase1Builder::Fase1Builder():
-tilemap("assets/Fase1v2.json")
+Fase2Builder::Fase2Builder():
+tilemap("assets/Fase2.json")
 {
 }
 
-Fase1Builder::~Fase1Builder()
+Fase2Builder::~Fase2Builder()
 {
 }
 
-void Fase1Builder::buildFase()
+void Fase2Builder::buildFase()
 {
 	vector2D<unsigned> dimensoes = tilemap.getDimensoesMapa();
 	DadosFase* m = NULL;
@@ -23,24 +23,19 @@ void Fase1Builder::buildFase()
 	{
 		for (unsigned short j = 0; j < dimensoes.x; j++)
 		{
-			if (tilemap[i][j] == 2)
+			if (tilemap[i][j] == 9)
 			{
-				t_aux = new Areia(vector2D<float>(200.0f * j, 200.0f * i));
-				m->incluirTile(t_aux);
-			}
-			if (tilemap[i][j] == 1)
-			{
-				t_aux = new AreiaTopo(vector2D<float>(200.0f * j, 200.0f * i));
+				t_aux = new Pedra(vector2D<float>(200.0f * j, 200.0f * i));
 				m->incluirTile(t_aux);
 			}
 			if (tilemap[i][j] == 4)
 			{
-				if (i == 3 && j == 10 || i == 9 && j == 7 || i == 12 && j == 20)
+				if (i == 2 && j == 22 || i == 15 && j == 8 || i == 8 && j == 2)
 				{
 					t_aux = new Cacto(vector2D<float>(200.0f * j, 200.0f * i));
 					m->incluirTile(t_aux);
 				}
-				else if(rand() % 2 == 1)
+				else if (rand() % 2 == 1)
 				{
 					t_aux = new Cacto(vector2D<float>(200.0f * j, 200.0f * i));
 					m->incluirTile(t_aux);
@@ -48,7 +43,7 @@ void Fase1Builder::buildFase()
 			}
 			if (tilemap[i][j] == 5)
 			{
-				if (i == 3 && j == 11 || i == 9 && j == 12 || i == 12 && j == 21)
+				if (i == 1 && j == 17 || i == 15 && j == 2 || i == 10 && j == 17)
 				{
 					t_aux = new Caixote(vector2D<float>(200.0f * j, 200.0f * i));
 					m->incluirTile(t_aux);
@@ -64,12 +59,12 @@ void Fase1Builder::buildFase()
 	dados = m;
 }
 
-void Fase1Builder::buildJogadores(Heroi* jog)
+void Fase2Builder::buildJogadores(Heroi* jog)
 {
 	dados->incluirJogador(jog);
 }
 
-void Fase1Builder::buildInimigos(int ini)
+void Fase2Builder::buildInimigos(int ini)
 {
 	Inimigo* i_aux = NULL;
 	vector2D<unsigned> dimensoes = tilemap.getDimensoesMapa();
@@ -82,7 +77,7 @@ void Fase1Builder::buildInimigos(int ini)
 		{
 			if (tilemap[i][j] == 6)
 			{
-				if (i == 7 && j == 3 || i == 12 && j == 19 || i == 16 && j == 10)
+				if (i == 7 && j == 15 || i == 8 && j == 3 || i == 18 && j == 2)
 				{
 					i_aux = new Inimigo1(vector2D<float>(200.0f * j, 200.0f * i), dados->getJogador());
 					dados->incluirInimigo(i_aux);
@@ -95,7 +90,7 @@ void Fase1Builder::buildInimigos(int ini)
 			}
 			if (tilemap[i][j] == 7)
 			{
-				if (i == 9 && j == 13 || i == 12 && j == 26 || i == 18 && j == 26)
+				if (i == 3 && j == 9 || i == 10 && j == 18 || i == 18 && j == 24)
 				{
 					i_aux = new Inimigo2(vector2D<float>(200.0f * j, 200.0f * i), dados->getJogador());
 					dados->incluirInimigo(i_aux);

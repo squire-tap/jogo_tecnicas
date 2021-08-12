@@ -2,8 +2,7 @@
 
 #include "MapaBuilder.hpp"
 
-#include "Areia.hpp"
-#include "AreiaTopo.hpp"
+#include "Pedra.hpp"
 #include "Cacto.hpp"
 #include "Caixote.hpp"
 
@@ -11,15 +10,15 @@
 #include "Inimigo2.hpp"
 #include "Chefe.hpp"
 
-class Fase1Builder : public MapaBuilder
+class Fase2Builder: public MapaBuilder
 {
 private:
 	TileMap tilemap;
 
 public:
-	Fase1Builder();
-	~Fase1Builder();
-	
+	Fase2Builder();
+	~Fase2Builder();
+
 	void buildFase();
 	void buildJogadores(Heroi* jog);
 	void buildInimigos(int ini);

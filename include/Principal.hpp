@@ -11,6 +11,7 @@
 #include "DadosFase.hpp"
 #include "DiretorMapa.hpp"
 #include "Fase1Builder.hpp"
+#include "Fase2Builder.hpp"
 #include "PlanoFundo.hpp"
                 
 

@@ -229,13 +229,11 @@ void lista<TL>::removerDestruir(TL info)
         ElementoLista<TL>* pAux = inicio;
         TL pInfo = NULL;
 
-        cout << "removendo" << endl;
         while (pInfo != info)
         {
                 pAux = pAux->get_prox();
                 pInfo = pAux->get_info();
         }
-        
         if (pAux == inicio)
         {
                 inicio = pAux->get_prox();
@@ -255,8 +253,6 @@ void lista<TL>::removerDestruir(TL info)
 
         delete pInfo;
         delete pAux;
-
-        cout<<"removi"<<endl;
 }
 
 

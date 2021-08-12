@@ -6,15 +6,16 @@
 
 class Inimigo : public Atirador
 {
-private:
+protected:
     /* Ponteiro para saber onde esta o heroi */
     Heroi* pHeroi;
+    float esperaTiro;
     
 public:
     Inimigo(vector2D<float> pos = (0.0f , 0.0f) , vector2D<float> vel = (0.0f , 0.0f) , vector2D<float> dim = (0.0f , 0.0f) , const string caminhoText = " " , int id = 0 , Heroi* p = NULL);
     ~Inimigo();
 
-    void atualizar(float t);
+    virtual void atualizar(float t);
     void inicializar(GerenciadorGrafico &gg , GerenciadorEventos &ge);
     void colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vector2D<float> dimensoesOutro);
     void tratarEvento(const sf::Event &e);

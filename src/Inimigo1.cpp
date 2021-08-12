@@ -1,6 +1,6 @@
 #include "Inimigo1.hpp"
 
-Inimigo1::Inimigo1(vector2D<float> pos, Heroi* pH): Inimigo(pos, vector2D<float>(0.0f, 0.0f), vector2D<float>(200.0f, 200.0f), "assets/Inimigo_atirador.png", 2, pH)
+Inimigo1::Inimigo1(vector2D<float> pos, Heroi* pH): Inimigo(pos, vector2D<float>(0.0f, 0.0f), vector2D<float>(200.0f, 200.0f), "assets/inimigo_atirador.png", 2, pH)
 {
 }
 

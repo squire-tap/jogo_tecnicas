@@ -58,7 +58,7 @@ void GerenciadorColisoes::removerTodos()
 	colidiveis.clear();
 }
 
-void GerenciadorColisoes::setListaDesenhaveis(ListaDesenhaveis* l)
+void GerenciadorColisoes:: setListaDesenhaveis(ListaDesenhaveis* l)
 {
 	lista = l;
 }

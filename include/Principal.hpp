@@ -1,18 +1,13 @@
 #ifndef _PRINCIPAL_HPP_
 #define _PRINCIPAL_HPP_
-#include "Principal.hpp"
 #include "Heroi.hpp"
-#include "Inimigo.hpp"
-#include "Municao.hpp"
 #include "GerenciadorGrafico.hpp"
 #include "GerenciadorColisoes.hpp"
+#include "GerenciadorEstado.hpp"
 #include "ListaDesenhaveis.hpp"
-#include "Heroi.hpp"
-#include "DadosFase.hpp"
-#include "DiretorMapa.hpp"
-#include "Fase1Builder.hpp"
-#include "Fase2Builder.hpp"
-#include "PlanoFundo.hpp"
+#include "MenuFase.hpp"
+#include "MenuTransicao.hpp"
+#include "MenuPause.hpp"
                 
 
 
@@ -23,13 +18,20 @@ private:
     sf::Clock relogio;
     GerenciadorGrafico gg;
     GerenciadorEventos ge;
+    GerenciadorEstado gerenciadorEstado;
     GerenciadorColisoes gc;
     ListaDesenhaveis listaAmigos;
     unsigned int IDjanelaFechada;
     bool terminar;
 
+    MenuFase menu_fase;
+    MenuPause menu_pause;
+    MenuTransicao menu_transicao;
+
+    
+
     Heroi* jogador;
-    PlanoFundo pf;
+
 
 public:
     Principal();

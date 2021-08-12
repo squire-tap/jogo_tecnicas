@@ -12,8 +12,9 @@
 #include "Fase1Builder.hpp"
 #include "Fase2Builder.hpp"
 #include "PlanoFundo.hpp"
+#include "Estado.hpp"
 
-class Fase1
+class Fase1 : public Estado
 {
 private:
 

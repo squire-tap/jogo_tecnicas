@@ -14,6 +14,7 @@
 #include <iostream>
 #include <set>
 #include <iterator>
+#include <stack>
 using std::cout;
 using std::endl;
 using std::cin;

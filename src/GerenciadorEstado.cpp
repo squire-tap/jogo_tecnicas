@@ -1,14 +1,27 @@
 #include "GerenciadorEstado.hpp"
 
-GerenciadorEstado::GerenciadorEstado(Estado* menu_f)
+GerenciadorEstado::GerenciadorEstado(Fase1* Fase1,
+                                     Fase2* Fase2,
+                                     MenuFase* Menu_fase,
+                                     MenuPause* Menu_pause,
+                                     MenuTransicao* Menu_transicao)
+                                     
+                                     :
+
+                                     fase1(Fase1),
+                                     fase2(Fase2),
+                                     menu_fase(Menu_fase),
+                                     menu_pause(Menu_pause),
+                                     menu_transicao(Menu_transicao)
+
 {
     /* coloca o menu fase na pilha */
-    pushEstado(menu_f);
+    pushEstado(menu_fase);
 }
 
 GerenciadorEstado::~GerenciadorEstado()
 {
-    esvaziarPilha();
+    //esvaziarPilha();
 }
 bool GerenciadorEstado::executar()
 {
@@ -30,10 +43,10 @@ void GerenciadorEstado::popEstado()
 }
 void GerenciadorEstado::esvaziarPilha()
 {
-     while(pilhaEstados.size() != 0) 
+    /*  while(pilhaEstados.size() != 0) 
     {
         popEstado();
-    }
+    } */
 }
 
 int GerenciadorEstado::processarCodigo(int codigoRetorno)
@@ -43,59 +56,66 @@ int GerenciadorEstado::processarCodigo(int codigoRetorno)
     
     /* caso 1 , caso 2 , caso 3 ------------> fases retornam */
     case 1:
+
         cout<<"pausar"<<endl;
-        pushEstado(/* menu_pause */);
+        pushEstado( menu_pause );
         break;
 
     case 2:
+
         cout<<"game over"<<endl;
-        popEstado();
-        pushEstado(/* menu_fase */);
-    
+        pilhaEstados.pop();
+        pushEstado( menu_fase );
+        break;
+
     case 3:
         cout<<"fase concluída"<<endl;
-        popEstado();
-        pushEstado(/* menu_transição */);
-
-    /* caso 4 , caso 5 , caso 6 ------------> menus retornam */
-
+        pilhaEstados.pop();
+        pushEstado( menu_transicao );
+        break;
 
     /* caso 4 e caso 5 ---------> menu_pause */
     case 4:
         /* menu pause , ou continua o jogo ou volta para o menu_fase */
         cout<<"continuar"<<endl;
-        popEstado();
+        pilhaEstados.pop();
+        break;
     
     case 5:
         cout<<"indo para menu fase"<<endl;
         popEstado();
         popEstado();
-        pushEstado(/* menu_fase */);
+        pushEstado( menu_fase );
+        break;
     
     
     /* caso 6 e caso 7 ----------> menu_fase retorna  */
 
     case 6:
         cout<<"indo fase 1"<<endl;
-        popEstado();
-        pushEstado(/* fase1 */);
+        pilhaEstados.pop();
+        pushEstado( fase1 );
+        break;
     
     case 7:
         cout<<"indo fase 2"<<endl;
-        popEstado();
-        pushEstado(/* fase2 */);
+        pilhaEstados.pop();
+        pushEstado( fase2 );
+        break;
 
     
     /* caso 8 e caso 9 ------------> menu_transicao retorna */
     case 8:
         cout<<"transitando fase 2"<<endl;
-        popEstado();
-        pushEstado(/* fase2 */);
+        pilhaEstados.pop();
+        pushEstado( fase2 );
+        break;
     
     case 9:
         cout<<"voltando para menu fase"<<endl;
-        popEstado();
-        pushEstado(/* menu_fase */)
+        pilhaEstados.pop();
+        pushEstado( menu_fase );
+        break;
 
     default:
         break;

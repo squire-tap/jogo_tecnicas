@@ -8,6 +8,9 @@
 #include "MenuFase.hpp"
 #include "MenuTransicao.hpp"
 #include "MenuPause.hpp"
+#include "Fase1.hpp"
+#include "Fase2.hpp"
+
                 
 
 
@@ -15,12 +18,12 @@ class Principal
 {
 private:
     
-    sf::Clock relogio;
-    GerenciadorGrafico gg;
-    GerenciadorEventos ge;
+    /* sf::Clock relogio; */
+    /* GerenciadorGrafico gg; */
+    /* GerenciadorColisoes gc; */
+    /* ListaDesenhaveis listaAmigos; */
+    GerenciadorEventos gerenciadorEventos; 
     GerenciadorEstado gerenciadorEstado;
-    GerenciadorColisoes gc;
-    ListaDesenhaveis listaAmigos;
     unsigned int IDjanelaFechada;
     bool terminar;
 
@@ -28,9 +31,11 @@ private:
     MenuPause menu_pause;
     MenuTransicao menu_transicao;
 
-    
+    Fase1 fase1;
+    Fase2 fase2;
 
-    Heroi* jogador;
+    Heroi jogador1;
+    
 
 
 public:
@@ -38,6 +43,7 @@ public:
     ~Principal();               
     void executar();
     void janelaFechada(const sf::Event& e);
+    void inicializaFases();
 };
 
 #endif

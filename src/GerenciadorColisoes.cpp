@@ -6,15 +6,18 @@ GerenciadorColisoes::GerenciadorColisoes()
 
 GerenciadorColisoes::~GerenciadorColisoes()
 {
-	set<Colidivel*>::iterator it;
+	/* set<Colidivel*>::iterator it;
 	Colidivel* c_aux = NULL;
 	for (it = colidiveis.begin(); it != colidiveis.end(); it++) //limpando vector de colidiveis
 	{
-		if (*it)
+		c_aux = *it;
+		if (c_aux != NULL)
 		{
-			delete* it;
+			delete c_aux;
 		}
-	}
+		c_aux = NULL;
+	} */
+	colidiveis.clear();
 }
 
 int GerenciadorColisoes::estadoColidindo(Colidivel* p1, Colidivel* p2)

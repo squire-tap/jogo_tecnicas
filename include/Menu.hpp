@@ -6,7 +6,7 @@
 class Menu : public Estado {
 
     public:
-        virtual int executar();
+        virtual int executar() = 0;
 };
 
 #endif

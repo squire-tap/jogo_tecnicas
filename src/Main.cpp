@@ -1,5 +1,4 @@
 #include "Principal.hpp"
-
 #include "Fase1.hpp"
 #include "Fase2.hpp"
 /*
@@ -13,7 +12,7 @@ int main()
 }
 */
 
-int main()
+/* int main()
 {
 	Fase1 fase1;
 
@@ -21,6 +20,15 @@ int main()
 
 	Fase2 fase2;
 	i = fase2.executar();
+
+	return 0;
+} */
+
+int main()
+{
+	Principal objPrincipal;
+
+	objPrincipal.executar();
 
 	return 0;
 }

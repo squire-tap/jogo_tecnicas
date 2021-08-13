@@ -8,7 +8,6 @@ IDjanelaFechada{ ge->adicionarOuvinteOutro([this](const sf::Event& e) { janelaFe
 IDmenuPausa{ ge->adicionarOuvinteTeclado([this](const sf::Event& e) { menuPausa(e); })},
 terminar{ false }, 
 pausado{ false },
-//jogador(jog),
 pf()
 {
         /* Criando os primeiros personagem */
@@ -41,6 +40,10 @@ pf()
 Fase1::~Fase1()
 {
     listaAmigos.destruirDesenhavel();
+    ge->~GerenciadorEventos();
+    ge->~GerenciadorEventos();
+    gc.removerTodos();
+    gc.removerTodos();
 }
 
 int Fase1::executar()
@@ -48,36 +51,28 @@ int Fase1::executar()
     /* Enquanto terminar for false */
     while (!terminar)
     {
-        pausado = false;
+        
         
         if (jogador->getDerrotado())
         {
-            listaAmigos.destruirDesenhavel();
-            gc.removerTodos();
-            ge->~GerenciadorEventos();
             return 2;
         }
         if (termino())
         {
-            listaAmigos.destruirDesenhavel();
-            gc.removerTodos();
-            ge->~GerenciadorEventos();
             return 3;
         }
 
-        
-        
         sf::Time t = relogio.getElapsedTime();
         relogio.restart();
 
+        if (pausado)
+        {   
+            pausado = false;
+            return 1;
+        }
         
         ge->tratarEventos();
 
-        if (pausado)
-        {   
-            cout<<"executou false"<<endl;
-            return 1;
-        }
 
         gg->limpar();
         /* limpo os que n�o existem mais */
@@ -104,7 +99,11 @@ void Fase1::janelaFechada(const sf::Event& e)
 void Fase1::menuPausa(const sf::Event& e)
 {
     if (e.key.code == sf::Keyboard::Key::P)
+    {
         pausado = true;
+        int i = pausado;
+        cout << i << endl;
+    }
 }
 
 bool Fase1::termino()

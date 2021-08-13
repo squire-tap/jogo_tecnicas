@@ -20,23 +20,11 @@ private:
     
     /* sf::Clock relogio; */
     /* GerenciadorColisoes gc; */
-    /* ListaDesenhaveis listaAmigos; */
     GerenciadorGrafico gerenciadorGrafico;
     GerenciadorEventos gerenciadorEventos; 
     GerenciadorEstado gerenciadorEstado;
     unsigned int IDjanelaFechada;
     bool terminar;
-
-    MenuFase menu_fase;
-    MenuPause menu_pause;
-    MenuTransicao menu_transicao;
-    
-    Heroi jogador1;
-
-    Fase1 fase1;
-    Fase2 fase2;
-
-    
 
 
 public:

@@ -55,14 +55,14 @@ int Fase2::executar()
         {
             listaAmigos.destruirDesenhavel();
             gc.removerTodos();
-            ge->~GerenciadorEventos();
+            //ge->~GerenciadorEventos();
             return 2;
         }
         if (termino())
         {
             listaAmigos.destruirDesenhavel();
             gc.removerTodos();
-            ge->~GerenciadorEventos();
+            //ge->~GerenciadorEventos();
             return 3;
         }
         if (pausado)

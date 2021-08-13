@@ -4,22 +4,9 @@
 Principal::Principal():
 gerenciadorGrafico(),
 gerenciadorEventos(),
-gerenciadorEstado(&fase1,
-                  &fase2,
-                  &menu_fase,
-                  &menu_pause,
-                  &menu_transicao,
-                  &gerenciadorGrafico,
-                  &gerenciadorEventos) ,
+gerenciadorEstado( &gerenciadorGrafico, &gerenciadorEventos) ,
 IDjanelaFechada {gerenciadorEventos.adicionarOuvinteOutro([this](const sf::Event& e) { janelaFechada(e); })},
-terminar(false),
-menu_fase(),
-menu_pause(),
-menu_transicao(),
-jogador1(vector2D<float>(200.0f, 200.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(195.0f, 195.0f), "assets/heroi.png"),
-fase1(&gerenciadorGrafico , &gerenciadorEventos),
-fase2(&gerenciadorGrafico , &gerenciadorEventos)
-
+terminar(false)
 {
     
     /* inicializarFases(); */

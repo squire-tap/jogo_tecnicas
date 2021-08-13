@@ -53,14 +53,7 @@ void ListaDesenhaveis::desenharDesenhavel(GerenciadorGrafico *gg)
 }
 void ListaDesenhaveis::destruirDesenhavel()
 {
-    Desenhavel *p = lista_desenhavel.voltarInicio();
 
-    /* Percorre toda a lista de personagens , e chama a funcao destruir para cada personagem */
-    while (p)
-    {
-        delete p;
-        p = lista_desenhavel.irProximo();
-    }
     lista_desenhavel.esvaziar();
 }
 

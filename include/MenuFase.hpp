@@ -7,7 +7,7 @@
 class MenuFase : public Menu{
 
     public:
-        int executar() override;
+        int executar();
 };
 
 #endif

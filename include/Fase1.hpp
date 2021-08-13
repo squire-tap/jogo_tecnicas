@@ -13,6 +13,7 @@
 #include "Fase2Builder.hpp"
 #include "PlanoFundo.hpp"
 #include "Estado.hpp"
+#include "stdafx.hpp"
 
 class Fase1 : public Estado
 {
@@ -32,7 +33,7 @@ private:
     PlanoFundo pf;
 
 public:
-    Fase1(GerenciadorGrafico* GG , GerenciadorEventos* GE , Heroi* jog);
+    Fase1(GerenciadorGrafico* GG , GerenciadorEventos* GE);
     ~Fase1();
     int executar();
     void janelaFechada(const sf::Event& e);

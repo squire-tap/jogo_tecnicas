@@ -30,9 +30,9 @@ void Inimigo::atualizar(float t)
 	}
 }
 
-void Inimigo::inicializar(GerenciadorGrafico &gg, GerenciadorEventos &ge)
+void Inimigo::inicializar(GerenciadorGrafico* gg, GerenciadorEventos* ge)
 {
-       gg.carregarTextura(caminho);
+       gg->carregarTextura(caminho);
  
        //ge.adicionarOuvinteMouse([this](const sf::Event &e) { tratarEvento(e); } , id);
  }
@@ -81,24 +81,6 @@ void Inimigo::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, ve
 }
 
 
- /*  void Inimigo::tratarEvento(const sf::Event &e)
-{
-      // Caso o jogador atire , o inimigo também atira 
-       if (e.type == sf::Event::MouseButtonPressed)
-       {
-               switch (e.mouseButton.button)
-               {
-               case sf::Mouse::Left:
-                       atirar();
-                       break;
-
-               default:
-                       break;
-               }
-       }
- }   */
-
-
 void Inimigo::atirar()
 {
 	/* Cria a munição */
@@ -124,7 +106,7 @@ void Inimigo::atirar()
 	
 }
 
-void Inimigo::desenhar(GerenciadorGrafico& gg)
+void Inimigo::desenhar(GerenciadorGrafico* gg)
 {
-	gg.desenhar(caminho , posicao , dimensao , orientacao);
+	gg->desenhar(caminho , posicao , dimensao , orientacao);
 }

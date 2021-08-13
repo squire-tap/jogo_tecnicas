@@ -1,6 +1,7 @@
 #include "Fase1.hpp"
 
-Fase1::Fase1(GerenciadorGrafico* GG , GerenciadorEventos* GE , Heroi* jog):
+Fase1::Fase1(GerenciadorGrafico* GG , GerenciadorEventos* GE):
+relogio(),
 gg(GG),
 ge(GE),
 IDjanelaFechada{ ge->adicionarOuvinteOutro([this](const sf::Event& e) { janelaFechada(e); })}, 
@@ -47,28 +48,36 @@ int Fase1::executar()
     /* Enquanto terminar for false */
     while (!terminar)
     {
+        pausado = false;
+        
         if (jogador->getDerrotado())
         {
             listaAmigos.destruirDesenhavel();
             gc.removerTodos();
+            ge->~GerenciadorEventos();
             return 2;
         }
         if (termino())
         {
             listaAmigos.destruirDesenhavel();
             gc.removerTodos();
+            ge->~GerenciadorEventos();
             return 3;
         }
-        if (pausado)
-        {
-            return 1;
-        }
+
         
         
         sf::Time t = relogio.getElapsedTime();
         relogio.restart();
 
+        
         ge->tratarEventos();
+
+        if (pausado)
+        {   
+            cout<<"executou false"<<endl;
+            return 1;
+        }
 
         gg->limpar();
         /* limpo os que n�o existem mais */

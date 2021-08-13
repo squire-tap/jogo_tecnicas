@@ -189,7 +189,7 @@ TL lista<TL>::irProximo()
     else
     {
         return nullptr;
-        /* cout << "Nao fui para o proximo personagem!" << endl; */
+        cerr << "Nao fui para o proximo personagem!" << endl;
     }
 }
 

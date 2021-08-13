@@ -6,7 +6,7 @@
 class MenuPause : public Menu{
 
     public:
-        int executar() override;
+        int executar();
 
 };
 

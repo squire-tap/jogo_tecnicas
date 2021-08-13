@@ -16,6 +16,8 @@ class GerenciadorEstado{
         MenuFase* menu_fase;
         MenuPause* menu_pause;
         MenuTransicao* menu_transicao;
+        GerenciadorGrafico* gg;
+        GerenciadorEventos* ge;
         
     
     public:
@@ -23,7 +25,9 @@ class GerenciadorEstado{
                           Fase2* fase2 = nullptr , 
                           MenuFase* menu_fase = nullptr, 
                           MenuPause* menu_pause = nullptr, 
-                          MenuTransicao* menu_transicao = nullptr);
+                          MenuTransicao* menu_transicao = nullptr,
+                          GerenciadorGrafico* GG = nullptr,
+                          GerenciadorEventos* GE = nullptr);
 
         ~GerenciadorEstado();
         bool executar();

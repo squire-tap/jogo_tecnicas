@@ -1,6 +1,6 @@
 #include "Fase2.hpp"
 
-Fase2::Fase2(GerenciadorGrafico* GG , GerenciadorEventos* GE , Heroi* jog):
+Fase2::Fase2(GerenciadorGrafico* GG , GerenciadorEventos* GE):
 relogio(),
 gg(GG),
 ge(GE),
@@ -55,12 +55,14 @@ int Fase2::executar()
         {
             listaAmigos.destruirDesenhavel();
             gc.removerTodos();
+            ge->~GerenciadorEventos();
             return 2;
         }
         if (termino())
         {
             listaAmigos.destruirDesenhavel();
             gc.removerTodos();
+            ge->~GerenciadorEventos();
             return 3;
         }
         if (pausado)

@@ -30,11 +30,12 @@ private:
     MenuFase menu_fase;
     MenuPause menu_pause;
     MenuTransicao menu_transicao;
+    
+    Heroi jogador1;
 
     Fase1 fase1;
     Fase2 fase2;
 
-    Heroi jogador1;
     
 
 

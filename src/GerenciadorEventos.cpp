@@ -7,6 +7,11 @@ GerenciadorEventos::GerenciadorEventos()
 }
 GerenciadorEventos::~GerenciadorEventos()
 {
+    janela = NULL;
+    
+    ouvintesMouse.clear();
+    ouvintesTeclado.clear();
+    ouvintesOutros.clear();
 }
 void GerenciadorEventos::tratarEventos()
 {

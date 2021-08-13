@@ -6,7 +6,7 @@
 class MenuTransicao : public Menu {
 
     public:
-        int executar() override;
+        int executar();
 
 };
 

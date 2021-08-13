@@ -15,12 +15,11 @@ public:
     Inimigo(vector2D<float> pos = (0.0f , 0.0f) , vector2D<float> vel = (0.0f , 0.0f) , vector2D<float> dim = (0.0f , 0.0f) , const string caminhoText = " " , int id = 0 , Heroi* p = NULL);
     ~Inimigo();
 
-    virtual void atualizar(float t);
-    void inicializar(GerenciadorGrafico &gg , GerenciadorEventos &ge);
+    virtual void atualizar(float t) ;
+    void inicializar(GerenciadorGrafico* gg , GerenciadorEventos* ge) ;
     void colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vector2D<float> dimensoesOutro);
-    void tratarEvento(const sf::Event &e);
     void atirar();
-    void desenhar(GerenciadorGrafico& gg);
+    void desenhar(GerenciadorGrafico* gg);
 };
 
 

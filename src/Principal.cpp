@@ -8,15 +8,17 @@ gerenciadorEstado(&fase1,
                   &fase2,
                   &menu_fase,
                   &menu_pause,
-                  &menu_transicao) ,
+                  &menu_transicao,
+                  &gerenciadorGrafico,
+                  &gerenciadorEventos) ,
 IDjanelaFechada {gerenciadorEventos.adicionarOuvinteOutro([this](const sf::Event& e) { janelaFechada(e); })},
 terminar(false),
 menu_fase(),
 menu_pause(),
 menu_transicao(),
-fase1(&gerenciadorGrafico , &gerenciadorEventos , &jogador1),
-fase2(&gerenciadorGrafico , &gerenciadorEventos , &jogador1)
-//jogador1(vector2D<float>(200.0f, 200.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(195.0f, 195.0f), "assets/heroi.png")
+jogador1(vector2D<float>(200.0f, 200.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(195.0f, 195.0f), "assets/heroi.png"),
+fase1(&gerenciadorGrafico , &gerenciadorEventos),
+fase2(&gerenciadorGrafico , &gerenciadorEventos)
 
 {
     

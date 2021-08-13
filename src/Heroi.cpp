@@ -3,20 +3,20 @@
 Heroi::Heroi(vector2D<float> pos , vector2D<float> vel , vector2D<float> dim , const string caminhoText, int id ) :
 Atirador(pos, vel, dim , caminhoText, 1)  , noChao(false), recarga(0), derrotado(false)
 {
-    vida = 30;
+    vida = 1;
 }
 
 Heroi::~Heroi()
 {
 }
-void Heroi::inicializar(GerenciadorGrafico &gg, GerenciadorEventos &ge)
+void Heroi::inicializar(GerenciadorGrafico* gg, GerenciadorEventos* ge)
 {
-    gg.carregarTextura(caminho);
+    gg->carregarTextura(caminho);
 
     /* Heroi passa a ser um ouvinte do teclado , que após um evento é chamada a tratar evento do heroi */
-     chaveOuvinte = ge.adicionarOuvinteTeclado([this](const sf::Event &e) { tratarEvento(e); });
+     chaveOuvinte = ge->adicionarOuvinteTeclado([this](const sf::Event &e) { tratarEvento(e); });
 
-     chaveOuvinte = ge.adicionarOuvinteMouse( [this] (const sf::Event &e) {tratarEvento(e); });
+     chaveOuvinte = ge->adicionarOuvinteMouse( [this] (const sf::Event &e) {tratarEvento(e); });
 
 }
 void Heroi::atualizar(float t)
@@ -34,9 +34,9 @@ bool Heroi::getDerrotado()
     return derrotado;
 }
 
-void Heroi::desenhar(GerenciadorGrafico &gg)
+void Heroi::desenhar(GerenciadorGrafico* gg)
 {
-    gg.desenhar(caminho, posicao, dimensao , orientacao);
+    gg->desenhar(caminho, posicao, dimensao , orientacao);
 }
 //Abstrata "virtual pura"
 void Heroi::tratarEvento(const sf::Event &e)

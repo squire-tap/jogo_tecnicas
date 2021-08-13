@@ -14,13 +14,13 @@ void Municao::atualizar(float t)
     posicao += velocidade * t;
     
 }
-void Municao::desenhar(GerenciadorGrafico &gg)
+void Municao::desenhar(GerenciadorGrafico *gg)
 {
-    gg.desenhar(caminho, posicao, dimensao , true);
+    gg->desenhar(caminho, posicao, dimensao , true);
 }
-void Municao::inicializar(GerenciadorGrafico &gg, GerenciadorEventos &ge)
+void Municao::inicializar(GerenciadorGrafico *gg, GerenciadorEventos *ge)
 {
-    gg.carregarTextura(caminho);
+    gg->carregarTextura(caminho);
 }
 
 void Municao::colidir(int direcao , int idOutro , vector2D<float> posicaoOutro , vector2D<float> dimensoesOutro)

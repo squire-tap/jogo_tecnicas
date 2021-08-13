@@ -15,6 +15,7 @@ public:
     }
     ~vector2D()
     {
+        
     }
     vector2D<TIPO> operator+(vector2D<TIPO> v)
     {

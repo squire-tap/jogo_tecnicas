@@ -19,8 +19,8 @@ class Fase1 : public Estado
 private:
 
     sf::Clock relogio;
-    GerenciadorGrafico gg;
-    GerenciadorEventos ge;
+    GerenciadorGrafico* gg;
+    GerenciadorEventos* ge;
     GerenciadorColisoes gc;
     ListaDesenhaveis listaAmigos;
     unsigned int IDjanelaFechada;
@@ -32,7 +32,7 @@ private:
     PlanoFundo pf;
 
 public:
-    Fase1();
+    Fase1(GerenciadorGrafico* GG , GerenciadorEventos* GE , Heroi* jog);
     ~Fase1();
     int executar();
     void janelaFechada(const sf::Event& e);

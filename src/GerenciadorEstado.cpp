@@ -83,8 +83,8 @@ int GerenciadorEstado::processarCodigo(int codigoRetorno)
     
     case 5:
         cout<<"indo para menu fase"<<endl;
-        popEstado();
-        popEstado();
+        pilhaEstados.pop();
+        pilhaEstados.pop();
         pushEstado( menu_fase );
         break;
     

@@ -15,7 +15,7 @@ void ListaDesenhaveis::inserir(Desenhavel *info)
     lista_desenhavel.inserir(info);
 }
 
-void ListaDesenhaveis::inicializarDesenhavel(GerenciadorGrafico &gg , GerenciadorEventos &ge)
+void ListaDesenhaveis::inicializarDesenhavel(GerenciadorGrafico* gg , GerenciadorEventos* ge)
 {
     Desenhavel *p = lista_desenhavel.voltarInicio();
     
@@ -40,7 +40,7 @@ void ListaDesenhaveis::atualizaDesenhavel(float t)
         p = lista_desenhavel.irProximo();
     }
 }
-void ListaDesenhaveis::desenharDesenhavel(GerenciadorGrafico &gg)
+void ListaDesenhaveis::desenharDesenhavel(GerenciadorGrafico *gg)
 {
     Desenhavel *p = lista_desenhavel.voltarInicio();
 

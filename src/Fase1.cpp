@@ -1,9 +1,14 @@
 #include "Fase1.hpp"
 
-Fase1::Fase1():
-IDjanelaFechada {ge.adicionarOuvinteOutro([this](const sf::Event& e) { janelaFechada(e); })}, 
-IDmenuPausa{ ge.adicionarOuvinteTeclado([this](const sf::Event& e) { menuPausa(e); })},
-terminar{ false }, pausado{ false }
+Fase1::Fase1(GerenciadorGrafico* GG , GerenciadorEventos* GE , Heroi* jog):
+gg(GG),
+ge(GE),
+IDjanelaFechada{ ge->adicionarOuvinteOutro([this](const sf::Event& e) { janelaFechada(e); })}, 
+IDmenuPausa{ ge->adicionarOuvinteTeclado([this](const sf::Event& e) { menuPausa(e); })},
+terminar{ false }, 
+pausado{ false },
+//jogador(jog),
+pf()
 {
         /* Criando os primeiros personagem */
 
@@ -26,10 +31,10 @@ terminar{ false }, pausado{ false }
         mp = DM->criarMapa(jogador, 1);
         mp->registrarEntidades(&gc, &listaAmigos);
 
-        /* Atribui as condições iniciais para as entidades , tanto na parte gráfica como nos eventos */
+        /* Atribui as condiï¿½ï¿½es iniciais para as entidades , tanto na parte grï¿½fica como nos eventos */
         listaAmigos.inicializarDesenhavel(gg, ge);
 
-        ge.setJanela(gg.getJanela());
+        ge->setJanela(gg->getJanela());
 }
 
 Fase1::~Fase1()
@@ -63,21 +68,21 @@ int Fase1::executar()
         sf::Time t = relogio.getElapsedTime();
         relogio.restart();
 
-        ge.tratarEventos();
+        ge->tratarEventos();
 
-        gg.limpar();
-        /* limpo os que não existem mais */
+        gg->limpar();
+        /* limpo os que nï¿½o existem mais */
 
         listaAmigos.atualizaDesenhavel(t.asSeconds());
         gc.verificarColisoes();
 
-        gg.centralizar(jogador->getPosicao());
+        gg->centralizar(jogador->getPosicao());
         pf.setPosicao(jogador->getPosicao());
 
         pf.desenhar(gg);
         listaAmigos.desenharDesenhavel(gg);
 
-        gg.mostrar();
+        gg->mostrar();
     }
 }
 
@@ -89,7 +94,7 @@ void Fase1::janelaFechada(const sf::Event& e)
 
 void Fase1::menuPausa(const sf::Event& e)
 {
-    if (e.key.code == sf::Keyboard::Key::Escape)
+    if (e.key.code == sf::Keyboard::Key::P)
         pausado = true;
 }
 

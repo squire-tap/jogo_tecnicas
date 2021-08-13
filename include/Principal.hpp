@@ -19,9 +19,9 @@ class Principal
 private:
     
     /* sf::Clock relogio; */
-    /* GerenciadorGrafico gg; */
     /* GerenciadorColisoes gc; */
     /* ListaDesenhaveis listaAmigos; */
+    GerenciadorGrafico gerenciadorGrafico;
     GerenciadorEventos gerenciadorEventos; 
     GerenciadorEstado gerenciadorEstado;
     unsigned int IDjanelaFechada;

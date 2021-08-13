@@ -15,9 +15,9 @@ public:
     ~ListaDesenhaveis();
 
     void inserir(Desenhavel* info);
-    void inicializarDesenhavel(GerenciadorGrafico &gg , GerenciadorEventos &ge);
+    void inicializarDesenhavel(GerenciadorGrafico *gg , GerenciadorEventos* ge);
     void atualizaDesenhavel(float t);
-    void desenharDesenhavel(GerenciadorGrafico &gg);
+    void desenharDesenhavel(GerenciadorGrafico *gg);
     void destruirDesenhavel();
     void removerDesenhavel(Desenhavel* p);
     void removerDestruir(Desenhavel* p);

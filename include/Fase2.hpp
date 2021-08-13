@@ -18,12 +18,16 @@ class Fase2 : public Estado
 private:
 
     sf::Clock relogio;
-    GerenciadorGrafico gg;
-    GerenciadorEventos ge;
+    
+    GerenciadorGrafico* gg;
+    GerenciadorEventos* ge;
     GerenciadorColisoes gc;
+    
     ListaDesenhaveis listaAmigos;
+    
     unsigned int IDjanelaFechada;
     unsigned int IDmenuPausa;
+    
     bool terminar;
     bool pausado;
 
@@ -31,7 +35,7 @@ private:
     PlanoFundo pf;
 
 public:
-    Fase2();
+    Fase2(GerenciadorGrafico* GG , GerenciadorEventos* GE , Heroi* jog);
     ~Fase2();
     int executar();
     void janelaFechada(const sf::Event& e);

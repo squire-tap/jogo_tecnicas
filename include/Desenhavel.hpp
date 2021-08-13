@@ -16,9 +16,9 @@ protected:
 public:
     Desenhavel(vector2D<float> pos = (0.0f , 0.0f) , vector2D<float> vel = (0.0f , 0.0f) , vector2D<float> dim = (0.0f , 0.0f),  const string caminho = " ");
     virtual ~Desenhavel();
-    virtual void inicializar(GerenciadorGrafico &gg , GerenciadorEventos &ge);
+    virtual void inicializar(GerenciadorGrafico* gg , GerenciadorEventos *ge);
     virtual void atualizar(float t);
-    virtual void desenhar(GerenciadorGrafico &gg);
+    virtual void desenhar(GerenciadorGrafico* gg);
 
     vector2D<float> getPosicao();
     vector2D<float> getDimensao();

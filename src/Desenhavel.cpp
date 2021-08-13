@@ -12,9 +12,9 @@ Desenhavel::~Desenhavel()
 
 /* Função virtual , na classe base 'Desenhavel' essa apenas carrega a textura
 nas classes herdadas a função tratará de forma mais específica */
-void Desenhavel::inicializar(GerenciadorGrafico &gg , GerenciadorEventos &ge)
+void Desenhavel::inicializar(GerenciadorGrafico* gg , GerenciadorEventos* ge)
 {
-    gg.carregarTextura(caminho);
+    gg->carregarTextura(caminho);
 
 }
 void Desenhavel::atualizar(float t)
@@ -23,9 +23,9 @@ void Desenhavel::atualizar(float t)
 
     //corpo.setPosition(position);
 }
-void Desenhavel::desenhar(GerenciadorGrafico &gg)
+void Desenhavel::desenhar(GerenciadorGrafico* gg)
 {
-    gg.desenhar(caminho , posicao , dimensao , true);
+    gg->desenhar(caminho , posicao , dimensao , true);
 }
 
 vector2D<float> Desenhavel::getPosicao()

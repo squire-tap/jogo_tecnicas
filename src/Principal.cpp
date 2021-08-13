@@ -2,6 +2,7 @@
 
 /* inicialização da adicionarOuvinteOutro com a função lambda */
 Principal::Principal():
+gerenciadorGrafico(),
 gerenciadorEventos(),
 gerenciadorEstado(&fase1,
                   &fase2,
@@ -13,12 +14,13 @@ terminar(false),
 menu_fase(),
 menu_pause(),
 menu_transicao(),
-fase1(),
-fase2(),
-jogador1()
+fase1(&gerenciadorGrafico , &gerenciadorEventos , &jogador1),
+fase2(&gerenciadorGrafico , &gerenciadorEventos , &jogador1)
+//jogador1(vector2D<float>(200.0f, 200.0f), vector2D<float>(0.0f, 0.0f), vector2D<float>(195.0f, 195.0f), "assets/heroi.png")
 
 {
-    //inicializarFases();
+    
+    /* inicializarFases(); */
 }
 
 
@@ -44,5 +46,6 @@ void Principal::janelaFechada(const sf::Event &e)
 
 /* void Principal::inicializaFases()
 {
-    Fase1.
-} */
+    Fase1()
+} 
+ */

@@ -7,6 +7,8 @@
 #include "GerenciadorColisoes.hpp"
 #include "ListaDesenhaveis.hpp"
 #include "Heroi.hpp"
+#include "Jogador1.hpp"
+#include "Jogador2.hpp"
 #include "DadosFase.hpp"
 #include "DiretorMapa.hpp"
 #include "Fase1Builder.hpp"
@@ -29,7 +31,8 @@ private:
     bool terminar;
     bool pausado;
 
-    Heroi* jogador;
+    Jogador1* jogador1;
+    Jogador2* jogador2;
     PlanoFundo pf;
 
 public:

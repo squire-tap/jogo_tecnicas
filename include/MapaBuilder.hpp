@@ -13,7 +13,8 @@ public:
 	
 	virtual void buildFase() = 0;
 	virtual void buildJogadores(Heroi* jog) = 0;
-	virtual void buildInimigos(int ini) = 0;
+	virtual void buildJogadores(Heroi* jog, Heroi* jog2) = 0;
+	virtual void buildInimigos() = 0;
 
 	DadosFase* getMapa();
 };

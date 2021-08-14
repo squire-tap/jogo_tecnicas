@@ -66,10 +66,16 @@ void Fase1Builder::buildFase()
 
 void Fase1Builder::buildJogadores(Heroi* jog)
 {
-	dados->incluirJogador(jog);
+	dados->incluirJogador1(jog);
 }
 
-void Fase1Builder::buildInimigos(int ini)
+void Fase1Builder::buildJogadores(Heroi* jog1, Heroi* jog2)
+{
+	dados->incluirJogador1(jog1);
+	dados->incluirJogador2(jog2);
+}
+
+void Fase1Builder::buildInimigos()
 {
 	Inimigo* i_aux = NULL;
 	vector2D<unsigned> dimensoes = tilemap.getDimensoesMapa();
@@ -84,12 +90,16 @@ void Fase1Builder::buildInimigos(int ini)
 			{
 				if (i == 7 && j == 3 || i == 12 && j == 19 || i == 16 && j == 10)
 				{
-					i_aux = new Inimigo1(vector2D<float>(200.0f * j, 200.0f * i), dados->getJogador());
+					i_aux = new Inimigo1(vector2D<float>(200.0f * j, 200.0f * i), dados->getJogador1());
+					if (dados->getJogador2())
+						i_aux->setJogador2(dados->getJogador2());
 					dados->incluirInimigo(i_aux);
 				}
 				else if (rand() % 2 == 1)
 				{
-					i_aux = new Inimigo1(vector2D<float>(200.0f * j, 200.0f * i), dados->getJogador());
+					i_aux = new Inimigo1(vector2D<float>(200.0f * j, 200.0f * i), dados->getJogador1());
+					if (dados->getJogador2())
+						i_aux->setJogador2(dados->getJogador2());
 					dados->incluirInimigo(i_aux);
 				}
 			}
@@ -97,18 +107,24 @@ void Fase1Builder::buildInimigos(int ini)
 			{
 				if (i == 9 && j == 13 || i == 12 && j == 26 || i == 18 && j == 26)
 				{
-					i_aux = new Inimigo2(vector2D<float>(200.0f * j, 200.0f * i), dados->getJogador());
+					i_aux = new Inimigo2(vector2D<float>(200.0f * j, 200.0f * i), dados->getJogador1());
+					if (dados->getJogador2())
+						i_aux->setJogador2(dados->getJogador2());
 					dados->incluirInimigo(i_aux);
 				}
 				else if (rand() % 2 == 1)
 				{
-					i_aux = new Inimigo2(vector2D<float>(200.0f * j, 200.0f * i), dados->getJogador());
+					i_aux = new Inimigo2(vector2D<float>(200.0f * j, 200.0f * i), dados->getJogador1());
+					if (dados->getJogador2())
+						i_aux->setJogador2(dados->getJogador2());
 					dados->incluirInimigo(i_aux);
 				}
 			}
 			if (tilemap[i][j] == 8)
 			{
-				i_aux = new Chefe(vector2D<float>(200.0f * j, 200.0f * i), dados->getJogador());
+				i_aux = new Chefe(vector2D<float>(200.0f * j, 200.0f * i), dados->getJogador1());
+				if (dados->getJogador2())
+					i_aux->setJogador2(dados->getJogador2());
 				dados->incluirInimigo(i_aux);
 			}
 		}

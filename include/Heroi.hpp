@@ -6,7 +6,7 @@
 
 class Heroi : public Atirador
 {
-private:
+protected:
     unsigned int chaveOuvinte;
     bool noChao;
     float recarga;
@@ -19,9 +19,9 @@ public:
     void atualizar(float t);
     bool getDerrotado();
     void desenhar(GerenciadorGrafico *gg);
-    void tratarEvento(const sf::Event &e);
+    virtual void tratarEvento(const sf::Event &e);
     void colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vector2D<float> dimensoesOutro);
-    void atirar();
+    void atirar(bool dir);
 };
 
 #endif

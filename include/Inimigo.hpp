@@ -8,7 +8,8 @@ class Inimigo : public Atirador
 {
 protected:
     /* Ponteiro para saber onde esta o heroi */
-    Heroi* pHeroi;
+    Heroi* pJog1;
+    Heroi* pJog2;
     float esperaTiro;
     
 public:
@@ -16,9 +17,10 @@ public:
     ~Inimigo();
 
     virtual void atualizar(float t) ;
+    void setJogador2(Heroi* jog2);
     void inicializar(GerenciadorGrafico* gg , GerenciadorEventos* ge) ;
     void colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vector2D<float> dimensoesOutro);
-    void atirar();
+    void atirar(bool dir);
     void desenhar(GerenciadorGrafico* gg);
 };
 

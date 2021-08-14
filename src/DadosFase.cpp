@@ -1,7 +1,7 @@
 #include "DadosFase.hpp"
 
 DadosFase::DadosFase(int f):
-fase(f)
+fase(f), jog1(NULL), jog2(NULL)
 {
 }
 
@@ -14,10 +14,16 @@ int DadosFase::getFase()
 	return fase;
 }
 
-void DadosFase::incluirJogador(Heroi* jog)
+void DadosFase::incluirJogador1(Heroi* jog)
 {
-	jogadores.push_back(jog);
+	jog1 = jog;
 }
+
+void DadosFase::incluirJogador2(Heroi* jog)
+{
+	jog2 = jog;
+}
+
 
 void DadosFase::incluirInimigo(Inimigo* ini)
 {
@@ -54,7 +60,12 @@ void DadosFase::registrarEntidades(GerenciadorColisoes* gC, ListaDesenhaveis* Ld
 	}
 }
 
-Heroi* DadosFase::getJogador()
+Heroi* DadosFase::getJogador1()
 {
-	return jogadores[0];
+	return jog1;
+}
+
+Heroi* DadosFase::getJogador2()
+{
+	return jog2;
 }

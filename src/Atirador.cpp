@@ -1,5 +1,6 @@
 #include "Atirador.hpp"
 
+
 Atirador::Atirador(vector2D<float> pos, vector2D<float> vel, vector2D<float> dim, const string caminhoText, int id) : 
 Colidivel(pos, vel, dim, caminhoText, id), podeAtirar(false) , orientacao(true) , vida(0)
 {
@@ -30,7 +31,6 @@ void Atirador::setGerenciadorColisao(GerenciadorColisoes *g)
     gc = g;
 }
 
-void Atirador::atirar()
-{
-    
+void Atirador::atirar(bool dir)
+{    
 }

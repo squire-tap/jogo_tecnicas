@@ -15,10 +15,15 @@ void Inimigo2::atualizar(float t)
 
 	velocidade.y = velocidade.y + 2000 * t;
 
-	if (abs(pHeroi->getPosicao().x - posicao.x) < 600.0f && esperaTiro < 0)
+	if (abs(pJog1->getPosicao().x - posicao.x) < 600.0f && esperaTiro < 0)
 	{
-		atirar();
-		esperaTiro = 0.5;
+		atirar(pJog1);
+		esperaTiro = 1;
+	}
+	if (abs(pJog2->getPosicao().x - posicao.x) < 600.0f && esperaTiro < 0)
+	{
+		atirar(pJog2);
+		esperaTiro = 1;
 	}
 	else
 	{

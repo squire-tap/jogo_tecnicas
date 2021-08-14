@@ -125,8 +125,10 @@ int GerenciadorEstado::processarCodigo(int codigoRetorno)
 
     default:
         cout<<"estado indefinido" << codigoRetorno << endl;
+        exit (1);
         break;
     }
+    return 0;
 }
 
 /* void GerenciadorEstado::inicializar()

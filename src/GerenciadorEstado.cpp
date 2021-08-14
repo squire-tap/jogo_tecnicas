@@ -5,7 +5,7 @@ gg(GG), ge(GE)
 
 {
     /* coloca o menu fase na pilha */
-    menu_fase = new MenuFase();
+    menu_fase = new MenuFase(gg);
     pushEstado(menu_fase);
 }
 
@@ -34,13 +34,13 @@ void GerenciadorEstado::popEstado()
 }
 void GerenciadorEstado::esvaziarPilha()
 {
-    /*  while(pilhaEstados.size() != 0) 
+    while(pilhaEstados.size() != 0) 
     {
         popEstado();
-    } */
+    } 
 }
 
-int GerenciadorEstado::processarCodigo(int codigoRetorno)
+bool GerenciadorEstado::processarCodigo(int codigoRetorno)
 {
     switch (codigoRetorno)
     {
@@ -49,7 +49,7 @@ int GerenciadorEstado::processarCodigo(int codigoRetorno)
     case 1:
 
         cout << "pausar" << endl;
-        menu_pause = new MenuPause();
+        menu_pause = new MenuPause(gg);
         pushEstado(menu_pause);
         break;
 
@@ -58,15 +58,14 @@ int GerenciadorEstado::processarCodigo(int codigoRetorno)
         cout << "game over" << endl;
         //pilhaEstados.pop();
         popEstado();
-        menu_fase = new MenuFase();
+        menu_fase = new MenuFase(gg);
         pushEstado(menu_fase);
         break;
 
     case 3:
         cout << "fase concluída" << endl;
-        //pilhaEstados.pop();
         popEstado();
-        menu_transicao = new MenuTransicao();
+        menu_transicao = new MenuTransicao(gg);
         pushEstado(menu_transicao);
         break;
 
@@ -74,17 +73,15 @@ int GerenciadorEstado::processarCodigo(int codigoRetorno)
     case 4:
         /* menu pause , ou continua o jogo ou volta para o menu_fase */
         cout << "continuar" << endl;
-        //pilhaEstados.pop();
         popEstado();
         break;
 
     case 5:
         cout << "indo para menu fase" << endl;
-        //pilhaEstados.pop();
-        //pilhaEstados.pop();
+        
         popEstado();
         popEstado();
-        menu_fase = new MenuFase();
+        menu_fase = new MenuFase(gg);
         pushEstado(menu_fase);
         break;
 
@@ -92,7 +89,6 @@ int GerenciadorEstado::processarCodigo(int codigoRetorno)
 
     case 6:
         cout << "indo fase 1" << endl;
-        //pilhaEstados.pop();
         popEstado();
         fase1 = new Fase1(gg, ge);
         pushEstado(fase1);
@@ -119,14 +115,19 @@ int GerenciadorEstado::processarCodigo(int codigoRetorno)
         cout << "voltando para menu fase" << endl;
         //pilhaEstados.pop();
         popEstado();
-        menu_fase = new MenuFase();
+        menu_fase = new MenuFase(gg);
         pushEstado(menu_fase);
         break;
+    
+    case 10:
+        cout << "saindo do jogo" << endl;
+        return true;
 
     default:
         cout<<"estado indefinido" << codigoRetorno << endl;
         break;
     }
+    return false;
 }
 
 /* void GerenciadorEstado::inicializar()

@@ -3,11 +3,13 @@
 #include "stdafx.hpp"
 #include "Menu.hpp"
 
-class MenuTransicao : public Menu {
+class MenuTransicao : public Menu
+{
 
-    public:
-        int executar();
-
+public:
+    MenuTransicao(GerenciadorGrafico *gg);
+    ~MenuTransicao();
+    int executar();
 };
 
 #endif

@@ -5,7 +5,7 @@ Principal::Principal():
 gerenciadorGrafico(),
 gerenciadorEventos(),
 gerenciadorEstado( &gerenciadorGrafico, &gerenciadorEventos) ,
-IDjanelaFechada {gerenciadorEventos.adicionarOuvinteOutro([this](const sf::Event& e) { janelaFechada(e); })},
+//IDjanelaFechada {gerenciadorEventos.adicionarOuvinteOutro([this](const sf::Event& e) { janelaFechada(e); })},
 terminar(false)
 {
     
@@ -23,7 +23,7 @@ void Principal::executar()
     /* Enquanto terminar for false */
     while (!terminar)
     {
-        gerenciadorEstado.executar();
+        terminar = gerenciadorEstado.executar();
     }
 }
 

@@ -44,25 +44,26 @@ pf()
 Fase2::~Fase2()
 {
     listaAmigos.destruirDesenhavel();
+    ge->removerOuvintes();
+    gc.removerTodos();
 }
 
 int Fase2::executar()
 {
     /* Enquanto terminar for false */
+    ge->tratarEventos();
+    jogador->setVelocidade(vector2D<float>(0.0f , 0.0f));
+    pausado = false;
     while (!terminar)
     {
         if (jogador->getDerrotado())
         {
             listaAmigos.destruirDesenhavel();
-            gc.removerTodos();
-            //ge->~GerenciadorEventos();
             return 2;
         }
         if (termino())
         {
             listaAmigos.destruirDesenhavel();
-            gc.removerTodos();
-            //ge->~GerenciadorEventos();
             return 3;
         }
         if (pausado)

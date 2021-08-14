@@ -40,15 +40,16 @@ pf()
 Fase1::~Fase1()
 {
     listaAmigos.destruirDesenhavel();
-    ge->~GerenciadorEventos();
-    ge->~GerenciadorEventos();
-    gc.removerTodos();
+    ge->removerOuvintes();
     gc.removerTodos();
 }
 
 int Fase1::executar()
 {
     /* Enquanto terminar for false */
+    ge->tratarEventos();
+    jogador->setVelocidade(vector2D<float>(0.0f , 0.0f));
+    pausado = false;
     while (!terminar)
     {
         
@@ -62,8 +63,9 @@ int Fase1::executar()
             return 3;
         }
 
-        sf::Time t = relogio.getElapsedTime();
-        relogio.restart();
+        sf::Time t = relogio.restart();
+
+        //pausado = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::P);
 
         if (pausado)
         {   

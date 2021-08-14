@@ -8,10 +8,6 @@ GerenciadorEventos::GerenciadorEventos()
 GerenciadorEventos::~GerenciadorEventos()
 {
     janela = NULL;
-    
-    ouvintesMouse.clear();
-    ouvintesTeclado.clear();
-    ouvintesOutros.clear();
 }
 void GerenciadorEventos::tratarEventos()
 {
@@ -84,4 +80,11 @@ unsigned int GerenciadorEventos::adicionarOuvinteOutro(function<void(const sf::E
 void GerenciadorEventos::removerOuvinteOutro(int id)
 {
     ouvintesOutros.erase(id);
+}
+
+void GerenciadorEventos::removerOuvintes()
+{
+    ouvintesMouse.clear();
+    ouvintesTeclado.clear();
+    ouvintesOutros.clear();
 }

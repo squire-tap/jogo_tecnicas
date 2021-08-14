@@ -41,6 +41,8 @@ int GerenciadorColisoes::estadoColidindo(Colidivel* p1, Colidivel* p2)
 			return 3;
 		else if ((fabs(distancia.y) < fabs(distancia.x) && distancia.x < 0))
 			return 4;
+		else
+			return -1;
 	}
 	else
 		return 0;

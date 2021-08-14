@@ -21,6 +21,7 @@ public:
 
 	void buildFase();
 	void buildJogadores(Heroi* jog);
-	void buildInimigos(int ini);
+	void buildJogadores(Heroi* jog1, Heroi* jog2);
+	void buildInimigos();
 };
 

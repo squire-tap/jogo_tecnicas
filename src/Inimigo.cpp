@@ -1,12 +1,13 @@
 #include "Inimigo.hpp"
 
 Inimigo::Inimigo(vector2D<float> pos, vector2D<float> vel, vector2D<float> dim, const string caminhoText, int id, Heroi *p) : 
-Atirador(pos, vel, dim, caminhoText, 2), pHeroi(p)
+Atirador(pos, vel, dim, caminhoText, 2), pJog1(p), pJog2(NULL)
 {
     //adição vida do inimigo
     vida = 10;
 	esperaTiro = 0;
 }
+
 Inimigo::~Inimigo()
 {
 
@@ -14,20 +15,30 @@ Inimigo::~Inimigo()
 
 void Inimigo::atualizar(float t)
 {
-    posicao += (velocidade + correcaoColisao) * t;
+    /*posicao += (velocidade + correcaoColisao) * t;
     correcaoColisao = vector2D<float>(0.0f, 0.0f);
 
     velocidade.y = velocidade.y + 2000 * t;
     
-    if(abs(pHeroi->getPosicao().x - posicao.x)  < 600.0f && esperaTiro < 0)
+    if(abs(pJog1->getPosicao().x - posicao.x)  < 600.0f && esperaTiro < 0)
 	{
-		atirar();
+		atirar(pJog1);
+		esperaTiro = 1;
+	}
+	if (abs(pJog2->getPosicao().x - posicao.x) < 600.0f && esperaTiro < 0)
+	{
+		atirar(pJog2);
 		esperaTiro = 1;
 	}
 	else
 	{
 		esperaTiro -= 1 * t;
-	}
+	}*/
+}
+
+void Inimigo::setJogador2(Heroi* jog2)
+{
+	pJog2 = jog2;
 }
 
 void Inimigo::inicializar(GerenciadorGrafico* gg, GerenciadorEventos* ge)
@@ -81,14 +92,14 @@ void Inimigo::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, ve
 }
 
 
-void Inimigo::atirar()
+void Inimigo::atirar(bool dir)
 {
 	/* Cria a munição */
     Municao *p = NULL;
     float correcaoSaidaBalaX = 45.0f;
     float correcaoSaidaBalaY = 8.0f;
 	/* Se o jogador estiver atras do inimigo a bala sai em direção ao jogador */
-	if ( pHeroi->getPosicao().x /* jogador */ <  posicao.x /* inimigo */) /* - */
+	if (!dir) /* - */
 	{
 		orientacao = false;
 		p = new Municao(posicao + vector2D<float>(-correcaoSaidaBalaX, -correcaoSaidaBalaY), vector2D<float>(-500.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -2);

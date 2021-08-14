@@ -48,6 +48,10 @@ public:
     {
         return vector2D<TIPO>(x * d, y * d);
     }
+    vector2D<TIPO> operator/(double d)
+    {
+        return vector2D<TIPO>(x / d, y / d);
+    }
     /*         TIPO operator*(vector2D<TIPO> v) */
     /*         { */
     /*             return x*v.x + y*v.y */

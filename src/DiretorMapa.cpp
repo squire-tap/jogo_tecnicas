@@ -9,11 +9,20 @@ DiretorMapa::~DiretorMapa()
 {
 }
 
-DadosFase* DiretorMapa::criarMapa(Heroi* jog, int ini)
+DadosFase* DiretorMapa::criarMapa(Heroi* jog)
 {
 	builder->buildFase();
 	builder->buildJogadores(jog);
-	builder->buildInimigos(ini);
+	builder->buildInimigos();
+
+	return builder->getMapa();
+}
+
+DadosFase* DiretorMapa::criarMapa(Heroi* jog1, Heroi* jog2)
+{
+	builder->buildFase();
+	builder->buildJogadores(jog1, jog2);
+	builder->buildInimigos();
 
 	return builder->getMapa();
 }

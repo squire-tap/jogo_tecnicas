@@ -1,9 +1,10 @@
 #include "Heroi.hpp"
 
+
 Heroi::Heroi(vector2D<float> pos , vector2D<float> vel , vector2D<float> dim , const string caminhoText, int id ) :
 Atirador(pos, vel, dim , caminhoText, 1)  , noChao(false), recarga(0), derrotado(false)
 {
-    vida = 1;
+    vida = 30;
 }
 
 Heroi::~Heroi()
@@ -93,7 +94,7 @@ void Heroi::tratarEvento(const sf::Event &e)
             switch (e.mouseButton.button)
             {
             case sf::Mouse::Left:
-                atirar() ;
+                atirar(orientacao) ;
                 break;
 
             default:
@@ -167,7 +168,7 @@ void Heroi::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vect
     }
 }
 
-void Heroi::atirar()
+void Heroi::atirar(bool dir)
 {
     if (recarga <= 0)
     {
@@ -176,7 +177,7 @@ void Heroi::atirar()
         float correcaoSaidaBalaX = 85.0f;
         float correcaoSaidaBalaY = 12.5f;
         /* Se for o heroi que disparou */
-        if (orientacao)
+        if (dir)
             p = new Municao(posicao + vector2D<float>(correcaoSaidaBalaX, correcaoSaidaBalaY), vector2D<float>(500.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -1);
         else
             p = new Municao(posicao + vector2D<float>(-correcaoSaidaBalaX, correcaoSaidaBalaY), vector2D<float>(-500.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -1);

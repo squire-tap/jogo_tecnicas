@@ -125,6 +125,7 @@ bool GerenciadorEstado::processarCodigo(int codigoRetorno)
 
     default:
         cout<<"estado indefinido" << codigoRetorno << endl;
+        exit (1);
         break;
     }
     return false;

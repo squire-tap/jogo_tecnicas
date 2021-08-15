@@ -11,6 +11,7 @@
 #include "vector2D.hpp"
 #include <SFML/Graphics.hpp>
 #include <stdio.h>
+#include <fstream>
 #include <iostream>
 #include <set>
 #include <iterator>

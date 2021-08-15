@@ -29,7 +29,7 @@ class GerenciadorEstado{
         void pushEstado(Estado* p);
         void popEstado();
         void esvaziarPilha();
-        bool processarCodigo(int codigoRetorno);
+        int processarCodigo(int codigoRetorno);
 };
 
 

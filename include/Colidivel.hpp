@@ -9,6 +9,7 @@ protected:
 	int id;
 	vector2D<float> correcaoColisao;
 	bool existe;
+	int vida;
 
 public:
 	Colidivel(vector2D<float> pos = (0.0f , 0.0f), vector2D<float> vel = (0.0f , 0.0f), vector2D<float> dim = (0.0f , 0.0f), const string caminhoText = " ", int id = 0);
@@ -16,6 +17,9 @@ public:
 	virtual void colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vector2D<float> dimensoesOutro) = 0;
 	int getId();
 	bool getExiste();
+
+	void setVida(int v);
+	int getVida();
 };
 
 #endif

@@ -23,6 +23,8 @@ public:
     vector2D<float> getPosicao();
     vector2D<float> getDimensao();
     void setVelocidade(vector2D<float> velo);
+    void setPosicao(vector2D<float> pos);
+    vector2D<float> getVelocidade();
 
 };
 

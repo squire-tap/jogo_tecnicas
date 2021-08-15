@@ -171,7 +171,6 @@ TL lista<TL>::voltarInicio()
     }
     else
     {
-        /* cout << "Nao possui inicio a Lista de Personagens" << endl; */
         return nullptr;
     };
 }

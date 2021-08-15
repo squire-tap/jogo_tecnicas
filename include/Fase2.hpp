@@ -44,5 +44,9 @@ public:
     void janelaFechada(const sf::Event& e);
     void menuPausa(const sf::Event& e);
 
+    void salvar();
+    void recuperar();
+    int getPontuacao();
+
     bool termino();
 };

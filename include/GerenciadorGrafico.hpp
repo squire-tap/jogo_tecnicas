@@ -22,7 +22,6 @@ public:
     void mostrar();
     /* O const no final significa que se esse metodo for chamado não ira alterar nenhum atributo da classe */
     sf::RenderWindow* getJanela() const; 
-    void desenhaMenus(sf::Text* TEXTO , int linhas_na_tela);
 };
 
 #endif

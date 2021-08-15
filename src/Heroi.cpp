@@ -2,7 +2,7 @@
 
 
 Heroi::Heroi(vector2D<float> pos , vector2D<float> vel , vector2D<float> dim , const string caminhoText, int id ) :
-Atirador(pos, vel, dim , caminhoText, 1)  , noChao(false), recarga(0), derrotado(false)
+Atirador(pos, vel, dim , caminhoText, id)  , noChao(false), recarga(0), derrotado(false)
 {
     vida = 30;
 }
@@ -26,6 +26,8 @@ void Heroi::atualizar(float t)
     correcaoColisao = vector2D<float>(0.0f, 0.0f);
     
     velocidade.y = velocidade.y + 2000 * t;
+    if (velocidade.y > 5000)
+        velocidade.y = 5000;
 
     recarga -= 1 * t;
 }
@@ -117,7 +119,7 @@ void Heroi::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vect
             correcaoColisao.x = -500;
     }
 
-    if (idOutro == 4)
+    if (idOutro == 25)
     {
         /*Pula como reação ao contato com o cacto*/
         velocidade.y = -1000;
@@ -130,7 +132,7 @@ void Heroi::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vect
     }
 
     /*mudar id da tile*/
-    if (idOutro == 3 || idOutro == 5)
+    if (idOutro == 21 || idOutro == 22 || idOutro == 23 || idOutro == 24)
     {
         if (direcao == 1)
         {
@@ -156,7 +158,7 @@ void Heroi::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vect
         }
     }
     
-    if(idOutro == -2)
+    if(idOutro == 32)
     {
         //Se a colisao for com a bala do inimigo , decresce a vida em uma unidade
         vida -= 1;
@@ -178,9 +180,9 @@ void Heroi::atirar(bool dir)
         float correcaoSaidaBalaY = 12.5f;
         /* Se for o heroi que disparou */
         if (dir)
-            p = new Municao(posicao + vector2D<float>(correcaoSaidaBalaX, correcaoSaidaBalaY), vector2D<float>(800.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -1);
+            p = new Municao(posicao + vector2D<float>(correcaoSaidaBalaX, correcaoSaidaBalaY), vector2D<float>(500.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", 31);
         else
-            p = new Municao(posicao + vector2D<float>(-correcaoSaidaBalaX, correcaoSaidaBalaY), vector2D<float>(-800.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -1);
+            p = new Municao(posicao + vector2D<float>(-correcaoSaidaBalaX, correcaoSaidaBalaY), vector2D<float>(-500.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", 31);
 
         /* Adiciona a municao à lista */
         lista->inserir(p);

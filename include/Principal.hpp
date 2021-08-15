@@ -6,7 +6,6 @@
 #include "GerenciadorEstado.hpp"
 #include "ListaDesenhaveis.hpp"
 #include "MenuFase.hpp"
-#include "MenuTransicao.hpp"
 #include "MenuPause.hpp"
 #include "Fase1.hpp"
 #include "Fase2.hpp"

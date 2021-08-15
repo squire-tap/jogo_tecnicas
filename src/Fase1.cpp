@@ -38,6 +38,7 @@ pf(vector2D<float>(1920.0f, 1080.0f) , "assets/PlanoFundo.png")
         DM = new DiretorMapa(FB1);
         mp = DM->criarMapa(jogador1, jogador2);
         mp->registrarEntidades(&gc, &listaAmigos);
+        //recuperar();
 
         /* Atribui as condi��es iniciais para as entidades , tanto na parte gr�fica como nos eventos */
         listaAmigos.inicializarDesenhavel(gg, ge);
@@ -60,10 +61,12 @@ int Fase1::executar()
     if(jogador2)
         jogador2->setVelocidade(vector2D<float>(0.0f, 0.0f));
     pausado = false;
+
+
     while (!terminar)
     {
-        
-        
+       
+         
         if (jogador1->getDerrotado())
         {
             listaAmigos.destruirDesenhavel();
@@ -87,10 +90,10 @@ int Fase1::executar()
         sf::Time t = relogio.restart();
 
         //pausado = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::P);
-
         if (pausado)
         {   
             pausado = false;
+            salvar();
             return 1;
         }
         
@@ -102,7 +105,6 @@ int Fase1::executar()
 
         listaAmigos.atualizaDesenhavel(t.asSeconds());
         gc.verificarColisoes();
-
         if (jogador2)
         {
             gg->centralizar((jogador1->getPosicao() + jogador2->getPosicao()) / 2.0);
@@ -136,13 +138,37 @@ void Fase1::menuPausa(const sf::Event& e)
     }
 }
 
+void Fase1::salvar()
+{
+    gc.salvar();
+}
+
+void Fase1::recuperar()
+{
+    listaAmigos.destruirDesenhavel();
+    gc.limpaDesenhaveis();
+
+    listaAmigos.inserir(jogador1);
+    gc.adicionarColidivel(jogador1);
+
+    listaAmigos.inserir(jogador2);
+    gc.adicionarColidivel(jogador2);
+
+    gc.recuperar(jogador1, jogador2);
+}
+
+int Fase1::getPontuacao()
+{
+    return gc.getPontuacao();
+}
+
 bool Fase1::termino()
 {
-    if (fabs(jogador1->getPosicao().y - vector2D<float>(5600.0f, 600.0f).y) < vector2D<float>(100.0f, 100.0f).y&&
+    if (fabs(jogador1->getPosicao().y - vector2D<float>(5600.0f, 600.0f).y) < vector2D<float>(100.0f, 100.0f).y &&
         fabs(jogador1->getPosicao().x - vector2D<float>(5600.0f, 600.0f).x) < vector2D<float>(100.0f, 100.0f).x)
         return true;
     else if (jogador2)
-        if (fabs(jogador2->getPosicao().y - vector2D<float>(5600.0f, 600.0f).y) < vector2D<float>(100.0f, 100.0f).y&&
+        if (fabs(jogador2->getPosicao().y - vector2D<float>(5600.0f, 600.0f).y) < vector2D<float>(100.0f, 100.0f).y &&
             fabs(jogador2->getPosicao().x - vector2D<float>(5600.0f, 600.0f).x) < vector2D<float>(100.0f, 100.0f).x)
             return true;
     else

@@ -84,7 +84,7 @@ int MenuFase::executar()
 
         GG->getJanela()->clear();
 
-        pf.setPosicao(vector2D<float>(1980.0/2.f ,1080/2.f ));
+        pf.setPosicao(vector2D<float>(1920.0/2.0f ,975/2.0f ));
         pf.desenhar(GG);
 
         GG->desenhaMenus(texto, linhas);

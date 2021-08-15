@@ -15,11 +15,13 @@ pause(vector2D<float>(500.0f, 500.0f) , "assets/pause.png")
     texto[0].setFont(fonte);
     texto[0].setColor(sf::Color::Red);
     texto[0].setString("Continuar");
+    texto[0].setOrigin(sf::Vector2f(texto[0].getLocalBounds().width/2 , texto[0].getLocalBounds().height));
     texto[0].setPosition(sf::Vector2f(largura / 2 , altura / ( linhas + 1) * 1));
 
     texto[1].setFont(fonte);
     texto[1].setColor(sf::Color::Black);
     texto[1].setString("Menu Fase");
+    texto[1].setOrigin(sf::Vector2f(texto[1].getLocalBounds().width/2 , texto[1].getLocalBounds().height));
     texto[1].setPosition(sf::Vector2f(largura / 2 , altura / ( linhas + 1) * 2));
 
 }

@@ -56,7 +56,6 @@ bool GerenciadorEstado::processarCodigo(int codigoRetorno)
     case 2:
 
         cout << "game over" << endl;
-        //pilhaEstados.pop();
         popEstado();
         menu_fase = new MenuFase(gg);
         pushEstado(menu_fase);
@@ -65,8 +64,8 @@ bool GerenciadorEstado::processarCodigo(int codigoRetorno)
     case 3:
         cout << "fase concluída" << endl;
         popEstado();
-        menu_transicao = new MenuTransicao(gg);
-        pushEstado(menu_transicao);
+        fase2 = new Fase2(gg , ge);
+        pushEstado(fase2);
         break;
 
     /* caso 4 e caso 5 ---------> menu_pause */
@@ -96,7 +95,6 @@ bool GerenciadorEstado::processarCodigo(int codigoRetorno)
 
     case 7:
         cout << "indo fase 2" << endl;
-        //pilhaEstados.pop();
         popEstado();
         fase2 = new Fase2(gg, ge);
         pushEstado(fase2);
@@ -110,17 +108,16 @@ bool GerenciadorEstado::processarCodigo(int codigoRetorno)
         break;
 
     /* caso 8 e caso 9 ------------> menu_transicao retorna */
-    case 8:
+    /* case 8:
         cout << "transitando fase 2" << endl;
-        //pilhaEstados.pop();
         popEstado();
         fase2 = new Fase2(gg, ge);
         pushEstado(fase2);
-        break;
+        break; */
 
+    /* Terminou a fase 2 e vai para o menu */
     case 9:
         cout << "voltando para menu fase" << endl;
-        //pilhaEstados.pop();
         popEstado();
         menu_fase = new MenuFase(gg);
         pushEstado(menu_fase);

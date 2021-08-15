@@ -6,7 +6,7 @@
 #include "Fase2.hpp"
 #include "MenuFase.hpp"
 #include "MenuPause.hpp"
-#include "MenuTransicao.hpp"
+
 
 class GerenciadorEstado{
     private:
@@ -15,7 +15,6 @@ class GerenciadorEstado{
         Fase2* fase2;
         MenuFase* menu_fase;
         MenuPause* menu_pause;
-        MenuTransicao* menu_transicao;
         GerenciadorGrafico* gg;
         GerenciadorEventos* ge;
         

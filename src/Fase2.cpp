@@ -81,7 +81,7 @@ int Fase2::executar()
         {
             listaAmigos.destruirDesenhavel();
             gc.removerTodos();
-            return 3;
+            return 9;
         }
 
 

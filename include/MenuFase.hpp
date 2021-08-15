@@ -5,7 +5,7 @@
 #include "PlanoFundo.hpp"
 
 
-class MenuFase : public Menu{
+class MenuFase : public Menu::Menu{
 
     private:
         int linhas;

@@ -4,7 +4,7 @@
 #include "Menu.hpp"
 #include "PlanoFundo.hpp"
 
-class MenuPause : public Menu{
+class MenuPause : public Menu::Menu{
 
     private:
         int linhas;

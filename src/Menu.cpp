@@ -1,7 +1,7 @@
 #include "Menu.hpp"
 
 
-Menu::Menu(GerenciadorGrafico* gg): 
+Menu::Menu::Menu(GerenciadorGrafico* gg): 
 GG(gg),
 selectedItemIndex(0)
 {
@@ -13,12 +13,12 @@ selectedItemIndex(0)
 
 }
 
-Menu::~Menu()
+Menu::Menu::~Menu()
 {
 
 }
 
-void Menu::moveUp()
+void Menu::Menu::moveUp()
 {
     if(selectedItemIndex - 1 >= 0)
     {
@@ -28,7 +28,8 @@ void Menu::moveUp()
     }
 }
 
-void Menu::moveDown()
+
+void Menu::Menu::moveDown()
 {
     if(selectedItemIndex + 1 < MAXIMO_NUMERO_DE_ITENS)
     {

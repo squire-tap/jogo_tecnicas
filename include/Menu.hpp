@@ -5,6 +5,8 @@
 #include "Estado.hpp"
 #include "GerenciadorGrafico.hpp"
 
+namespace Menu{
+
 class Menu : public Estado {
 
     protected:
@@ -17,7 +19,7 @@ class Menu : public Estado {
     public:
 
         Menu(GerenciadorGrafico* gg);
-        ~Menu(); 
+       ~Menu(); 
 
         
         void moveUp();
@@ -25,5 +27,7 @@ class Menu : public Estado {
         virtual int executar() = 0;
 
 };
+
+}
 
 #endif

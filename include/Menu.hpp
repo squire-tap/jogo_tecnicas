@@ -1,6 +1,6 @@
 #ifndef MENU_HPP
 #define MENU_HPP
-#define MAXIMO_NUMERO_DE_ITENS 3
+#define MAXIMO_NUMERO_DE_ITENS 4
 #include "stdafx.hpp"
 #include "Estado.hpp"
 #include "GerenciadorGrafico.hpp"

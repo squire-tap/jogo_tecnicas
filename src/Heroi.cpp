@@ -178,9 +178,9 @@ void Heroi::atirar(bool dir)
         float correcaoSaidaBalaY = 12.5f;
         /* Se for o heroi que disparou */
         if (dir)
-            p = new Municao(posicao + vector2D<float>(correcaoSaidaBalaX, correcaoSaidaBalaY), vector2D<float>(500.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -1);
+            p = new Municao(posicao + vector2D<float>(correcaoSaidaBalaX, correcaoSaidaBalaY), vector2D<float>(800.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -1);
         else
-            p = new Municao(posicao + vector2D<float>(-correcaoSaidaBalaX, correcaoSaidaBalaY), vector2D<float>(-500.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -1);
+            p = new Municao(posicao + vector2D<float>(-correcaoSaidaBalaX, correcaoSaidaBalaY), vector2D<float>(-800.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -1);
 
         /* Adiciona a municao à lista */
         lista->inserir(p);

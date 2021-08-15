@@ -3,7 +3,8 @@
 MenuPause::MenuPause(GerenciadorGrafico *gg):
 Menu(gg),
 linhas(2),
-pf()
+pf(vector2D<float>(1920.0f, 1080.0f) , "assets/PlanoFundo.png"),
+pause(vector2D<float>(500.0f, 500.0f) , "assets/pause.png")
 
 {
     auto largura = gg->getJanela()->getSize().x;
@@ -76,8 +77,15 @@ int MenuPause::executar()
 
         GG->getJanela()->clear();
 
+        /* plano de fundo */
         pf.setPosicao(vector2D<float>(1920.0/2.0f ,975/2.0f ));
         pf.desenhar(GG);
+
+        /* icone pause */
+        pause.setPosicao(vector2D<float>(500.0f , 975/2.0f));
+        pause.desenhar(GG);
+
+
 
         GG->desenhaMenus(texto, linhas);
 

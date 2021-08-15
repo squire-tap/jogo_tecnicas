@@ -101,6 +101,13 @@ bool GerenciadorEstado::processarCodigo(int codigoRetorno)
         fase2 = new Fase2(gg, ge);
         pushEstado(fase2);
         break;
+    
+    case 11:
+        cout << "indo para o leaderboard" << endl;
+        popEstado();
+        /* leaderboard = new MenuLeader(); */
+        /* pushEstado(leaderboard); */
+        break;
 
     /* caso 8 e caso 9 ------------> menu_transicao retorna */
     case 8:
@@ -122,6 +129,7 @@ bool GerenciadorEstado::processarCodigo(int codigoRetorno)
     case 10:
         cout << "saindo do jogo" << endl;
         return true;
+    
 
     default:
         cout<<"estado indefinido" << codigoRetorno << endl;

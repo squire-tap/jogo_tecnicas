@@ -10,8 +10,7 @@ IDjanelaFechada{ge->adicionarOuvinteOutro([this](const sf::Event& e) { janelaFec
 IDmenuPausa{ge->adicionarOuvinteTeclado([this](const sf::Event& e) { menuPausa(e); })},
 terminar{ false }, 
 pausado{ false },
-//jogador(jog),
-pf()
+pf(vector2D<float>(1920.0f, 1080.0f) , "assets/PlanoFundo2.png")
 
 {
         /* Criando os primeiros personagem */

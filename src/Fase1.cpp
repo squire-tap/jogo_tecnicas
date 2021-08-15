@@ -8,7 +8,7 @@ IDjanelaFechada{ ge->adicionarOuvinteOutro([this](const sf::Event& e) { janelaFe
 IDmenuPausa{ ge->adicionarOuvinteTeclado([this](const sf::Event& e) { menuPausa(e); })},
 terminar{ false }, 
 pausado{ false },
-pf()
+pf(vector2D<float>(1920.0f, 1080.0f) , "assets/PlanoFundo.png")
 {
         /* Criando os primeiros personagem */
 
@@ -133,7 +133,6 @@ void Fase1::menuPausa(const sf::Event& e)
     {
         pausado = true;
         int i = pausado;
-        cout << i << endl;
     }
 }
 

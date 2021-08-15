@@ -1,7 +1,7 @@
 #include "PlanoFundo.hpp"
 
-PlanoFundo::PlanoFundo(vector2D<float> dimensao):
-Desenhavel(vector2D<float>(0.0f, 0.0f), vector2D<float>(0.0f, 0.0f), dimensao, "assets/PlanoFundo.png")
+PlanoFundo::PlanoFundo(vector2D<float> dimensao , const string Caminho):
+Desenhavel(vector2D<float>(0.0f, 0.0f), vector2D<float>(0.0f, 0.0f), dimensao, Caminho)
 {
 }
 

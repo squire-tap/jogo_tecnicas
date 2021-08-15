@@ -2,19 +2,20 @@
 
 MenuFase::MenuFase(GerenciadorGrafico *gg) :
 Menu(gg),
-linhas(3),
-pf()
+linhas(4),
+pf(vector2D<float>(1920.0f, 1080.0f) , "assets/PlanoFundo.png"),
+titulo(vector2D<float>(1000.0f , 200.0f) , "assets/dangerous_west.png"),
+revolver(vector2D<float>(500.0f , 500.0f) , "assets/revolver.png"),
+revolver2(vector2D<float>(500.0f , 500.0f) , "assets/revolver2.png")
 {
-
 
     auto altura = gg->getJanela()->getSize().y;
     auto largura = gg->getJanela()->getSize().x;
 
     gg->centralizar( vector2D<float>(float(largura)/2.0f , float(altura)/2.0f ) );
 
-    cout << altura << endl;
-    cout << largura << endl;
-
+    /* Titulo */
+    
     texto[0].setFont(fonte);
     texto[0].setColor(sf::Color::Red);
     texto[0].setString("Fase 1");
@@ -27,8 +28,13 @@ pf()
 
     texto[2].setFont(fonte);
     texto[2].setColor(sf::Color::Black);
-    texto[2].setString("Sair");
+    texto[2].setString("Leaderboard");
     texto[2].setPosition(sf::Vector2f(largura / 2, altura / (linhas + 1) * 3));
+
+    texto[3].setFont(fonte);
+    texto[3].setColor(sf::Color::Black);
+    texto[3].setString("Sair");
+    texto[3].setPosition(sf::Vector2f(largura / 2, altura / (linhas + 1) * 4));
 }
 
 MenuFase::~MenuFase()
@@ -63,6 +69,8 @@ int MenuFase::executar()
                         return 6;
                     if(texto[selectedItemIndex].getString() == "Fase 2")
                         return 7;
+                    if(texto[selectedItemIndex].getString() == "Leaderboard")
+                        return 11;
                     if(texto[selectedItemIndex].getString() == "Sair")
                         return 10;
                     break;
@@ -86,6 +94,17 @@ int MenuFase::executar()
 
         pf.setPosicao(vector2D<float>(1920.0/2.0f ,975/2.0f ));
         pf.desenhar(GG);
+
+        /* Titulo */
+        titulo.setPosicao(vector2D<float>(1920.0/2.0f , 100.0f));
+        titulo.desenhar(GG);
+
+        /* revolver */
+        revolver.setPosicao(vector2D<float>(500.0f , 975.0/2.0f));
+        revolver.desenhar(GG);
+
+        revolver2.setPosicao(vector2D<float>( 1420.0f ,975.0/2.0f));
+        revolver2.desenhar(GG); 
 
         GG->desenhaMenus(texto, linhas);
 

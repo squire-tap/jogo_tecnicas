@@ -10,6 +10,9 @@ class MenuFase : public Menu{
     private:
         int linhas;
         PlanoFundo pf;
+        PlanoFundo titulo;
+        PlanoFundo revolver;
+        PlanoFundo revolver2;
 
     public:
         MenuFase(GerenciadorGrafico* gg);

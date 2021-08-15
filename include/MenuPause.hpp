@@ -9,6 +9,7 @@ class MenuPause : public Menu{
     private:
         int linhas;
         PlanoFundo pf;
+        PlanoFundo pause;
 
     public:
         MenuPause(GerenciadorGrafico* gg);

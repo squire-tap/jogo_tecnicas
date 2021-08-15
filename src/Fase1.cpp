@@ -29,7 +29,7 @@ pf()
         listaAmigos.inserir(jogador2);
         gc.adicionarColidivel(jogador2);
 
-        /*DiretorMapa* DM = NULL;
+        DiretorMapa* DM = NULL;
         Fase1Builder* FB1 = NULL;
         
         DadosFase* mp = NULL;
@@ -37,8 +37,8 @@ pf()
 
         DM = new DiretorMapa(FB1);
         mp = DM->criarMapa(jogador1, jogador2);
-        mp->registrarEntidades(&gc, &listaAmigos);*/
-        recuperar();
+        mp->registrarEntidades(&gc, &listaAmigos);
+        //recuperar();
 
         /* Atribui as condi��es iniciais para as entidades , tanto na parte gr�fica como nos eventos */
         listaAmigos.inicializarDesenhavel(gg, ge);

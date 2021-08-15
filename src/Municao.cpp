@@ -26,17 +26,18 @@ void Municao::inicializar(GerenciadorGrafico *gg, GerenciadorEventos *ge)
 void Municao::colidir(int direcao , int idOutro , vector2D<float> posicaoOutro , vector2D<float> dimensoesOutro)
 {
     /* Se a municao for do heroi*/
-    if (id == -1)
+    if (id == 31)
     {
-            /* Heroi */     /* Ela mesma */   /* A bala inimiga */
-        if (idOutro != 1 && idOutro != -1 && idOutro != -2 && idOutro != 4 && idOutro != 5)
+                       /* Heroi */        /* Ela mesma */   /* A bala inimiga */
+        if (idOutro != 1 && idOutro != 2 && idOutro != 31 && idOutro != 32 && idOutro != 24 && idOutro != 25)
             existe = false;
     }
 
     /* Se a municao for do inimigo */
     else
             /* Inimigo */   /* Ela mesma */   /* Bala Heroi */
-        if (idOutro != 2 && idOutro != -2 && idOutro != -1 && idOutro != 4 && idOutro != 5)
+        if (idOutro != 11 && idOutro != 12 && idOutro != 13 && idOutro != 32 && idOutro != 31 && idOutro != 24 && idOutro != 25)
+        {
             existe = false;
-
+        }
 }

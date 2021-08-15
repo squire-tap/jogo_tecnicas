@@ -80,11 +80,3 @@ sf::RenderWindow *GerenciadorGrafico::getJanela() const
 {
     return janela;
 }
-
-void GerenciadorGrafico::desenhaMenus(sf::Text* TEXTO , int linhas_na_tela)
-{
-    for(int i = 0 ; i < linhas_na_tela ; i++)
-    {
-        janela->draw(TEXTO[i]);
-    }
-}

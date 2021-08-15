@@ -1,7 +1,7 @@
 #include "Inimigo.hpp"
 
 Inimigo::Inimigo(vector2D<float> pos, vector2D<float> vel, vector2D<float> dim, const string caminhoText, int id, Heroi *p) : 
-Atirador(pos, vel, dim, caminhoText, 2), pJog1(p), pJog2(NULL)
+Atirador(pos, vel, dim, caminhoText, id), pJog1(p), pJog2(NULL)
 {
     //adição vida do inimigo
     vida = 10;
@@ -52,7 +52,7 @@ void Inimigo::inicializar(GerenciadorGrafico* gg, GerenciadorEventos* ge)
 void Inimigo::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, vector2D<float> dimensoesOutro)
 {
     //Se a colisao for com a bala do jogador , decresce a vida
-	if (idOutro == -1)
+	if (idOutro == 31)
 	{
 	    vida -= 2;
 	    //Inimigo deixa de existir
@@ -62,7 +62,7 @@ void Inimigo::colidir(int direcao, int idOutro, vector2D<float> posicaoOutro, ve
 		}
 	}
     
-    if (idOutro == 3)
+    if (idOutro == 21 || idOutro == 22 || idOutro == 23 || idOutro == 24)
     {
         if (direcao == 1)
         {
@@ -102,14 +102,14 @@ void Inimigo::atirar(bool dir)
 	if (!dir) /* - */
 	{
 		orientacao = false;
-		p = new Municao(posicao + vector2D<float>(-correcaoSaidaBalaX, -correcaoSaidaBalaY), vector2D<float>(-500.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -2);
+		p = new Municao(posicao + vector2D<float>(-correcaoSaidaBalaX, -correcaoSaidaBalaY), vector2D<float>(-500.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", 32);
 	}
 
 	/* Caso contrario ela sai para frente em direção ao jogador */
 	else
 	{
 		orientacao = true; 															/* + */
-		p = new Municao(posicao + vector2D<float>(correcaoSaidaBalaX, -correcaoSaidaBalaY), vector2D<float>(500.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", -2);
+		p = new Municao(posicao + vector2D<float>(correcaoSaidaBalaX, -correcaoSaidaBalaY), vector2D<float>(500.0f, 0.0f), vector2D<float>(100.0f, 100.0f), "assets/bala.png", 32);
 	}
 	
 	lista->inserir(p);

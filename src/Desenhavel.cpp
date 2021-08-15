@@ -42,3 +42,13 @@ void Desenhavel::setVelocidade(vector2D<float> velo)
 {
     velocidade = velo;
 }
+
+void Desenhavel::setPosicao(vector2D<float> pos)
+{
+    posicao = pos;
+}
+
+vector2D<float> Desenhavel::getVelocidade()
+{
+	return velocidade;
+}

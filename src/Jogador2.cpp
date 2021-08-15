@@ -1,7 +1,7 @@
 #include "Jogador2.hpp"
 
 Jogador2::Jogador2(vector2D<float> pos, int v = 30): 
-Heroi(pos, vector2D<float>(0.0f, 0.0f), vector2D<float>(195.0f, 195.0f), "assets/heroi2.png")
+Heroi(pos, vector2D<float>(0.0f, 0.0f), vector2D<float>(195.0f, 195.0f), "assets/heroi2.png", 2)
 {
     vida = v;
 }

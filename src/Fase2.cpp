@@ -122,6 +122,30 @@ int Fase2::executar()
     return -1;
 }
 
+void Fase2::salvar()
+{
+    gc.salvar();
+}
+
+void Fase2::recuperar()
+{
+    listaAmigos.destruirDesenhavel();
+    gc.limpaDesenhaveis();
+
+    listaAmigos.inserir(jogador1);
+    gc.adicionarColidivel(jogador1);
+
+    listaAmigos.inserir(jogador2);
+    gc.adicionarColidivel(jogador2);
+
+    gc.recuperar(jogador1, jogador2);
+}
+
+int Fase2::getPontuacao()
+{
+    return gc.getPontuacao();
+}
+
 void Fase2::janelaFechada(const sf::Event& e)
 {
     if (e.type == sf::Event::Closed)

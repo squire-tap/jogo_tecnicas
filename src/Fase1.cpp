@@ -1,6 +1,6 @@
 #include "Fase1.hpp"
 
-Fase1::Fase1(GerenciadorGrafico* GG , GerenciadorEventos* GE):
+Fase1::Fase1(GerenciadorGrafico* GG , GerenciadorEventos* GE , int i):
 relogio(),
 gg(GG),
 ge(GE),
@@ -29,16 +29,22 @@ pf(vector2D<float>(1920.0f, 1080.0f) , "assets/PlanoFundo.png")
         listaAmigos.inserir(jogador2);
         gc.adicionarColidivel(jogador2);
 
-        DiretorMapa* DM = NULL;
-        Fase1Builder* FB1 = NULL;
+        if(i == 0)
+        {
+            DiretorMapa* DM = NULL;
+            Fase1Builder* FB1 = NULL;
         
-        DadosFase* mp = NULL;
-        FB1 = new Fase1Builder();
+            DadosFase* mp = NULL;
+            FB1 = new Fase1Builder();
 
-        DM = new DiretorMapa(FB1);
-        mp = DM->criarMapa(jogador1, jogador2);
-        mp->registrarEntidades(&gc, &listaAmigos);
-        //recuperar();
+            DM = new DiretorMapa(FB1);
+            mp = DM->criarMapa(jogador1, jogador2);
+            mp->registrarEntidades(&gc, &listaAmigos);
+        }
+        else
+        {
+            recuperar();
+        }
 
         /* Atribui as condi��es iniciais para as entidades , tanto na parte gr�fica como nos eventos */
         listaAmigos.inicializarDesenhavel(gg, ge);

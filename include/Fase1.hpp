@@ -36,7 +36,7 @@ private:
     PlanoFundo pf;
 
 public:
-    Fase1(GerenciadorGrafico* GG , GerenciadorEventos* GE);
+    Fase1(GerenciadorGrafico* GG , GerenciadorEventos* GE , int i);
     ~Fase1();
     int executar();
     void janelaFechada(const sf::Event& e);

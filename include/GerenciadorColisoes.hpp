@@ -28,7 +28,7 @@ public:
 	void verificarColisoes();
 	void limpaDesenhaveis();
 
-	void salvar();
+	void salvar(int i);
 	void recuperar(Heroi* j1, Heroi* j2);
 	void recuperarJogadores(Heroi* j1, Heroi* j2);
 	void recuperarInimigos(Heroi* j1, Heroi* j2);

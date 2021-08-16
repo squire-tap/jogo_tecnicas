@@ -62,13 +62,13 @@ bool GerenciadorEstado::processarCodigo(int codigoRetorno)
         break;
 
     case 3:
-        cout << "fase concluída" << endl;
+        cout << "fase 1 concluída" << endl;
         popEstado();
-        fase2 = new Fase2(gg , ge);
+        fase2 = new Fase2(gg , ge , 0);
         pushEstado(fase2);
         break;
 
-    /* caso 4 e caso 5 ---------> menu_pause */
+    /* caso 4 , caso 5  ---------> menu_pause */
     case 4:
         /* menu pause , ou continua o jogo ou volta para o menu_fase */
         cout << "continuar" << endl;
@@ -84,36 +84,57 @@ bool GerenciadorEstado::processarCodigo(int codigoRetorno)
         pushEstado(menu_fase);
         break;
 
-        /* caso 6 e caso 7 ----------> menu_fase retorna  */
-
+ 
+    /* caso 6 , caso 7 , caso 11 e caso 13 ----------> menu_fase retorna  */
     case 6:
         cout << "indo fase 1" << endl;
         popEstado();
-        fase1 = new Fase1(gg, ge);
+        fase1 = new Fase1(gg, ge , 0);
         pushEstado(fase1);
         break;
 
     case 7:
         cout << "indo fase 2" << endl;
         popEstado();
-        fase2 = new Fase2(gg, ge);
+        fase2 = new Fase2(gg, ge , 0);
         pushEstado(fase2);
         break;
     
+    /* Terminar */
     case 11:
         cout << "indo para o leaderboard" << endl;
         popEstado();
         /* leaderboard = new MenuLeader(); */
         /* pushEstado(leaderboard); */
         break;
-
-    /* caso 8 e caso 9 ------------> menu_transicao retorna */
-    /* case 8:
-        cout << "transitando fase 2" << endl;
+    
+    case 13:
+    {
+        cout << "indo Carregar fase" << endl;
         popEstado();
-        fase2 = new Fase2(gg, ge);
-        pushEstado(fase2);
-        break; */
+
+        ifstream RecuperarFase("salvamento/fase.txt" , ios::in);
+        int i;
+        RecuperarFase >> i; 
+
+        if(i == 1)
+        {
+            fase1 = new Fase1(gg , ge , 1);
+            pushEstado(fase1);
+        }
+        else if(i == 2)
+        {
+            fase2 = new Fase2(gg , ge , 1);
+            pushEstado(fase2);
+        }
+        else
+        { 
+            cout << "Nao há carregamentos" << endl;
+        } 
+
+        break;
+    }
+
 
     /* Terminou a fase 2 e vai para o menu */
     case 9:
@@ -135,8 +156,3 @@ bool GerenciadorEstado::processarCodigo(int codigoRetorno)
     }
     return false;
 }
-
-/* void GerenciadorEstado::inicializar()
-{
-    pilhaEstados.push( //menu_fase);
-} */

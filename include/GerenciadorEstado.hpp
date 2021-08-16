@@ -6,6 +6,7 @@
 #include "Fase2.hpp"
 #include "MenuFase.hpp"
 #include "MenuPause.hpp"
+#include "MenuCarregar.hpp"
 
 
 class GerenciadorEstado{
@@ -15,8 +16,10 @@ class GerenciadorEstado{
         Fase2* fase2;
         MenuFase* menu_fase;
         MenuPause* menu_pause;
+        MenuCarregar* menu_carregar;
         GerenciadorGrafico* gg;
         GerenciadorEventos* ge;
+
         
     
     public:
@@ -29,6 +32,7 @@ class GerenciadorEstado{
         void popEstado();
         void esvaziarPilha();
         bool processarCodigo(int codigoRetorno);
+        int getFase();
 };
 
 

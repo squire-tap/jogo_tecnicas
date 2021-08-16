@@ -9,6 +9,7 @@ revolver(vector2D<float>(500.0f , 500.0f) , "assets/revolver.png"),
 revolver2(vector2D<float>(500.0f , 500.0f) , "assets/revolver2.png")
 {
 
+
     auto altura = gg->getJanela()->getSize().y;
     auto largura = gg->getJanela()->getSize().x;
 
@@ -30,15 +31,22 @@ revolver2(vector2D<float>(500.0f , 500.0f) , "assets/revolver2.png")
 
     texto[2].setFont(fonte);
     texto[2].setColor(sf::Color::Black);
-    texto[2].setString("Leaderboard");
+    texto[2].setString("Carregar Fases");
     texto[2].setOrigin(sf::Vector2f(texto[2].getLocalBounds().width/2 , texto[2].getLocalBounds().height));
     texto[2].setPosition(sf::Vector2f(largura / 2, altura / (linhas + 1) * 2.5));
 
+
     texto[3].setFont(fonte);
     texto[3].setColor(sf::Color::Black);
-    texto[3].setString("Sair");
+    texto[3].setString("Leaderboard");
     texto[3].setOrigin(sf::Vector2f(texto[3].getLocalBounds().width/2 , texto[3].getLocalBounds().height));
     texto[3].setPosition(sf::Vector2f(largura / 2, altura / (linhas + 1) * 3.0));
+
+    texto[4].setFont(fonte);
+    texto[4].setColor(sf::Color::Black);
+    texto[4].setString("Sair");
+    texto[4].setOrigin(sf::Vector2f(texto[4].getLocalBounds().width/2 , texto[4].getLocalBounds().height));
+    texto[4].setPosition(sf::Vector2f(largura / 2, altura / (linhas + 1) * 3.5));
 }
 
 MenuFase::~MenuFase()
@@ -73,6 +81,8 @@ int MenuFase::executar()
                         return 6;
                     if(texto[selectedItemIndex].getString() == "Fase 2")
                         return 7;
+                    if(texto[selectedItemIndex].getString() == "Carregar Fases")
+                        return 13;
                     if(texto[selectedItemIndex].getString() == "Leaderboard")
                         return 11;
                     if(texto[selectedItemIndex].getString() == "Sair")

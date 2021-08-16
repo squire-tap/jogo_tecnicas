@@ -6,8 +6,7 @@
 #include "Fase2.hpp"
 #include "MenuFase.hpp"
 #include "MenuPause.hpp"
-#include "MenuCarregar.hpp"
-
+#include "Placar.hpp"
 
 class GerenciadorEstado{
     private:
@@ -16,7 +15,7 @@ class GerenciadorEstado{
         Fase2* fase2;
         MenuFase* menu_fase;
         MenuPause* menu_pause;
-        MenuCarregar* menu_carregar;
+        Placar* menu_carregar;
         GerenciadorGrafico* gg;
         GerenciadorEventos* ge;
 

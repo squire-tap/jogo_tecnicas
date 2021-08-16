@@ -1,6 +1,6 @@
-#include "Leaderboard.hpp"
+#include "Placar.hpp"
 
-MenuCarregar::MenuCarregar(GerenciadorGrafico *gg):
+Placar::Placar(GerenciadorGrafico *gg):
 Menu(gg),
 linhas(3),
 pf(vector2D<float>(1920.0f, 1080.0f) , "assets/PlanoFundo.png")
@@ -30,11 +30,11 @@ pf(vector2D<float>(1920.0f, 1080.0f) , "assets/PlanoFundo.png")
     texto[2].setPosition(sf::Vector2f(largura / 2 , altura / ( linhas + 1) * 2.5));
 
 }
-MenuCarregar::~MenuCarregar()
+Placar::~Placar()
 {
 
 }
-int MenuCarregar::executar()
+int Placar::executar()
 {
     while (GG->getJanela()->isOpen())
     {

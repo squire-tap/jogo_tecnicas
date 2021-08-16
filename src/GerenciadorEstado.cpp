@@ -121,6 +121,7 @@ bool GerenciadorEstado::processarCodigo(int codigoRetorno)
         {
             fase1 = new Fase1(gg , ge , 1);
             pushEstado(fase1);
+            
         }
         else if(i == 2)
         {

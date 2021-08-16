@@ -22,17 +22,6 @@ pontuacao(0)
 
 GerenciadorColisoes::~GerenciadorColisoes()
 {
-	/* set<Colidivel*>::iterator it;
-	Colidivel* c_aux = NULL;
-	for (it = colidiveis.begin(); it != colidiveis.end(); it++) //limpando vector de colidiveis
-	{
-		c_aux = *it;
-		if (c_aux != NULL)
-		{
-			delete c_aux;
-		}
-		c_aux = NULL;
-	} */
 	colidiveis.clear();
 }
 

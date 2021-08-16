@@ -89,7 +89,6 @@ int Fase1::executar()
 
         sf::Time t = relogio.restart();
 
-        //pausado = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::P);
         if (pausado)
         {   
             pausado = false;

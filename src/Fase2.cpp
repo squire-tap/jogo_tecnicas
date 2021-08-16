@@ -97,6 +97,7 @@ int Fase2::executar()
 
         if (pausado)
         {
+            salvar();
             pausado = false;
             return 1;
         }
@@ -130,7 +131,7 @@ int Fase2::executar()
 
 void Fase2::salvar()
 {
-    gc.salvar();
+    gc.salvar(2);
 }
 
 void Fase2::recuperar()

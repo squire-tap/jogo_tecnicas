@@ -32,6 +32,7 @@ class GerenciadorEstado{
         void popEstado();
         void esvaziarPilha();
         bool processarCodigo(int codigoRetorno);
+        int getFase();
 };
 
 

@@ -138,7 +138,7 @@ void GerenciadorColisoes::limpaDesenhaveis()
     limpeza.clear();
 }
 
-void GerenciadorColisoes::salvar()
+void GerenciadorColisoes::salvar(int i)
 {
 	ofstream GravadorJog1("salvamento/jogador1.txt", ios::out);
 	ofstream GravadorJog2("salvamento/jogador2.txt", ios::out);
@@ -263,7 +263,14 @@ void GerenciadorColisoes::salvar()
 
 	GravadorPont << pontuacao << endl;
 
+
 	GravadorPont.close();
+
+	ofstream GravadorFase("salvamento/fase.txt" , ios::out);
+
+	GravadorFase << i << endl;
+
+	GravadorFase.close();
 }
 
 void GerenciadorColisoes::recuperar(Heroi* j1, Heroi* j2)

@@ -4,15 +4,15 @@
 #include "Menu.hpp"
 #include "PlanoFundo.hpp"
 
-class MenuCarregar : public Menu::Menu{
+class Leaderbaord : public Menu::Menu{
 
     private:
         int linhas;
         PlanoFundo pf;
 
     public:
-        MenuCarregar(GerenciadorGrafico* gg);
-        ~MenuCarregar();
+        Leaderbaord(GerenciadorGrafico* gg);
+        ~Leaderbaord();
         int executar();
 
 };

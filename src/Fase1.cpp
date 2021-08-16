@@ -145,7 +145,7 @@ void Fase1::menuPausa(const sf::Event& e)
 
 void Fase1::salvar()
 {
-    gc.salvar();
+    gc.salvar(1);
 }
 
 void Fase1::recuperar()

@@ -109,27 +109,32 @@ bool GerenciadorEstado::processarCodigo(int codigoRetorno)
         break;
     
     case 13:
-        cout << "indo para Carregar fase" << endl;
+    {
+        cout << "indo Carregar fase" << endl;
         popEstado();
-        menu_carregar = new MenuCarregar(gg);
-        pushEstado(menu_carregar);
+
+        ifstream RecuperarFase("salvamento/fase.txt" , ios::in);
+        int i;
+        RecuperarFase >> i; 
+
+        if(i == 1)
+        {
+            fase1 = new Fase1(gg , ge , 1);
+            pushEstado(fase1);
+        }
+        else if(i == 2)
+        {
+            fase2 = new Fase2(gg , ge , 1);
+            pushEstado(fase2);
+        }
+        else
+        { 
+            cout << "Nao há carregamentos" << endl;
+        } 
+
         break;
-    
-    
-    
-    /* case 8 e 12 menu carregar retorna */
-    case 8:
-        cout << "recuperando fase 1" << endl;
-        popEstado();
-        fase1 = new Fase1(gg ,ge , 1);
-        pushEstado(fase1);
-        break;
-    
-    case 12:
-        cout << "recuperando fase 2" << endl;
-        popEstado();
-        fase2 = new Fase2(gg , ge , 1);
-        pushEstado(fase2);
+    }
+
 
     /* Terminou a fase 2 e vai para o menu */
     case 9:
@@ -151,8 +156,3 @@ bool GerenciadorEstado::processarCodigo(int codigoRetorno)
     }
     return false;
 }
-
-/* void GerenciadorEstado::inicializar()
-{
-    pilhaEstados.push( //menu_fase);
-} */

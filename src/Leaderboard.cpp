@@ -1,4 +1,4 @@
-#include "MenuCarregar.hpp"
+#include "Leaderboard.hpp"
 
 MenuCarregar::MenuCarregar(GerenciadorGrafico *gg):
 Menu(gg),

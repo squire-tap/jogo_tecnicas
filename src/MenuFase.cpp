@@ -9,6 +9,7 @@ revolver(vector2D<float>(500.0f , 500.0f) , "assets/revolver.png"),
 revolver2(vector2D<float>(500.0f , 500.0f) , "assets/revolver2.png")
 {
 
+
     auto altura = gg->getJanela()->getSize().y;
     auto largura = gg->getJanela()->getSize().x;
 

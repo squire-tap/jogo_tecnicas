@@ -21408,12 +21408,13 @@
 											"_parent": {
 												"$ref": "AAAAAAF7QOFYnWYDJL4="
 											},
-											"visible": false,
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
-											"left": 16,
-											"top": 48,
-											"height": 13
+											"left": 1093,
+											"top": 3253,
+											"width": 407,
+											"height": 13,
+											"text": "«Inimigo»"
 										},
 										{
 											"_type": "LabelView",
@@ -21424,7 +21425,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;1",
 											"left": 1093,
-											"top": 3255,
+											"top": 3268,
 											"width": 407,
 											"height": 13,
 											"text": "Bandido"
@@ -21464,7 +21465,7 @@
 									"left": 1088,
 									"top": 3248,
 									"width": 417,
-									"height": 25,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF7QOFYnWYES8A="
 									},
@@ -21490,7 +21491,7 @@
 									"fillColor": "#ea92f3",
 									"font": "Arial;13;0",
 									"left": 1088,
-									"top": 3273,
+									"top": 3286,
 									"width": 417,
 									"height": 10
 								},
@@ -21516,7 +21517,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
 											"left": 1093,
-											"top": 3288,
+											"top": 3301,
 											"width": 407,
 											"height": 13,
 											"text": "«create»+Bandido(pos: Vector2D<float>, pH: Heroi*)",
@@ -21534,7 +21535,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
 											"left": 1093,
-											"top": 3303,
+											"top": 3316,
 											"width": 407,
 											"height": 13,
 											"text": "«destroy»+Bandido()",
@@ -21552,7 +21553,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
 											"left": 1093,
-											"top": 3318,
+											"top": 3331,
 											"width": 407,
 											"height": 13,
 											"text": "+atualizar(t: float): void",
@@ -21562,7 +21563,7 @@
 									"fillColor": "#ea92f3",
 									"font": "Arial;13;0",
 									"left": 1088,
-									"top": 3283,
+									"top": 3296,
 									"width": 417,
 									"height": 53
 								},
@@ -21650,12 +21651,13 @@
 											"_parent": {
 												"$ref": "AAAAAAF7QOF0E2nD0UA="
 											},
-											"visible": false,
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
-											"left": -32,
-											"top": 80,
-											"height": 13
+											"left": 1093,
+											"top": 3429,
+											"width": 407,
+											"height": 13,
+											"text": "«Inimigo»"
 										},
 										{
 											"_type": "LabelView",
@@ -21666,7 +21668,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;1",
 											"left": 1093,
-											"top": 3431,
+											"top": 3444,
 											"width": 407,
 											"height": 13,
 											"text": "BandidoVeterano"
@@ -21706,7 +21708,7 @@
 									"left": 1088,
 									"top": 3424,
 									"width": 417,
-									"height": 25,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF7QOF0E2nE0WU="
 									},
@@ -21732,7 +21734,7 @@
 									"fillColor": "#ea92f3",
 									"font": "Arial;13;0",
 									"left": 1088,
-									"top": 3449,
+									"top": 3462,
 									"width": 417,
 									"height": 10
 								},
@@ -21758,7 +21760,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
 											"left": 1093,
-											"top": 3464,
+											"top": 3477,
 											"width": 407,
 											"height": 13,
 											"text": "«create»+BandidoVeterano(pos: vector2D<float>, pH: Heroi*)",
@@ -21776,7 +21778,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
 											"left": 1093,
-											"top": 3479,
+											"top": 3492,
 											"width": 407,
 											"height": 13,
 											"text": "«destroy»+BandidoVeterano()",
@@ -21794,7 +21796,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
 											"left": 1093,
-											"top": 3494,
+											"top": 3507,
 											"width": 407,
 											"height": 13,
 											"text": "+atualizar(t: float): void",
@@ -21804,7 +21806,7 @@
 									"fillColor": "#ea92f3",
 									"font": "Arial;13;0",
 									"left": 1088,
-									"top": 3459,
+									"top": 3472,
 									"width": 417,
 									"height": 53
 								},
@@ -21892,11 +21894,13 @@
 											"_parent": {
 												"$ref": "AAAAAAF7QOHS2Zb06tE="
 											},
-											"visible": false,
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
-											"top": 64,
-											"height": 13
+											"left": 1093,
+											"top": 3589,
+											"width": 406,
+											"height": 13,
+											"text": "«Inimigo»"
 										},
 										{
 											"_type": "LabelView",
@@ -21907,7 +21911,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;1",
 											"left": 1093,
-											"top": 3591,
+											"top": 3604,
 											"width": 406,
 											"height": 13,
 											"text": "Chefe"
@@ -21945,7 +21949,7 @@
 									"left": 1088,
 									"top": 3584,
 									"width": 416,
-									"height": 25,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF7QOHS2Zb1Iv0="
 									},
@@ -21971,7 +21975,7 @@
 									"fillColor": "#ea92f3",
 									"font": "Arial;13;0",
 									"left": 1088,
-									"top": 3609,
+									"top": 3622,
 									"width": 416,
 									"height": 10
 								},
@@ -21997,7 +22001,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
 											"left": 1093,
-											"top": 3624,
+											"top": 3637,
 											"width": 406,
 											"height": 13,
 											"text": "«create»+Chefe(pos: vector2D<float>, pH: Heroi*)",
@@ -22015,7 +22019,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
 											"left": 1093,
-											"top": 3639,
+											"top": 3652,
 											"width": 406,
 											"height": 13,
 											"text": "«destroy»+Chefe()",
@@ -22033,7 +22037,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
 											"left": 1093,
-											"top": 3654,
+											"top": 3667,
 											"width": 406,
 											"height": 13,
 											"text": "+atualizar(t: float): void",
@@ -22043,7 +22047,7 @@
 									"fillColor": "#ea92f3",
 									"font": "Arial;13;0",
 									"left": 1088,
-									"top": 3619,
+									"top": 3632,
 									"width": 416,
 									"height": 53
 								},
@@ -22411,12 +22415,13 @@
 											"_parent": {
 												"$ref": "AAAAAAF7QONbur81UEo="
 											},
-											"visible": false,
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
-											"left": 128,
-											"top": -16,
-											"height": 13
+											"left": 1925,
+											"top": 3229,
+											"width": 398,
+											"height": 13,
+											"text": "«Heroi»"
 										},
 										{
 											"_type": "LabelView",
@@ -22427,7 +22432,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;1",
 											"left": 1925,
-											"top": 3231,
+											"top": 3244,
 											"width": 398,
 											"height": 13,
 											"text": "Jogador1"
@@ -22467,7 +22472,7 @@
 									"left": 1920,
 									"top": 3224,
 									"width": 408,
-									"height": 25,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF7QONbur82sI8="
 									},
@@ -22493,7 +22498,7 @@
 									"fillColor": "#ea92f3",
 									"font": "Arial;13;0",
 									"left": 1920,
-									"top": 3249,
+									"top": 3262,
 									"width": 408,
 									"height": 10
 								},
@@ -22519,7 +22524,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
 											"left": 1925,
-											"top": 3264,
+											"top": 3277,
 											"width": 398,
 											"height": 13,
 											"text": "«create»+jogador1(pos: vector2D<float>, v: int)",
@@ -22537,7 +22542,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
 											"left": 1925,
-											"top": 3279,
+											"top": 3292,
 											"width": 398,
 											"height": 13,
 											"text": "«destroy»+Jogador1()",
@@ -22555,7 +22560,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
 											"left": 1925,
-											"top": 3294,
+											"top": 3307,
 											"width": 398,
 											"height": 13,
 											"text": "+tratarEvento(e: const Event&): void",
@@ -22565,7 +22570,7 @@
 									"fillColor": "#ea92f3",
 									"font": "Arial;13;0",
 									"left": 1920,
-									"top": 3259,
+									"top": 3272,
 									"width": 408,
 									"height": 53
 								},
@@ -22653,11 +22658,13 @@
 											"_parent": {
 												"$ref": "AAAAAAF7QON5ysL1oys="
 											},
-											"visible": false,
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
-											"left": 128,
-											"height": 13
+											"left": 1925,
+											"top": 3413,
+											"width": 398,
+											"height": 13,
+											"text": "«Heroi»"
 										},
 										{
 											"_type": "LabelView",
@@ -22668,7 +22675,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;1",
 											"left": 1925,
-											"top": 3415,
+											"top": 3428,
 											"width": 398,
 											"height": 13,
 											"text": "Jogador2"
@@ -22706,7 +22713,7 @@
 									"left": 1920,
 									"top": 3408,
 									"width": 408,
-									"height": 25,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF7QON5ysL2B2A="
 									},
@@ -22732,7 +22739,7 @@
 									"fillColor": "#ea92f3",
 									"font": "Arial;13;0",
 									"left": 1920,
-									"top": 3433,
+									"top": 3446,
 									"width": 408,
 									"height": 10
 								},
@@ -22758,7 +22765,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
 											"left": 1925,
-											"top": 3448,
+											"top": 3461,
 											"width": 398,
 											"height": 13,
 											"text": "«create»+Jogador2(pos: vector2D<float>, v: int)",
@@ -22776,7 +22783,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
 											"left": 1925,
-											"top": 3463,
+											"top": 3476,
 											"width": 398,
 											"height": 13,
 											"text": "«destroy»+Jogador2()",
@@ -22794,7 +22801,7 @@
 											"fillColor": "#ea92f3",
 											"font": "Arial;13;0",
 											"left": 1925,
-											"top": 3478,
+											"top": 3491,
 											"width": 398,
 											"height": 13,
 											"text": "+tratarEvento(e: const Event&): void",
@@ -22804,7 +22811,7 @@
 									"fillColor": "#ea92f3",
 									"font": "Arial;13;0",
 									"left": 1920,
-									"top": 3443,
+									"top": 3456,
 									"width": 408,
 									"height": 53
 								},
@@ -23078,12 +23085,13 @@
 											"_parent": {
 												"$ref": "AAAAAAF7QObjKptNOl4="
 											},
-											"visible": false,
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
-											"left": -128,
-											"top": 32,
-											"height": 13
+											"left": 3549,
+											"top": 797,
+											"width": 247,
+											"height": 13,
+											"text": "«Tile»"
 										},
 										{
 											"_type": "LabelView",
@@ -23094,7 +23102,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;1",
 											"left": 3549,
-											"top": 799,
+											"top": 812,
 											"width": 247,
 											"height": 13,
 											"text": "Areia"
@@ -23134,7 +23142,7 @@
 									"left": 3544,
 									"top": 792,
 									"width": 257,
-									"height": 25,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF7QObjKptOFhE="
 									},
@@ -23160,7 +23168,7 @@
 									"fillColor": "#ffff91",
 									"font": "Arial;13;0",
 									"left": 3544,
-									"top": 817,
+									"top": 830,
 									"width": 257,
 									"height": 10
 								},
@@ -23186,7 +23194,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
 											"left": 3549,
-											"top": 832,
+											"top": 845,
 											"width": 247,
 											"height": 13,
 											"text": "«create»+Areia(pos: vector2D<float>)",
@@ -23204,7 +23212,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
 											"left": 3549,
-											"top": 847,
+											"top": 860,
 											"width": 247,
 											"height": 13,
 											"text": "«destroy»+Areia()",
@@ -23214,7 +23222,7 @@
 									"fillColor": "#ffff91",
 									"font": "Arial;13;0",
 									"left": 3544,
-									"top": 827,
+									"top": 840,
 									"width": 257,
 									"height": 38
 								},
@@ -23259,7 +23267,7 @@
 							"left": 3544,
 							"top": 792,
 							"width": 257,
-							"height": 80,
+							"height": 86,
 							"nameCompartment": {
 								"$ref": "AAAAAAF7QObjKptNOl4="
 							},
@@ -23302,12 +23310,13 @@
 											"_parent": {
 												"$ref": "AAAAAAF7QOcGBJ5B4Zk="
 											},
-											"visible": false,
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
-											"left": -176,
-											"top": 32,
-											"height": 13
+											"left": 3549,
+											"top": 893,
+											"width": 245.3369140625,
+											"height": 13,
+											"text": "«Tile»"
 										},
 										{
 											"_type": "LabelView",
@@ -23318,7 +23327,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;1",
 											"left": 3549,
-											"top": 895,
+											"top": 908,
 											"width": 245.3369140625,
 											"height": 13,
 											"text": "AreiaTopo"
@@ -23358,7 +23367,7 @@
 									"left": 3544,
 									"top": 888,
 									"width": 255.3369140625,
-									"height": 25,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF7QOcGBJ5CYLQ="
 									},
@@ -23384,7 +23393,7 @@
 									"fillColor": "#ffff91",
 									"font": "Arial;13;0",
 									"left": 3544,
-									"top": 913,
+									"top": 926,
 									"width": 255.3369140625,
 									"height": 10
 								},
@@ -23410,7 +23419,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
 											"left": 3549,
-											"top": 928,
+											"top": 941,
 											"width": 245.3369140625,
 											"height": 13,
 											"text": "«create»+AreiaTopo(pos: vector2D<float>)",
@@ -23428,7 +23437,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
 											"left": 3549,
-											"top": 943,
+											"top": 956,
 											"width": 245.3369140625,
 											"height": 13,
 											"text": "«destroy»+AreiaTopo()",
@@ -23438,7 +23447,7 @@
 									"fillColor": "#ffff91",
 									"font": "Arial;13;0",
 									"left": 3544,
-									"top": 923,
+									"top": 936,
 									"width": 255.3369140625,
 									"height": 38
 								},
@@ -23483,7 +23492,7 @@
 							"left": 3544,
 							"top": 888,
 							"width": 255.3369140625,
-							"height": 73,
+							"height": 86,
 							"nameCompartment": {
 								"$ref": "AAAAAAF7QOcGBJ5B4Zk="
 							},
@@ -23526,12 +23535,13 @@
 											"_parent": {
 												"$ref": "AAAAAAF7QOcqB6E1TDQ="
 											},
-											"visible": false,
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
-											"left": -128,
-											"top": 80,
-											"height": 13
+											"left": 3549,
+											"top": 989,
+											"width": 245.48876953125,
+											"height": 13,
+											"text": "«Tile»"
 										},
 										{
 											"_type": "LabelView",
@@ -23542,7 +23552,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;1",
 											"left": 3549,
-											"top": 991,
+											"top": 1004,
 											"width": 245.48876953125,
 											"height": 13,
 											"text": "Pedra"
@@ -23582,7 +23592,7 @@
 									"left": 3544,
 									"top": 984,
 									"width": 255.48876953125,
-									"height": 25,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF7QOcqCKE25lw="
 									},
@@ -23608,7 +23618,7 @@
 									"fillColor": "#ffff91",
 									"font": "Arial;13;0",
 									"left": 3544,
-									"top": 1009,
+									"top": 1022,
 									"width": 255.48876953125,
 									"height": 10
 								},
@@ -23634,7 +23644,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
 											"left": 3549,
-											"top": 1024,
+											"top": 1037,
 											"width": 245.48876953125,
 											"height": 13,
 											"text": "«create»+Pedra(pos: vector2D<float>)",
@@ -23652,7 +23662,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
 											"left": 3549,
-											"top": 1039,
+											"top": 1052,
 											"width": 245.48876953125,
 											"height": 13,
 											"text": "«destroy»+Pedra()",
@@ -23662,7 +23672,7 @@
 									"fillColor": "#ffff91",
 									"font": "Arial;13;0",
 									"left": 3544,
-									"top": 1019,
+									"top": 1032,
 									"width": 255.48876953125,
 									"height": 38
 								},
@@ -23707,7 +23717,7 @@
 							"left": 3544,
 							"top": 984,
 							"width": 255.48876953125,
-							"height": 73,
+							"height": 86,
 							"nameCompartment": {
 								"$ref": "AAAAAAF7QOcqB6E1TDQ="
 							},
@@ -23750,12 +23760,13 @@
 											"_parent": {
 												"$ref": "AAAAAAF7QOd4qqQpQZc="
 											},
-											"visible": false,
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
-											"left": 160,
-											"top": 16,
-											"height": 13
+											"left": 4021,
+											"top": 797,
+											"width": 231,
+											"height": 13,
+											"text": "«Tile»"
 										},
 										{
 											"_type": "LabelView",
@@ -23766,7 +23777,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;1",
 											"left": 4021,
-											"top": 799,
+											"top": 812,
 											"width": 231,
 											"height": 13,
 											"text": "Cacto"
@@ -23806,7 +23817,7 @@
 									"left": 4016,
 									"top": 792,
 									"width": 241,
-									"height": 25,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF7QOd4qqQqTQc="
 									},
@@ -23832,7 +23843,7 @@
 									"fillColor": "#ffff91",
 									"font": "Arial;13;0",
 									"left": 4016,
-									"top": 817,
+									"top": 830,
 									"width": 241,
 									"height": 10
 								},
@@ -23858,7 +23869,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
 											"left": 4021,
-											"top": 832,
+											"top": 845,
 											"width": 231,
 											"height": 13,
 											"text": "«create»+Cacto(pos: vector2D<float>)",
@@ -23876,7 +23887,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
 											"left": 4021,
-											"top": 847,
+											"top": 860,
 											"width": 231,
 											"height": 13,
 											"text": "«destroy»+Cacto()",
@@ -23886,7 +23897,7 @@
 									"fillColor": "#ffff91",
 									"font": "Arial;13;0",
 									"left": 4016,
-									"top": 827,
+									"top": 840,
 									"width": 241,
 									"height": 38
 								},
@@ -23931,7 +23942,7 @@
 							"left": 4016,
 							"top": 792,
 							"width": 241,
-							"height": 73,
+							"height": 86,
 							"nameCompartment": {
 								"$ref": "AAAAAAF7QOd4qqQpQZc="
 							},
@@ -23974,12 +23985,13 @@
 											"_parent": {
 												"$ref": "AAAAAAF7QOeX/qcd3+s="
 											},
-											"visible": false,
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
-											"left": 160,
-											"top": 48,
-											"height": 13
+											"left": 4021,
+											"top": 893,
+											"width": 230.876953125,
+											"height": 13,
+											"text": "«Tile»"
 										},
 										{
 											"_type": "LabelView",
@@ -23990,7 +24002,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;1",
 											"left": 4021,
-											"top": 895,
+											"top": 908,
 											"width": 230.876953125,
 											"height": 13,
 											"text": "Caixote"
@@ -24030,7 +24042,7 @@
 									"left": 4016,
 									"top": 888,
 									"width": 240.876953125,
-									"height": 25,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF7QOeX/qcezbU="
 									},
@@ -24056,7 +24068,7 @@
 									"fillColor": "#ffff91",
 									"font": "Arial;13;0",
 									"left": 4016,
-									"top": 913,
+									"top": 926,
 									"width": 240.876953125,
 									"height": 10
 								},
@@ -24082,7 +24094,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
 											"left": 4021,
-											"top": 928,
+											"top": 941,
 											"width": 230.876953125,
 											"height": 13,
 											"text": "«create»+Caixote(pos: vector2D<float>)",
@@ -24100,7 +24112,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
 											"left": 4021,
-											"top": 943,
+											"top": 956,
 											"width": 230.876953125,
 											"height": 13,
 											"text": "«destroy»+Caixote()",
@@ -24110,7 +24122,7 @@
 									"fillColor": "#ffff91",
 									"font": "Arial;13;0",
 									"left": 4016,
-									"top": 923,
+									"top": 936,
 									"width": 240.876953125,
 									"height": 38
 								},
@@ -24155,7 +24167,7 @@
 							"left": 4016,
 							"top": 888,
 							"width": 240.876953125,
-							"height": 73,
+							"height": 86,
 							"nameCompartment": {
 								"$ref": "AAAAAAF7QOeX/qcd3+s="
 							},
@@ -24198,12 +24210,13 @@
 											"_parent": {
 												"$ref": "AAAAAAF7QOfDdqoRb9U="
 											},
-											"visible": false,
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
-											"left": 176,
-											"top": 80,
-											"height": 13
+											"left": 4021,
+											"top": 989,
+											"width": 231,
+											"height": 13,
+											"text": "«Tile»"
 										},
 										{
 											"_type": "LabelView",
@@ -24214,7 +24227,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;1",
 											"left": 4021,
-											"top": 991,
+											"top": 1004,
 											"width": 231,
 											"height": 13,
 											"text": "Final"
@@ -24254,7 +24267,7 @@
 									"left": 4016,
 									"top": 984,
 									"width": 241,
-									"height": 25,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF7QOfDdqoSfEQ="
 									},
@@ -24280,7 +24293,7 @@
 									"fillColor": "#ffff91",
 									"font": "Arial;13;0",
 									"left": 4016,
-									"top": 1009,
+									"top": 1022,
 									"width": 241,
 									"height": 10
 								},
@@ -24306,7 +24319,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
 											"left": 4021,
-											"top": 1024,
+											"top": 1037,
 											"width": 231,
 											"height": 13,
 											"text": "«create»+Final(pos: vector2D<float>)",
@@ -24324,7 +24337,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
 											"left": 4021,
-											"top": 1039,
+											"top": 1052,
 											"width": 231,
 											"height": 13,
 											"text": "«destroy»+Final()",
@@ -24334,7 +24347,7 @@
 									"fillColor": "#ffff91",
 									"font": "Arial;13;0",
 									"left": 4016,
-									"top": 1019,
+									"top": 1032,
 									"width": 241,
 									"height": 38
 								},
@@ -24379,7 +24392,7 @@
 							"left": 4016,
 							"top": 984,
 							"width": 241,
-							"height": 73,
+							"height": 86,
 							"nameCompartment": {
 								"$ref": "AAAAAAF7QOfDdqoRb9U="
 							},
@@ -24986,11 +24999,13 @@
 											"_parent": {
 												"$ref": "AAAAAAF7QP03Giv0PcU="
 											},
-											"visible": false,
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
-											"left": 80,
-											"height": 13
+											"left": 3693,
+											"top": 309,
+											"width": 359,
+											"height": 13,
+											"text": "«MapaBuilder»"
 										},
 										{
 											"_type": "LabelView",
@@ -25001,7 +25016,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;1",
 											"left": 3693,
-											"top": 311,
+											"top": 324,
 											"width": 359,
 											"height": 13,
 											"text": "MapaFase2Builder"
@@ -25039,7 +25054,7 @@
 									"left": 3688,
 									"top": 304,
 									"width": 369,
-									"height": 25,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF7QP03Giv1Qps="
 									},
@@ -25075,7 +25090,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
 											"left": 3693,
-											"top": 334,
+											"top": 347,
 											"width": 359,
 											"height": 13,
 											"text": "+tilemap: LeitorMapaConstrutos",
@@ -25085,7 +25100,7 @@
 									"fillColor": "#ffff91",
 									"font": "Arial;13;0",
 									"left": 3688,
-									"top": 329,
+									"top": 342,
 									"width": 369,
 									"height": 23
 								},
@@ -25111,7 +25126,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
 											"left": 3693,
-											"top": 357,
+											"top": 370,
 											"width": 359,
 											"height": 13,
 											"text": "«create»+MapaFase2Builder()",
@@ -25129,7 +25144,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
 											"left": 3693,
-											"top": 372,
+											"top": 385,
 											"width": 359,
 											"height": 13,
 											"text": "«destroy»+MapaFase2Builder()",
@@ -25147,7 +25162,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
 											"left": 3693,
-											"top": 387,
+											"top": 400,
 											"width": 359,
 											"height": 13,
 											"text": "+buildFase(): void",
@@ -25165,7 +25180,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
 											"left": 3693,
-											"top": 402,
+											"top": 415,
 											"width": 359,
 											"height": 13,
 											"text": "+buildJogadores(jog: Heroi*): void",
@@ -25183,7 +25198,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
 											"left": 3693,
-											"top": 417,
+											"top": 430,
 											"width": 359,
 											"height": 13,
 											"text": "+buildInimigos(ini: int): void",
@@ -25193,7 +25208,7 @@
 									"fillColor": "#ffff91",
 									"font": "Arial;13;0",
 									"left": 3688,
-									"top": 352,
+									"top": 365,
 									"width": 369,
 									"height": 83
 								},
@@ -29761,6 +29776,7 @@
 											"$ref": "AAAAAAF7Bs+OnfmVdHM="
 										},
 										"navigable": false,
+										"aggregation": "shared",
 										"multiplicity": "1..2"
 									},
 									"end2": {
@@ -30101,6 +30117,7 @@
 											"$ref": "AAAAAAF7BtH5p/okOvg="
 										},
 										"navigable": false,
+										"aggregation": "shared",
 										"multiplicity": "0..*"
 									},
 									"end2": {
@@ -33176,6 +33193,7 @@
 							}
 						}
 					],
+					"stereotype": "Inimigo",
 					"operations": [
 						{
 							"_type": "UMLOperation",
@@ -33298,6 +33316,7 @@
 							}
 						}
 					],
+					"stereotype": "Inimigo",
 					"operations": [
 						{
 							"_type": "UMLOperation",
@@ -33420,6 +33439,7 @@
 							}
 						}
 					],
+					"stereotype": "Inimigo",
 					"operations": [
 						{
 							"_type": "UMLOperation",
@@ -33511,6 +33531,7 @@
 							}
 						}
 					],
+					"stereotype": "Heroi",
 					"operations": [
 						{
 							"_type": "UMLOperation",
@@ -33633,6 +33654,7 @@
 							}
 						}
 					],
+					"stereotype": "Heroi",
 					"operations": [
 						{
 							"_type": "UMLOperation",
@@ -33724,6 +33746,7 @@
 							}
 						}
 					],
+					"stereotype": "Tile",
 					"operations": [
 						{
 							"_type": "UMLOperation",
@@ -33778,6 +33801,7 @@
 							}
 						}
 					],
+					"stereotype": "Tile",
 					"operations": [
 						{
 							"_type": "UMLOperation",
@@ -33832,6 +33856,7 @@
 							}
 						}
 					],
+					"stereotype": "Tile",
 					"operations": [
 						{
 							"_type": "UMLOperation",
@@ -33886,6 +33911,7 @@
 							}
 						}
 					],
+					"stereotype": "Tile",
 					"operations": [
 						{
 							"_type": "UMLOperation",
@@ -33940,6 +33966,7 @@
 							}
 						}
 					],
+					"stereotype": "Tile",
 					"operations": [
 						{
 							"_type": "UMLOperation",
@@ -33994,6 +34021,7 @@
 							}
 						}
 					],
+					"stereotype": "Tile",
 					"operations": [
 						{
 							"_type": "UMLOperation",
@@ -34079,6 +34107,7 @@
 							}
 						}
 					],
+					"stereotype": "MapaBuilder",
 					"attributes": [
 						{
 							"_type": "UMLAttribute",
